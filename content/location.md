@@ -2,7 +2,7 @@
 title: "Location"
 date: 2024-05-08
 hidemeta: true
-description: "Smart Tech Ventures's mailing and office addresses at the Institute of Romance Philology."
+description: "Smart Tech Ventures is an Australian based organisation"
 
 ---
 
@@ -11,18 +11,12 @@ description: "Smart Tech Ventures's mailing and office addresses at the Institut
 #### Mailing address
 
 Smart Tech Ventures  
-Institute of Romance Philology  
-University of Regensburg  
-Regensburg, Germany
 
 ---
 
 #### Office address
 
-Room 133  
-Institute of Romance Philology  
-University of Regensburg
-
+191 St. Georges Terrace, Perth, WA 6000
 ---
 
 #### Office location
