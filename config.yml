@@ -34,7 +34,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["articles","data"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -50,8 +50,8 @@ params:
           imageWidth: 160
           imageHeight: 160
           buttons:
-            - name: Papers
-              url: papers/
+            - name: Articles
+              url: articles/
             - name: Data
               url: data/
             - name: Tags

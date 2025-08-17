@@ -1,4 +1,4 @@
 ---
-title: "Papers"
-description: "Preprints and articles by Smart Tech Ventures."
+title: "Articles"
+description: "Posts by Smart Tech Ventures."
 ---
