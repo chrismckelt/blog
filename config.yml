@@ -62,6 +62,8 @@ params:
               url: https://smarttechventures-au.github.io
 
     socialIcons:
+        - name: Website
+          url: https://www.smarttechventures.au
         - name: Email
           url: mailto:hi@smarttechventures.au
         - name: Zoom
