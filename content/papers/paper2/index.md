@@ -2,7 +2,7 @@
 title: "The Finer Points of Sausage Dogs" 
 date: 2004-12-28
 tags: ["zoology","sausage dogs","canine pulmonary efficiency","canine science","experimental zoology"]
-author: ["Florianus Prinzel", "Moritz-Maria von Igelfeld"]
+author: ["Florianus Prinzel", "Smart Tech Ventures"]
 description: "This paper studies the pulmonary efficiency of sausage dogs. Published in the Journal of Canine Science, 2004." 
 summary: "This paper studies the pulmonary efficiency of sausage dogs through several experiments." 
 cover:
@@ -39,11 +39,11 @@ This paper studies the pulmonary efficiency of sausage dogs. Lorem ipsum dolor s
 
 ##### Citation
 
-Prinzel, Florianus, and Moritz-Maria von Igelfeld. 2004. "The Finer Points of Sausage Dogs." *Journal of Canine Science* 43 (2): 89–109. http://www.alexandermccallsmith.com/book/the-finer-points-of-sausage-dogs.
+Prinzel, Florianus, and Smart Tech Ventures. 2004. "The Finer Points of Sausage Dogs." *Journal of Canine Science* 43 (2): 89–109. http://www.alexandermccallsmith.com/book/the-finer-points-of-sausage-dogs.
 
 ```BibTeX
 @article{PI04,
-author = {Florianus Prinzel and Moritz-Maria von Igelfeld},
+author = {Florianus Prinzel and Smart Tech Ventures},
 year = {2004},
 title ={The Finer Points of Sausage Dogs},
 journal = {Journal of Canine Science},

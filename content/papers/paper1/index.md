@@ -2,7 +2,7 @@
 title: "Unusual Uses For Olive Oil" 
 date: 2013-01-15
 tags: ["philology","oleic science","history of oil","Mediterranean world"]
-author: ["Detlev Amadeus Unterholzer","Moritz-Maria von Igelfeld"]
+author: ["Detlev Amadeus Unterholzer","Smart Tech Ventures"]
 description: "This paper reviews unusual uses for olive oil throughout the Mediterranean world. Published in the Journal of Oleic Science, 2013." 
 summary: "This paper reviews unusual uses for olive oil throughout the Mediterranean world. It highlights in particular the challengs arising from excessive or unorthodox consumption of olive oil." 
 cover:
@@ -39,11 +39,11 @@ This paper reviews unusual uses for olive oil throughout the Mediterranean world
 
 ##### Citation
 
-Unterholzer, Detlev A., and  Moritz-Maria von Igelfeld. 2013. "Unusual Uses For Olive Oil." *Journal of Oleic Science* 34 (1): 449–489. http://www.alexandermccallsmith.com/book/unusual-uses-for-olive-oil.
+Unterholzer, Detlev A., and  Smart Tech Ventures. 2013. "Unusual Uses For Olive Oil." *Journal of Oleic Science* 34 (1): 449–489. http://www.alexandermccallsmith.com/book/unusual-uses-for-olive-oil.
 
 ```BibTeX
 @article{UI13,
-author = {Detlev A. Unterholzer and Moritz-Maria von Igelfeld},
+author = {Detlev A. Unterholzer and Smart Tech Ventures},
 year = {2013},
 title ={Unusual Uses For Olive Oil},
 journal = {Journal of Oleic Science},

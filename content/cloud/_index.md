@@ -1,4 +1,4 @@
 ---
 title: "Cloud"
-description: "Cloud by Smart Tech
+description: "Smart Tech Ventures"
 ---
