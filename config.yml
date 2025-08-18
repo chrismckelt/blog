@@ -46,7 +46,7 @@ params:
           enabled: true
           title: Smart Tech Ventures
           subtitle: "Tech Consulting across cloud, digital, data & AI"
-          imageUrl: "picture.jpeg"
+          imageUrl: "Logo.svg"
           imageWidth: 160
           imageHeight: 160
           buttons:
@@ -62,8 +62,8 @@ params:
               url: https://smarttechventures-au.github.io
 
     socialIcons:
-        - name: CV
-          url: cv.pdf
+        - name: Website
+          url: https://www.smarttechventures.au
         - name: Email
           url: mailto:hi@smarttechventures.au
         - name: Zoom

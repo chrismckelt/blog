@@ -8,19 +8,15 @@ description: "Schedule and location for Smart Tech Ventures's office hours."
 --- 
 #### Schedule
 
-Office hours take place on Wednesday at 10am.
-
+Office hours take place on Monday to Saturday 8am to 6pm (and outside when requested)
 ---
 
 #### Location
 
-By default meetings are in my office. I am also available for virtual meetings on Zoom.
+We work remotely by default, but enjoy face to face meetings at your request.
 
 ---
 
-#### Meeting material
+#### Meeting Preferences
 
-+ If we are meeting to discuss research, please send me a written description of the work that you would like to discus. 
-+ Presentation slides or paper draft are perfectly fine. 
-+ If you do not have those, please send a one-page description of the research. 
-+ Please send me the material by 8pm on the evening prior of our meeting.
++ In order of preference -  Microsoft Teams, Whereby, Zoom, Slack
