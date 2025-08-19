@@ -2,14 +2,14 @@
 title: "API & Integration Lifecycle Governance"
 date: 2025-08-19T10:46:37Z
 draft: false
-tags: ["api","integration","governance","design thinking"]
+tags: ["api", "integration", "governance", "design thinking"]
 author: ["Smart Tech Ventures"]
 description: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:
-    image: "paper1.png"
-    alt: "API Integration Lifecycle"
-    relative: true
+  image: "/articles/2025-img-1.png"
+  alt: "API Integration Lifecycle"
+  relative: true
 ---
 
 > The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach.
@@ -21,9 +21,7 @@ cover:
 Integration requirements are defined by the business processes they support. Design thinking with respect to integration design refers to the understanding of business processes, the problems and inefficiencies in those processes, and the ideation of integration capabilities which can improve those processes.
 <br />
 
-{:.label .label-success-filled}
-{:.sub-title}
-Integration Types:
+### Integration Types:
 
 <br />
 
@@ -33,27 +31,20 @@ Integration Types:
 
 <br />
 
-{:.label .label-info-filled}
-{:.sub-title}
-Lean Approach
+### Lean Approach
 
 <br />
 
 The Lean startup methodology is a scientific approach to problem solving that draws on feedback data to guide and speed up the integrations iterative development. This process involves assessing options against define criteria and experimenting with technologies and implementation patterns to gain evidence based knowledge on performance and constraints which may influence the final design.
 
 <br />
-
-{:.label .label-info-filled}
-{:.sub-title}
-Agile
+###  Agile
 
 <br />
 Agile is a way of working, characterized by frequent and incremental delivery of product, ongoing reassessment of and adaptation of plans.
 <br />
 
-{:.label .label-info-filled}
-{:.sub-title}
-API Strategy
+### API Strategy
 
 <br />
 In the present day, APIs play a crucial role in integration, service platforms, innovation, and connectivity. They bring value by enabling direct monetization and enhancing core business functions. Additionally, they foster partnerships and cooperative communities globally, contributing to the push for standardization, as evident in Open Banking. When combined with the scalable processing power of the cloud, the data-gathering capabilities of the Internet of Things, and machine learning, APIs offer endless possibilities limited only by your imagination. To keep up with business growth, high-performing organizations require infrastructure development that aligns with their needs, offers rapid adaptability for innovation, and prioritizes ease of use and monetization opportunities.
