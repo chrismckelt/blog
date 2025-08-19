@@ -21,7 +21,7 @@ menu:
 params:
     description: "Smart Tech Ventures is a venture capital firm that invests in early-stage technology companies. We focus on startups that are leveraging cutting-edge technologies to solve real-world problems and create value for society."
     author: Chris McKelt
-    # googleAnalyticsID: "G-XXXXX"
+    googleAnalyticsID: "G-01MGQXJNBV"
     DateFormat: "January 2006"
     defaultTheme: light
     hideFooter: false
