@@ -14,7 +14,7 @@ cover:
 
 > The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach.
 
-<!--more-->
+<img alt="Design Thinking" src="https://blog.smarttechventures.au/articles/api-governance/2025-img-1.png" />
 
 **Design Thinking** is an iterative process in which we seek to understand the user, challenge assumptions, and redefine problems in an attempt to identify alternative strategies and solutions that might not be instantly apparent with our initial level of understanding. At the same time, Design Thinking provides a solution-based approach to solving problems. It is a way of thinking and working as well as a collection of hands-on methods.
 
