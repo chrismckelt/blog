@@ -69,6 +69,7 @@ The API Lifecycle follows the **CI/CD pipeline for API Management (APIM)** appro
 
 <br/>
 <br/>
+<hr />
 
 # Our Technological Competencies
 
@@ -78,6 +79,7 @@ The API Lifecycle follows the **CI/CD pipeline for API Management (APIM)** appro
 
 <br />
 <hr />
+
 ### Ready to start?
 
-[Contact us to start your journey](/contact)
+[Contact us to start your journey](https://smarttechventures.au/contact/)
