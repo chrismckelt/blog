@@ -7,7 +7,7 @@ author: ["Smart Tech Ventures"]
 description: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:
-  image: "/articles/2025-img-1.png"
+  image: "/articles/api-governance/2025-img-1.png"
   alt: "API Integration Lifecycle"
   relative: true
 ---
@@ -38,7 +38,8 @@ Integration requirements are defined by the business processes they support. Des
 The Lean startup methodology is a scientific approach to problem solving that draws on feedback data to guide and speed up the integrations iterative development. This process involves assessing options against define criteria and experimenting with technologies and implementation patterns to gain evidence based knowledge on performance and constraints which may influence the final design.
 
 <br />
-###  Agile
+
+### Agile
 
 <br />
 Agile is a way of working, characterized by frequent and incremental delivery of product, ongoing reassessment of and adaptation of plans.
