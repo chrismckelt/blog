@@ -1,6 +1,6 @@
 ---
 title: "Choosing a Customer Identity Management System"
-date: 2025-08-21T10:03:35Z
+date: 2024-08-21T10:03:35Z
 draft: false
 tags: ["ciam", "identity", "Access Management", "oauth"]
 author: ["Smart Tech Ventures"]
@@ -187,7 +187,7 @@ Support is provided via community channels (forums, Slack, GitHub). Allows up to
 
 # Our Technological Competencies
 
-![Our Technological Competencies](https://github.com/Axurcio/axurcio.github.io/assets/662868/03944ecd-1619-4ea9-b4ac-c023020d9b77)
+![Our Technological Competencies](https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48)
 
 ---
 
