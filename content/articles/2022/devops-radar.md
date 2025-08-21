@@ -1,0 +1,48 @@
+---
+title: "DevOps Radar"
+tags: ["devops", "radar", "gcp", "github"]
+author: ["Smart Tech Ventures"]
+description: "Plan your digital strategy"
+date: 2022-01-21T10:26:31Z
+draft: false
+cover:
+  image: "https://user-images.githubusercontent.com/662868/124373903-0972fc80-dcc9-11eb-80ad-0c6c32d8fc44.png"
+  alt: "Cloud Adoption"
+  relative: true
+---
+
+# Use the DevOps Radar to guide your way
+
+> Focus on metrics that will accelerate your software delivery process, how to obtain them and how to improve them
+
+When it comes to measuring an organisation’s ability to develop and operate software systems nothing beats the key metrics identified in the 2019 Accelerate State of DevOps [Report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) by DevOps Research and Assessment (DORA).
+
+The report clearly demonstrates the empirical links between high performing software teams and high performing organisations and provides evidence-based guidance on the capabilities and practices that accelerate digital transformation.
+
+This research, together with our extensive delivery experience, forms the basis of our DevOps practice.
+
+### The Approach
+
+- 5 day engagement schedule to suit your team
+- Interviews with technology leaders to evaluate the current state, understand the measurement potential, and determine metrics to measure
+- Data analysis to obtain metrics
+- Radar presentation of insights and detailed action plan for continual improvement
+
+### Benefits and Outcomes
+
+- Current state visibility
+- Visual radar
+- Identified issues
+- Actions for improvement
+
+# Our Technological Competencies
+
+<br />
+![Our Technological Competencies](<img width="878" height="497" alt="Image" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
+
+<br />
+<hr />
+
+### Ready to start?
+
+[Contact us to start your journey](https://smarttechventures.au/contact/)
