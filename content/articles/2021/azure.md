@@ -35,9 +35,7 @@ Our team of software professionals has **decades of industry experience** mentor
 
 ## Data & AI Experts
 
-![Automated Machine Learning](/assets/images/solutions/automated-machine-learning.png)
-
-We help organisations operationalise Machine Learning solutions and predictions, making them accessible via web services, Microsoft Azure Machine Learning Studio, and other data-driven channels.
+We help organisations bring to life their Machine Learning solutions and predictions, making them accessible via web services, Microsoft Azure Machine Learning Studio, and other data-driven channels.
 
 Azure enables seamless redirection of client application requests to the right services—whether websites hosted inside or outside Azure, mobile applications, or desktop applications such as Excel.
 
