@@ -10,6 +10,7 @@ cover:
   alt: "Agile Manifesto"
   relative: true
 ---
+
 # Agile Coaching
 
 > Our coaches focus on embedding Agile at the individual team level, using traditional frameworks like **Scrum** and **Kanban**.
@@ -28,11 +29,10 @@ We ensure that teams can build products the right way and deliver work sustainab
 - **Mentoring**: Scrum Masters, Product Owners, and Engineers to promote best practice
 - **Coaching**: Using the GROW model — Goal, Reality, Options, Will
 
-
 # Our Technological Competencies
 
 <br />
-![Our Technological Competencies](<img width="878" height="497" alt="Image" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
+![Our Technological Competencies](<img width="878" height="497" alt="Smart Tech" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
 
 <br />
 <hr />

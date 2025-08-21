@@ -7,16 +7,14 @@ author: ["Smart Tech Ventures"]
 description: "Baseline delivery to improve performance"
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:
-  image: "https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48"
-  alt: "Experts in cloud digital & data architecture"
+  image: "https://github.com/user-attachments/assets/21be23a2-3c2d-4284-9972-ead01de31606"
+  alt: "Understand what to measure and how to use them to accelerate your business"
   relative: true
 ---
 
 # Understand what to measure and how to use them to accelerate your business
 
-<!--more-->
-
-> One day facilitated workshop to focus on metrics that will accelerate your software delivery process, how to obtain them and how to improve them
+> Focus on metrics that will accelerate your software delivery process, learn how to obtain them and how to improve them
 
 When it comes to measuring an organisation’s ability to develop and operate software systems nothing beats the key metrics identified in the 2019 Accelerate State of DevOps [Report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) by DevOps Research and Assessment (DORA).
 
@@ -43,7 +41,7 @@ This research, together with our extensive delivery experience, forms the basis 
 # Our Technological Competencies
 
 <br />
-![Our Technological Competencies](<img width="878" height="497" alt="Image" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
+![Our Technological Competencies](<img width="878" height="497" alt="Smart Tech" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
 
 <br />
 <hr />

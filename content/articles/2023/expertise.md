@@ -27,7 +27,7 @@ Experience the power of Axurcio as we work alongside you to transform your busin
 # Our Technological Competencies
 
 <br />
-![Our Technological Competencies](<img width="878" height="497" alt="Image" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
+![Our Technological Competencies](<img width="878" height="497" alt="Smart Tech" src="https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48" />)
 
 <br />
 <hr />
