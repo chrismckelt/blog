@@ -7,8 +7,8 @@ author: ["Smart Tech Ventures"]
 description: " Solution Evaluation"
 summary: "Customer Identity and Access Managment"
 cover:
-  image: "/articles/api-governance/2025-img-1.png"
-  alt: "API Integration Lifecycle"
+  image: "https://github.com/user-attachments/assets/241253b8-9595-4cb5-97be-8431ebf623d4"
+  alt: "CIAM Selection"
   relative: true
 ---
 
@@ -23,6 +23,8 @@ To enable growth and ease custom development outside SalesForce, the client deci
 Customer Identity and Access Management (CIAM) is a subset of the larger identity and access management (IAM) concept that focuses on managing and controlling external parties' access to a business's applications, web portals, and digital services. CIAM solutions help organizations manage customer identities, providing security and an enhanced experience.
 
 We were engaged to provide options for a CIAM implementation and provide a recommended solution, costs and implementation estimates.
+
+<img width="957" height="530" alt="Image" src="https://github.com/user-attachments/assets/241253b8-9595-4cb5-97be-8431ebf623d4" />
 
 # Scope
 
