@@ -1,8 +1,8 @@
 ---
 title: "DevOps Radar"
-tags: ["devops", "radar", "gcp", "github"]
+tags: ["devops", "radar", "dora", "jira"]
 author: ["Smart Tech Ventures"]
-description: "Plan your digital strategy"
+description: "Use the DevOps Radar to assess your maturity"
 date: 2022-01-21T10:26:31Z
 draft: false
 cover:
