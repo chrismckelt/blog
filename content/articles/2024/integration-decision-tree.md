@@ -7,8 +7,8 @@ author: ["Smart Tech Ventures"]
 description: "Integration Decision Evaluation"
 summary: "A guide to integration strategy"
 cover:
-  image: "https://github.com/user-attachments/assets/241253b8-9595-4cb5-97be-8431ebf623d4"
-  alt: "CIAM Selection"
+  image: "https://github.com/user-attachments/assets/99f5ae95-124e-4cee-8c73-6d379faf876e"
+  alt: "Integration Decision Tree"
   relative: true
 ---
 
