@@ -7,35 +7,30 @@ date: 2020-02-21T10:26:31Z
 draft: false
 ---
 
-> Understand your current state, design your future, analyse the gaps and make a plan
-<!--more-->
+# Data Estate Assessment
 
-From data strategy, building data platforms, data-ops, data governance, advanced analytics, and data science, to creating a data culture. We are the specialist consulting firm that can turn data into real business insights.
+> Understand your current state, design your future, analyze the gaps, and make a plan.
 
-We bring the people, the platforms, the tools and the frameworks to unlock the potential of your data.
-<br />
+---
 
+From data strategy, building data platforms, data-ops, data governance, advanced analytics, and data science, to creating a data culture — we are the specialist consulting firm that can turn data into real business insights.
 
-<br />
+We bring the people, platforms, tools, and frameworks to unlock the full potential of your data.
 
-![data](https://www.axurcio.com/assets/images/solutions/laptop.png)
+![Data](https://www.axurcio.com/assets/images/solutions/laptop.png)
 
-{:.label .label-success-filled}
-{:.sub-title}
-Data Estate Assessment
+---
 
-<br />
+## What We Deliver
 
-We will deliver a data and analytics assessment, along with a future data state roadmap to modernize your digital processes. This will help you leverage your data assets to improve business value and performance.
+We provide a **data and analytics assessment** along with a **future-state roadmap** to modernize your digital processes. This helps you leverage your data assets to improve business value and performance.
 
-* Assess your current data assets
+**Our approach includes:**
 
-* Understand and document current processes
-
-* Prioritize your data analytics opportunity
-
-* Build an actionable data management roadmap
-
+- Assessing your current data assets
+- Understanding and documenting current processes
+- Prioritizing your data analytics opportunities
+- Building an actionable data management roadmap
 
 # Our Technological Competencies
 
