@@ -11,9 +11,9 @@ cover:
   relative: true
 ---
 
-Where possible, we choose to adopt OSS software to avoid vendor lock in.
+# Where possible, we choose to adopt OSS software to avoid vendor lock in.
 
-## The open source community and specifically the [Cloud Native Computing Foundation](https://www.cncf.io/) host a large amount of world class projects, some used under the covers by major cloud providers and charged back to you at a premium. We unlock the value of the global community to power your solutions & endeavour to give back what we can in return.
+The open source community and specifically the [Cloud Native Computing Foundation](https://www.cncf.io/) host a large amount of world class projects, some used under the covers by major cloud providers and charged back to you at a premium. We unlock the value of the global community to power your solutions & endeavour to give back what we can in return.
 
 ## We love OSS
 
