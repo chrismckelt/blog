@@ -6,12 +6,10 @@ description: "We are Azure Cloud Experts"
 date: 2021-02-21T10:26:31Z
 draft: false
 cover:
-  image: "https://github.com/user-attachments/assets/a9f100c9-123c-4a80-a089-415f4ad1defe"
+  image: "https://github.com/user-attachments/assets/314c2f0c-2506-459d-bd2d-f15a866c8382"
   alt: "Azure"
   relative: true
 ---
-
-# Azure Experts
 
 We have deep expertise in Microsoft Azure and help organisations modernise their technology environments by designing and implementing secure, scalable, and cost-effective cloud solutions.
 
@@ -19,15 +17,13 @@ Our team of certified Azure specialists works across infrastructure, application
 
 ---
 
-## Integration Experts
+## Azure Experts
 
-We are integration experts across a range of platforms with expertise in Azure.
+We are experts across a range of services across Azure.
 
-![Azure Integration Services](/assets/images/solutions/azure_integration_services.png)
+<img width="1536" height="864" alt="Image" src="https://github.com/user-attachments/assets/aa4c75ea-5a02-4b80-965d-21cfc273916d" />
 
-**Azure Integration Services** provide an enterprise-ready, event-driven, serverless compute experience that delivers efficiency and consistency when connecting applications across cloud and on-premises environments.
-
-# Dynamics 365 & Power Platform Experts
+# Dynamics 365 & Power Platform
 
 Dynamics 365 and the Power Platform system and data integration architecture, design, delivery, and support.
 
@@ -49,7 +45,7 @@ Azure enables seamless redirection of client application requests to the right s
 
 ## IoT Experts
 
-![Azure IoT Edge](/assets/images/solutions/iot.png)
+<img width="1439" height="770" alt="Image" src="https://github.com/user-attachments/assets/b02ea8a3-bcab-49a1-badd-f1eb72b0649a" />
 
 **Azure IoT Edge** is a fully managed service built on Azure IoT Hub. It allows you to deploy cloud workloads—such as artificial intelligence and custom business logic—on IoT edge devices using standard containers.
 
