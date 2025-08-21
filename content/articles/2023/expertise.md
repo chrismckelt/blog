@@ -7,8 +7,8 @@ author: ["Smart Tech Ventures"]
 description: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:
-  image: "/articles/api-governance/2025-img-1.png"
-  alt: "API Integration Lifecycle"
+  image: "https://github.com/user-attachments/assets/0863a4fa-501b-46ff-8433-e7ee246ded48"
+  alt: "Experts in cloud digital & data architecture"
   relative: true
 ---
 
