@@ -8,91 +8,80 @@ pagination:
   pagerSize: 20
 
 taxonomies:
-    tag: tags
+  tag: tags
 
 menu:
-    main:
-        - name: Articles
-          url: articles/
-          weight: 2
-        - name: Data
-          url: data/
-          weight: 4
+  main:
+    - name: Articles
+      url: articles/
+      weight: 2
 params:
-    description: "Smart Tech Ventures is a venture capital firm that invests in early-stage technology companies. We focus on startups that are leveraging cutting-edge technologies to solve real-world problems and create value for society."
-    author: Chris McKelt
-    googleAnalyticsID: "G-01MGQXJNBV"
-    DateFormat: "January 2006"
-    defaultTheme: light
-    hideFooter: false
-    disableThemeToggle: true
-    ShowShareButtons: false
-    ShowReadingTime: false
-    disableSpecial1stPost: true
-    disableAnchoredHeadings: true
-    ShowPostNavLinks: false
-    ShowBreadCrumbs: false
-    ShowCodeCopyButtons: true
-    ShowAllPagesInArchive: false
-    MainSections: ["articles","data"]
-    ShowToc: false
-    disableScrollToTop: true
-    TocOpen: true
-    ShowWordCount: false
-    UseHugoToc: true
-    comments: false
-    math: true
-    profileMode:
-          enabled: true
-          title: Smart Tech Ventures
-          subtitle: "Tech Consulting across cloud, digital, data & AI"
-          imageUrl: "Logo.svg"
-          imageWidth: 160
-          imageHeight: 160
-          buttons:
-            - name: Articles
-              url: articles/
-            - name: Data
-              url: data/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://blog.smarttechventures.au
+  description: "Smart Tech Ventures is a venture capital firm that invests in early-stage technology companies. We focus on startups that are leveraging cutting-edge technologies to solve real-world problems and create value for society."
+  author: Chris McKelt
+  googleAnalyticsID: "G-01MGQXJNBV"
+  DateFormat: "January 2006"
+  defaultTheme: light
+  hideFooter: false
+  disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: true
+  disableAnchoredHeadings: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: false
+  MainSections: ["articles"]
+  ShowToc: false
+  disableScrollToTop: true
+  TocOpen: true
+  ShowWordCount: false
+  UseHugoToc: true
+  comments: false
+  math: true
+  profileMode:
+    enabled: true
+    title: Smart Tech Ventures
+    subtitle: "Tech Consulting across cloud, digital, data & AI"
+    imageUrl: "Logo.svg"
+    imageWidth: 160
+    imageHeight: 160
+    buttons:
+      - name: Articles
+        url: articles/
+      - name: Tags
+        url: tags/
+      - name: Website
+        url: https://smarttechventures.au
 
-    socialIcons:
-        - name: Website
-          url: https://www.smarttechventures.au
-        - name: Email
-          url: mailto:hi@smarttechventures.au
-        - name: Zoom
-          url: https://www.smarttechventures.au
-        - name: Location
-          url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: GitHub
-          url: https://github.com/smarttechventures-au
+  socialIcons:
+    - name: Website
+      url: https://www.smarttechventures.au
+    - name: Email
+      url: mailto:hi+www@smarttechventures.au
+    - name: Book a Call
+      url: https://calendly.com/chris-smarttechventures/chat-with-us-1
+    - name: GitHub
+      url: https://github.com/smarttechventures-au
 
-    assets:
-        disableScrollBarStyle: true
-    cover:
-        hiddenInList: false
-        hiddenInSingle: true
-    label:
-      text: "Smart Tech Ventures"
-      icon: favicon.ico
-      iconHeight: 18
+  assets:
+    disableScrollBarStyle: true
+  cover:
+    hiddenInList: false
+    hiddenInSingle: true
+  label:
+    text: "Smart Tech Ventures"
+    icon: favicon.ico
+    iconHeight: 18
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        guessSyntax: true
-        style: autumn
-    tableOfContents:
-        endLevel: 2
-        ordered: false
-        startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    guessSyntax: true
+    style: autumn
+  tableOfContents:
+    endLevel: 2
+    ordered: false
+    startLevel: 2
