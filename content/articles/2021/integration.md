@@ -5,6 +5,10 @@ author: ["Smart Tech Ventures"]
 description: "100 point check to confirm your integration is fit for purpose"
 date: 2021-02-21T10:26:31Z
 draft: false
+cover:
+  image: "https://private-user-images.githubusercontent.com/662868/480493738-a9f100c9-123c-4a80-a089-415f4ad1defe.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTU3Nzg4MzMsIm5iZiI6MTc1NTc3ODUzMywicGF0aCI6Ii82NjI4NjgvNDgwNDkzNzM4LWE5ZjEwMGM5LTEyM2MtNGE4MC1hMDg5LTQxNWY0YWQxZGVmZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyMVQxMjE1MzNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZmFhZDE0YTYxMTFiMDM3MjNlMGE3MDc0ZTJkMTk2MWJlOWU3YzA1YTE4ZDBkZWMzOWE3NmYzNTgyZWY2NThlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ARwLr2GsNmJKg8m-FrqTKsLgwPpCioQDYhYdLX_qRII"
+  alt: "Integration"
+  relative: true
 ---
 
 # Platform Assessment
