@@ -36,7 +36,6 @@ This research, combined with our extensive delivery experience, forms the founda
 - Articulate current performance metrics maturity and identify key gaps and opportunities
 - Take immediate action to implement the right metrics and build better software, faster
 
-
 # Our Technological Competencies
 
 <br />
