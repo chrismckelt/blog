@@ -6,8 +6,8 @@ description: "Use the DevOps Radar to assess your maturity"
 date: 2022-01-21T10:26:31Z
 draft: false
 cover:
-  image: "https://user-images.githubusercontent.com/662868/124373903-0972fc80-dcc9-11eb-80ad-0c6c32d8fc44.png"
-  alt: "Cloud Adoption"
+  image: "https://private-user-images.githubusercontent.com/662868/480492803-0e1de57f-b780-4426-8bdc-ba3b29c7aadd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTU3Nzg3MTcsIm5iZiI6MTc1NTc3ODQxNywicGF0aCI6Ii82NjI4NjgvNDgwNDkyODAzLTBlMWRlNTdmLWI3ODAtNDQyNi04YmRjLWJhM2IyOWM3YWFkZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyMVQxMjEzMzdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMzViY2NkNDJiNTgzYzM5MjNhMWZhODliZjg3YWFmNWNkZTFkY2E5YzkwM2EwZTY1NjlmYTcxNWE3NjY4MWZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.s0k37umY3tAkVVOUoBOUny9aeYvHAxRM3sPCEGAER-Y"
+  alt: "DevOps Radar"
   relative: true
 ---
 
