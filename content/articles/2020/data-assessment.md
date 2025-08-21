@@ -5,19 +5,21 @@ author: ["Smart Tech Ventures"]
 description: "Understand your current state, design your future, analyse the gaps and make a plan  "
 date: 2020-02-21T10:26:31Z
 draft: false
+cover:
+  image: "https://github.com/user-attachments/assets/52641be6-3e1a-4312-b3e5-c53cd6799a4e"
+  alt: "Data Estate Assessment"
+  relative: true
 ---
 
 # Data Estate Assessment
 
 > Understand your current state, design your future, analyze the gaps, and make a plan.
 
----
-
 From data strategy, building data platforms, data-ops, data governance, advanced analytics, and data science, to creating a data culture — we are the specialist consulting firm that can turn data into real business insights.
 
 We bring the people, platforms, tools, and frameworks to unlock the full potential of your data.
 
-![Data](https://www.axurcio.com/assets/images/solutions/laptop.png)
+<img width="1280" height="720" alt="Image" src="https://github.com/user-attachments/assets/52641be6-3e1a-4312-b3e5-c53cd6799a4e" />
 
 ---
 
