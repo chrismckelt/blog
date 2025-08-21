@@ -1,13 +1,13 @@
 ---
-title: "DevOps Radar"
-tags: ["devops", "radar", "dora", "jira"]
+title: "Digital Estate Planning"
+tags: ["togaf", "application portfolio planning", "iserver", "roadmap"]
 author: ["Smart Tech Ventures"]
-description: "Use the DevOps Radar to assess your maturity"
+description: "Manage your application portfolio"
 date: 2022-01-21T10:26:31Z
 draft: false
 cover:
-  image: "https://github.com/user-attachments/assets/0e1de57f-b780-4426-8bdc-ba3b29c7aadd"
-  alt: "Cloud Adoption"
+  image: "https://github.com/user-attachments/assets/b3d0397c-11a7-45a7-b411-e92fa2821b40"
+  alt: "Application Lifecycle Planning"
   relative: true
 ---
 
