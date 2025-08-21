@@ -5,6 +5,11 @@ author: ["Smart Tech Ventures"]
 description: "Understand your current state, design your future, analyse the gaps and make a plan  "
 date: 2020-02-21T10:26:31Z
 draft: false
+cover:
+  image: "https://github.com/user-attachments/assets/b08f4487-473e-4f6f-9f3b-990daf5117ab"
+  alt: "DevOps"
+  relative: true
+---
 ---
 
 # DevOps Metrics Workshop

@@ -5,6 +5,10 @@ author: ["Smart Tech Ventures"]
 description: "Our partner network."
 date: 2020-01-21T10:26:31Z
 draft: false
+cover:
+  image: "https://github.com/user-attachments/assets/d5cf4ae6-dd92-4069-998d-0221caa6c83b"
+  alt: "DevOps"
+  relative: true
 ---
 
 # Partnering with Spot Solutions
