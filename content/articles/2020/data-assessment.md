@@ -6,7 +6,8 @@ description: "Understand your current state, design your future, analyse the gap
 date: 2020-02-21T10:26:31Z
 draft: false
 cover:
-  image: "https://github.com/user-attachments/assets/52641be6-3e1a-4312-b3e5-c53cd6799a4e"
+  image: "https://github.com/user-attachments/assets/809d70d3-9bdf-4661-8d51-a6c15e356bcb"
+  image: "https://github.com/user-attachments/assets/809d70d3-9bdf-4661-8d51-a6c15e356bcb"
   alt: "Data Estate Assessment"
   relative: true
 ---
@@ -19,7 +20,7 @@ From data strategy, building data platforms, data-ops, data governance, advanced
 
 We bring the people, platforms, tools, and frameworks to unlock the full potential of your data.
 
-<img width="1280" height="720" alt="Image" src="https://github.com/user-attachments/assets/52641be6-3e1a-4312-b3e5-c53cd6799a4e" />
+<img width="1280" height="720" alt="Image" src="https://github.com/user-attachments/assets/809d70d3-9bdf-4661-8d51-a6c15e356bcb" />
 
 ---
 
