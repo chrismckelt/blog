@@ -3,7 +3,7 @@ title: "Choosing a Customer Identity Management System"
 date: 2024-08-21T10:03:35Z
 draft: false
 tags: ["ciam", "identity", "Access Management", "oauth"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: " Solution Evaluation"
 summary: "Customer Identity and Access Managment"
 cover:

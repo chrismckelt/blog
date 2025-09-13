@@ -16,7 +16,7 @@ cover:
 
 ### Club Assist (AAA Mobile Battery Service)
 
-<img width="1200" height="627" alt="Club Assist" src="https://github.com/user-attachments/assets/80f04295-034d-49f7-a6be-64ab4dfe82c8" />
+<img width="225" height="225" alt="Club Assist" src="https://github.com/user-attachments/assets/80f04295-034d-49f7-a6be-64ab4dfe82c8" />
 
 - **Project:** APAC IT Modernization Program
 - **Role:** Principal Integration Architect
@@ -26,7 +26,7 @@ cover:
 
 ### South32
 
-<img width="313" height="161" alt="South32" src="https://github.com/user-attachments/assets/eea177ed-983c-4142-a1ce-49e2a2e0bd82" />
+<img width="225" height="225" alt="South32" src="https://github.com/user-attachments/assets/eea177ed-983c-4142-a1ce-49e2a2e0bd82" />
 
 - **Project:** Multiple
 - **Role:** Cloud Architect
@@ -50,7 +50,6 @@ cover:
 ### Fintech Services Australia / Fair Go Finance
 
 <img width="429" height="117" alt="Fintech Services Australia" src="https://github.com/user-attachments/assets/14ee8ff0-751f-4b0b-ac05-1a6d08237059" />
-
 
 - **Role:** CTO / Architect / Manager / Developer (Jun 2015 – Nov 2017)
 - **Company:** Later purchased by mybucks.com (South Africa).

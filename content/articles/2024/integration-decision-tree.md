@@ -3,7 +3,7 @@ title: "Integration Decision Tree"
 date: 2024-03-21T10:03:35Z
 draft: false
 tags: ["integration", "api", "event driven architecture", "pub sub"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Integration Decision Evaluation"
 summary: "A guide to integration strategy"
 cover:

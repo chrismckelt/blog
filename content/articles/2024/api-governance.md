@@ -3,7 +3,7 @@ title: "API & Integration Lifecycle Governance"
 date: 2024-01-19T10:46:37Z
 draft: false
 tags: ["api", "integration", "governance", "design thinking"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:

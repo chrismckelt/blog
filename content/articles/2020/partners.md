@@ -1,7 +1,7 @@
 ---
 title: "Partners"
 tags: ["azure", "aws", "gcp", "github"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Our partner network."
 date: 2020-01-21T10:26:31Z
 draft: false

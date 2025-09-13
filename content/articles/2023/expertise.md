@@ -3,7 +3,7 @@ title: "Our Expertise"
 date: 2023-01-19T10:46:37Z
 draft: false
 tags: ["cloud", "digital", "data", "security"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:

@@ -1,7 +1,7 @@
 ---
 title: "Digital Estate Planning"
 tags: ["togaf", "application portfolio planning", "iserver", "roadmap"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Manage your application portfolio"
 date: 2022-01-21T10:26:31Z
 draft: false

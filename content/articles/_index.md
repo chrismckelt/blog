@@ -1,4 +1,4 @@
 ---
 title: "Articles"
-description: "Posts by Smart Tech Ventures."
+description: "Posts by Chris McKelt Blog."
 ---

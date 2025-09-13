@@ -1,7 +1,7 @@
 ---
 title: "Azure"
 tags: ["Integration", "devops", "iot"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "We are Azure Cloud Experts"
 date: 2021-02-21T10:26:31Z
 draft: false

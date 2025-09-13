@@ -1,7 +1,7 @@
 ---
 title: "Cloud Adoption"
 tags: ["azure", "aws", "gcp", "github"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Plan your digital strategy"
 date: 2022-01-21T10:26:31Z
 draft: false

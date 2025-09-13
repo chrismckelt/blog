@@ -1,7 +1,7 @@
 ---
 title: "OSS"
 tags: ["cncf", "OSS", "apache", "dapr"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "We love OSS software"
 date: 2021-03-21T10:26:31Z
 draft: false

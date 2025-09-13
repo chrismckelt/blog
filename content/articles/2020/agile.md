@@ -1,7 +1,7 @@
 ---
 title: "Agile"
 tags: ["agile", "scrum", "kanban"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Helping organizations, teams, and individuals adopt agile practices "
 date: 2020-02-21T10:26:31Z
 draft: false

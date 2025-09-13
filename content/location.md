@@ -2,22 +2,20 @@
 title: "Location"
 date: 2024-05-08
 hidemeta: true
-description: "Smart Tech Ventures is an Australian based organisation"
-
+description: "Chris McKelt Blog is an Australian based organisation"
 ---
 
 ---
 
 #### Mailing address
 
-Smart Tech Ventures  
+Chris McKelt Blog
 
 ---
 
 #### Office address
 
-191 St. Georges Terrace, Perth, WA 6000
----
+## 191 St. Georges Terrace, Perth, WA 6000
 
 #### Office location
 
@@ -30,5 +28,3 @@ Smart Tech Ventures
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade">
 </iframe>
-
-

@@ -1,7 +1,7 @@
 ---
 title: "Data Estate Assessment"
 tags: ["azure", "aws", "gcp", "github"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Understand your current state, design your future, analyse the gaps and make a plan  "
 date: 2020-02-21T10:26:31Z
 draft: false

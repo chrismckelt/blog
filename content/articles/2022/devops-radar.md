@@ -1,7 +1,7 @@
 ---
 title: "DevOps Radar"
 tags: ["devops", "radar", "dora", "jira"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Use the DevOps Radar to assess your maturity"
 date: 2022-01-21T10:26:31Z
 draft: false
