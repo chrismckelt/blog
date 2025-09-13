@@ -28,6 +28,6 @@ Smart Tech is a specialist in open-source software, with deep expertise in Apach
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

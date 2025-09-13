@@ -162,6 +162,6 @@ Off-the-shelf ETL engines with many connectors for extracting, transforming, and
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

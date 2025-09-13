@@ -192,6 +192,6 @@ Support is provided via community channels (forums, Slack, GitHub). Allows up to
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

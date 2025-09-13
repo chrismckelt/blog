@@ -51,6 +51,6 @@ The journey to develop a strategic roadmap for your organisation involves **five
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)
