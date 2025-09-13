@@ -16,7 +16,7 @@ cover:
 
 ### Club Assist (AAA Mobile Battery Service)
 
-<img width="225" height="225" alt="Club Assist" src="https://github.com/user-attachments/assets/80f04295-034d-49f7-a6be-64ab4dfe82c8" />
+<img width="50%" height="50%" alt="Club Assist" src="https://github.com/user-attachments/assets/2e0a80a4-a33f-43e6-83cb-2835308c8ded" />
 
 - **Project:** APAC IT Modernization Program
 - **Role:** Principal Integration Architect
