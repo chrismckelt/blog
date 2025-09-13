@@ -26,7 +26,7 @@ cover:
 
 ### South32
 
-<img width="225" height="225" alt="South32" src="https://github.com/user-attachments/assets/eea177ed-983c-4142-a1ce-49e2a2e0bd82" />
+<img width="313" height="161" alt="South32" src="https://github.com/user-attachments/assets/eea177ed-983c-4142-a1ce-49e2a2e0bd82" />
 
 - **Project:** Multiple
 - **Role:** Cloud Architect
@@ -87,8 +87,7 @@ cover:
 <img width="225" height="225" alt="Challenger" src="https://github.com/user-attachments/assets/ed63e194-f59d-4c26-bc1b-9aa28a607d6f" />
 
 - **Role:** Architect / Development Manager Online (Feb 2011 – Jan 2014)
-- **Scale:** $30B FUM.
-- **Scope:** Ownership of quote/CRM/annuities systems; IT mgmt (resource planning, budget, stakeholders, reviews), requirements, leadership, hiring, roadmap.
+- **Responsibilities:** Ownership of quote/CRM/annuities systems; IT management (resource planning, budget, stakeholders, reviews), requirements, leadership, hiring, roadmap.
 - **Delivery:** Solution architecture & initial coding; three public MVC sites (Adviser/Investor/Admin) using WIF/ADFS; 3rd-party SOAP/REST; SOA via NServiceBus; Salesforce integration; actuarial collaboration for annuity pricing; online calculators (SpreadsheetGear); iOS/PhoneGap; Agile transformation from waterfall; CI.
 - **Technologies:** SOA, DDD, TDD/BDD, C#/F#/VB.NET, Java, IoC, NHibernate, WCF, SQL Server 2008, SSIS/SSRS, NServiceBus, ADFS/WIF, Salesforce, PowerShell, jQuery/Knockout, XML/SOAP, MSMQ, SCOM, SVN, Jira/Confluence/SharePoint (custom workflows), TeamCity, SOLID.
 - **Process:** Agile → Scrum → Lean (APRA-approved).
@@ -135,8 +134,8 @@ cover:
 - **Project:** **TMS – Travel Management System**
   - 15-person team to redevelop WA Rail booking & ticketing engine.
   - Windows clients (staff & travel agents) + public web booking.
-  - **Transperth** – journey planner/timetables & mapping; DotNetNuke (8 custom modules).
-  - **Transwa** – online train ticket booking; UML (Enterprise Architect); DotNetNuke (10 custom modules).
+  - **TransPerth** – journey planner/timetables & mapping; DotNetNuke (8 custom modules).
+  - **TransWA** – online train ticket booking; UML (Enterprise Architect); DotNetNuke (10 custom modules).
   - **New MetroRail** – email/SMS campaign mgr; 5 custom DNN modules incl. realtime traffic.
 - **Technologies:** Oracle, .NET WinForms (GDI+), XML/XSLT, Java/J2EE (Swing/AWT), Apache/Tomcat, JavaScript, TOAD, UML (EA).
 - **Process:** Waterfall, CI via CruiseControl.
