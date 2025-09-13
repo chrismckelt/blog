@@ -54,6 +54,8 @@ params:
         url: articles/
       - name: Projects
         url: projects/
+      - name: About
+        url: about/
       - name: Tags
         url: tags/
       - name: Website
