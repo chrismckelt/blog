@@ -16,7 +16,7 @@ cover:
 
 ### Club Assist (AAA Mobile Battery Service)
 
-![Club Assist logo](https://mms.businesswire.com/media/20180313006298/en/645816/23/Club_Assist_Standard_square.jpg "Club Assist")
+<img width="1200" height="627" alt="Club Assist" src="https://github.com/user-attachments/assets/80f04295-034d-49f7-a6be-64ab4dfe82c8" />
 
 - **Project:** APAC IT Modernization Program
 - **Role:** Principal Integration Architect
@@ -26,7 +26,7 @@ cover:
 
 ### South32
 
-_(logo omitted – was an inline base64 image)_
+<img width="313" height="161" alt="South32" src="https://github.com/user-attachments/assets/eea177ed-983c-4142-a1ce-49e2a2e0bd82" />
 
 - **Project:** Multiple
 - **Role:** Cloud Architect
@@ -38,7 +38,7 @@ _(logo omitted – was an inline base64 image)_
 
 ### Bankwest
 
-![Bankwest (Windows Store)](https://store-images.s-microsoft.com/image/apps.61935.9007199266247481.3fb2e41c-2e48-431f-892a-3b5e2a70f594.0c5f28a8-2ed9-43d5-8b83-97a7b1f9e34f "Bankwest")
+<img width="225" height="225" alt="Bankwest" src="https://github.com/user-attachments/assets/2feb9818-dd55-419c-a451-01e61680bb92" />
 
 - **Role:** Software Engineering Manager (Nov 2017 – Nov 2018)
 - **Duties:** Engineering Manager / Scrum Master / Product Owner. Managed a team of ~20 delivering payments, iOS/Android account tools, online loans/credit cards/account opening, CRM, and branch cash-flow desktop software. After Agile transformation (“Blaze”), also acted as Scrum Master & Customer Outcome Owner for a team of 6 focused on Royal Commission fixes.
@@ -49,7 +49,8 @@ _(logo omitted – was an inline base64 image)_
 
 ### Fintech Services Australia / Fair Go Finance
 
-![FinTech Services Australia (LinkedIn)](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG0L_5jKdXEbGYDAf1Dk-rP4FertUCmsgsRRmuEKOJsA5KRluwb98Wi_L9nCxaQhAB_xk "FinTech Services Australia")
+<img width="429" height="117" alt="Fintech Services Australia" src="https://github.com/user-attachments/assets/14ee8ff0-751f-4b0b-ac05-1a6d08237059" />
+
 
 - **Role:** CTO / Architect / Manager / Developer (Jun 2015 – Nov 2017)
 - **Company:** Later purchased by mybucks.com (South Africa).
@@ -72,7 +73,7 @@ _(logo omitted – was an inline base64 image)_
 
 ### Cash Converters
 
-_(logo omitted – was an inline base64 image)_
+<img width="225" height="225" alt="Cashies" src="https://github.com/user-attachments/assets/35c9198f-d932-4e78-a08c-d33dac45f75f" />
 
 - **Role:** Software Developer – Contract (Jul 2014 – Jun 2015)
 - **Projects:**
@@ -84,7 +85,7 @@ _(logo omitted – was an inline base64 image)_
 
 ### Challenger Limited
 
-_(logo omitted – was an inline base64 image)_
+<img width="225" height="225" alt="Challenger" src="https://github.com/user-attachments/assets/ed63e194-f59d-4c26-bc1b-9aa28a607d6f" />
 
 - **Role:** Architect / Development Manager Online (Feb 2011 – Jan 2014)
 - **Scale:** $30B FUM.
@@ -97,7 +98,7 @@ _(logo omitted – was an inline base64 image)_
 
 ### Beazley
 
-[![Beazley](https://149448277.v2.pressablecdn.com/wp-content/uploads/2020/05/beazley-logo.png "Beazley")](https://www.beazley.com)
+<img width="700" height="450" alt="Beazley" src="https://github.com/user-attachments/assets/05e1d55d-ce65-41f8-b022-04293da32a39" />
 
 - **Role:** Senior Developer – Contract (Feb 2008 – Nov 2010)
 - **Project:** Beazley Trade v3.0 (US/UK underwriting platform). Worked with MVPs, London .NET UG, ThoughtWorks.
@@ -109,8 +110,34 @@ _(logo omitted – was an inline base64 image)_
 
 ### ITV (UK)
 
-_(logo omitted – was an inline base64 image)_
+<img width="317" height="159" alt="ITV" src="https://github.com/user-attachments/assets/5ffc55b7-e20f-487b-b0eb-7886f2e79b89" />
 
 - **Role:** Technical Architect – Contract (Nov 2006 – Sep 2007)
 - **Project:** Video broadband solution—CMS, public site, rights management—under Agile XP.
 - **Responsibilities:** Solution/infrastructure design, developer mentoring, multithreaded Windows services for publication, TFS + CruiseControl CI, NUnit TDD, BizTalk feeds via WWF (2.0 back-port).
+
+### Reuters (Thomson Reuters)
+
+<img width="200" height="200" alt="Reuters" src="https://github.com/user-attachments/assets/9e9b1601-9dc8-45e6-9587-ddc9b5543e5b" />
+
+- **Role:** Senior Analyst Programmer – Contract (Jan 2005 – Nov 2006)
+- **Project:** _Sun Seeker_ – hosted trading for Reuters 3000 Xtra via Citrix (private trading cloud, 500+ servers).
+- **Notes:** Market data integration to desktop application; managed offshore developers (Thailand).
+- **Technologies:** C#/C++, SQL Server 2005, T-SQL, XML/XSLT, VBS/VBA, Perl, AD, Citrix.
+- **Process:** Semi-Agile.
+
+---
+
+### Public Transport Authority of Western Australia
+
+<img width="300" height="132" alt="PTA" src="https://github.com/user-attachments/assets/af68ccba-80c5-4a8c-8a49-c32ba92858e8" />
+
+- **Role:** Analyst Programmer – Contract (Aug 2003 – Nov 2004)
+- **Project:** **TMS – Travel Management System**
+  - 15-person team to redevelop WA Rail booking & ticketing engine.
+  - Windows clients (staff & travel agents) + public web booking.
+  - **Transperth** – journey planner/timetables & mapping; DotNetNuke (8 custom modules).
+  - **Transwa** – online train ticket booking; UML (Enterprise Architect); DotNetNuke (10 custom modules).
+  - **New MetroRail** – email/SMS campaign mgr; 5 custom DNN modules incl. realtime traffic.
+- **Technologies:** Oracle, .NET WinForms (GDI+), XML/XSLT, Java/J2EE (Swing/AWT), Apache/Tomcat, JavaScript, TOAD, UML (EA).
+- **Process:** Waterfall, CI via CruiseControl.
