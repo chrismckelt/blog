@@ -46,7 +46,7 @@ params:
     enabled: true
     title: Chris McKelt Blog
     subtitle: "Tech Consulting across cloud, digital, data & AI"
-    imageUrl: "Logo.svg"
+    imageUrl: "https://mckelt.com/_astro/profile_Z1AnH13.webp"
     imageWidth: 160
     imageHeight: 160
     buttons:
