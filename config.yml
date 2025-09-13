@@ -15,6 +15,9 @@ menu:
     - name: Articles
       url: articles/
       weight: 2
+    - name: Projects
+      url: projects/
+      weight: 3
 params:
   description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
   author: Smart Tech
@@ -54,13 +57,13 @@ params:
       - name: Tags
         url: tags/
       - name: Website
-        url: https://smarttechventures.au
+        url: https://mckelt.com
 
   socialIcons:
     - name: Website
-      url: https://www.smarttechventures.au
+      url: https://mckelt.com
     - name: Email
-      url: mailto:hi+www@smarttechventures.au
+      url: mailto:chrisi+mckelt@smarttechventures.au
     - name: Book a Call
       url: https://calendly.com/chris-smarttechventures/chat-with-us-1
     - name: GitHub
