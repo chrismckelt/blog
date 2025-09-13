@@ -36,6 +36,6 @@ We ensure that teams can build products the right way and deliver work sustainab
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)
