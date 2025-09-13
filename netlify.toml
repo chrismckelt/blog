@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.134.2"     # pin a current Extended version
+  HUGO_VERSION = "0.150.0"     # pin a current Extended version
   HUGO_ENV = "production"
 
 # Optional: make Deploy Previews noindex
