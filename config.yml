@@ -18,7 +18,7 @@ menu:
 params:
   description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
   author: Smart Tech
-  googleAnalyticsID: "G-01MGQXJNBV"
+  googleAnalyticsID: "UA-9649471-1"
   DateFormat: "January 2006"
   defaultTheme: light
   hideFooter: false
@@ -49,6 +49,8 @@ params:
     buttons:
       - name: Articles
         url: articles/
+      - name: Projects
+        url: projects/
       - name: Tags
         url: tags/
       - name: Website
