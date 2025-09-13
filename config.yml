@@ -1,5 +1,5 @@
-baseURL: "https://blog.smarttechventures.au/"
-title: Smart Tech Ventures
+baseURL: "https://blog.mckelt.com/"
+title: Chris McKelt - Remembering Thoughts
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -16,7 +16,7 @@ menu:
       url: articles/
       weight: 2
 params:
-  description: "Smart Tech Ventures offer several services including technology strategy, cloud architecture, data engineering and project delivery"
+  description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
   author: Smart Tech
   googleAnalyticsID: "G-01MGQXJNBV"
   DateFormat: "January 2006"
@@ -41,7 +41,7 @@ params:
   math: true
   profileMode:
     enabled: true
-    title: Smart Tech Ventures
+    title: Chris McKelt Blog
     subtitle: "Tech Consulting across cloud, digital, data & AI"
     imageUrl: "Logo.svg"
     imageWidth: 160
@@ -70,7 +70,7 @@ params:
     hiddenInList: false
     hiddenInSingle: true
   label:
-    text: "Smart Tech Ventures"
+    text: "Chris McKelt Blog"
     icon: favicon.ico
     iconHeight: 18
 
