@@ -30,11 +30,3 @@
 
 [params.googleSearch]
   cx = "d3c76880e4ff64f5b"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "all"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cse.google.com https://www.google.com; style-src 'self' 'unsafe-inline'; frame-src https://cse.google.com https://www.google.com;"
-
-# ...existing code...
