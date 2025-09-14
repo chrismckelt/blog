@@ -6,6 +6,11 @@
   HUGO_VERSION = "0.150.0"     # pin a current Extended version
   HUGO_ENV = "production"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # Optional: make Deploy Previews noindex
 [[headers]]
   for = "/*"
