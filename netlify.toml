@@ -28,8 +28,5 @@
   [contentTypes.'text/pandoc']
   [contentTypes.'text/rst']
 
-[params.googleSearch]
-  cx = "d3c76880e4ff64f5b"
-
 [outputs]
 	home = ["HTML","RSS","JSON"]
