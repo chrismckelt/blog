@@ -20,9 +20,12 @@ menu:
       weight: 2
     - name: About
       url: about/
-      weight: 2
+      weight: 3
     - name: Contact
       url: contact/
+      weight: 2
+    - name: Tags
+      url: tags/
       weight: 2
 params:
   description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
