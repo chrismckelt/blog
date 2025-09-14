@@ -28,7 +28,7 @@ menu:
       url: tags/
       weight: 2
 params:
-  description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
+  description: "Remembering Thoughts across technology strategy, cloud architecture, data engineering and project delivery"
   author: Smart Tech
   googleAnalyticsID: "UA-9649471-1"
   DateFormat: "January 2006"
@@ -54,7 +54,7 @@ params:
   profileMode:
     enabled: true
     title: Chris McKelt Blog
-    subtitle: "Tech Consulting across cloud, digital, data & AI"
+    subtitle: "Tech Consultant working across cloud, digital, data & AI"
     imageUrl: "https://mckelt.com/_astro/profile_Z1AnH13.webp"
     imageWidth: 160
     imageHeight: 160
@@ -71,13 +71,15 @@ params:
         url: https://mckelt.com
       - name: Contact
         url: contact/
+      - name: Hire Me
+        url: https://smarttechventures.au/contact
 
   socialIcons:
     - name: Website
       url: https://mckelt.com
     - name: Email
       url: mailto:chris+mckelt@smarttechventures.au
-    - name: Calendly
+    - name: Phone
       url: https://calendly.com/chris-smarttechventures/chat-with-us-1
     - name: GitHub
       url: https://github.com/smarttechventures-au
