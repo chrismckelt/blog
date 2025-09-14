@@ -1,14 +1,10 @@
 ---
-title: Search Page
+title: Search
 url: /search/
 _build:
   list: never
 ---
 
-<script type="text/javascript" src="search.js"></script>
-<div class="search-box">
- <input class="input" id="searchInput" type="text" placeholder="press '/' to search">
- <div id="searchResult">
-  <!-- the search result will appear here -->
- </div>
-</div>
+<script async src="https://cse.google.com/cse.js?cx=d3c76880e4ff64f5b">
+</script>
+<div class="gcse-searchbox-only"></div>
