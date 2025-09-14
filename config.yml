@@ -73,8 +73,8 @@ params:
     - name: Website
       url: https://mckelt.com
     - name: Email
-      url: mailto:chrisi+mckelt@smarttechventures.au
-    - name: Book a Call
+      url: mailto:chris+mckelt@smarttechventures.au
+    - name: Calendly
       url: https://calendly.com/chris-smarttechventures/chat-with-us-1
     - name: GitHub
       url: https://github.com/smarttechventures-au
