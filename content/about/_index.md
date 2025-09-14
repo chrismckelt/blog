@@ -18,11 +18,11 @@ I am passionate about helping teams deliver great experiences through Agile meth
 
 My experience ranges from start-ups to global financials with a focus on financial segments including lending, insurance, investment management, and banking.
 
-I have worked in London, Sydney, and Perth across a range of industry segments ranging from startups to global financials.
+I have worked in London, Sydney, and Perth across a range of industry segments ranging from startups to global financial corporations.
 
 Outside of work I enjoy the beach with my son, building/riding electric vehicles, and trying to perfect my BBQ technique.
 
-![Chris McKelt](https://blog.mckelt.com/static/img/me9.jpg "Chris McKelt")
-
+![Chris McKelt]( "Chris McKelt")
+{{ "/me1.jpg" | absUrl }}
 **Chris McKelt**
 Developer • Architect • Coach
