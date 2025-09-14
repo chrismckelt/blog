@@ -45,14 +45,14 @@ The build/check-in process is now as follows.
 
 Cruise control originally calls default.ps1 passing in the environment.
 
-> <powershell>   
-> <scriptsDirectory>C:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts</scriptsDirectory>  
+> <'powershell'>   
+> <'scriptsDirectory'>C:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts</'scriptsDirectory'>  
 > <!--Scrips folder-->   
-> <script>default.ps1</script>   
-> <buildArgs>-environment:integration</buildArgs>  
+> < 'script' >default.ps1</'script' >   
+> <'buildArgs'>-environment:integration</'buildArgs'>  
 > <!-- Project working folder -workingDir C:\\project1\\working-->   
-> <executable>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</executable>   
-> <buildTimeoutSeconds>10000</buildTimeoutSeconds> <description>Phoenix Build</description> </powershell>
+> <'executable'>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</'executable'>   
+> <'buildTimeoutSeconds'>10000</'buildTimeoutSeconds'> <'description'>Phoenix Build</'description'> </'powershell'>
 > 
  
 
