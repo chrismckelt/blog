@@ -12,6 +12,9 @@ taxonomies:
 
 menu:
   main:
+    - name: Search
+      url: search/
+      weight: 1
     - name: Articles
       url: articles/
       weight: 1
