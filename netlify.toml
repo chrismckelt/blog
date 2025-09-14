@@ -14,3 +14,11 @@
 
 [context.deploy-preview]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[contentTypes]
+  [contentTypes.'text/asciidoc']
+  [contentTypes.'text/html']
+  [contentTypes.'text/markdown']
+  [contentTypes.'text/org']
+  [contentTypes.'text/pandoc']
+  [contentTypes.'text/rst']
