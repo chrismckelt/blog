@@ -27,3 +27,6 @@
   [contentTypes.'text/org']
   [contentTypes.'text/pandoc']
   [contentTypes.'text/rst']
+
+[sitemap]
+  changeFreq = 'monthly'
