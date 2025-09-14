@@ -22,7 +22,7 @@ I have worked in London, Sydney, and Perth across a range of industry segments r
 
 Outside of work I enjoy the beach with my son, building/riding electric vehicles, and trying to perfect my BBQ technique.
 
-![Chris McKelt](https://blog.mckelt.com/assets/img/me9.jpg "Chris McKelt")
+![Chris McKelt](https://blog.mckelt.com/static/img/me9.jpg "Chris McKelt")
 
 **Chris McKelt**
 Developer • Architect • Coach
