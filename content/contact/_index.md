@@ -34,7 +34,7 @@ cover:
                     alt="Chris McKelt's DEV Profile" height="30" width="30"></a>
         </td>
         <td align="center"><a href="https://github.com/chrismckelt" class="zocial github">Github</a></td>
-        <td align="center"><a href="tel:00000000" class="zocial bitcoin">smarttechventures.au</a></td>
+        <td align="center"><a href="https://smarttechventures.au/" class="zocial bitcoin">smarttechventures.au</a></td>
     </tr>
     <tr>
         <td align="center"><a href="http://www.linkedin.com/in/chrismckelt" class="zocial linkedin">Linked In</a>
