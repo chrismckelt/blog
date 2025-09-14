@@ -12,9 +12,6 @@ taxonomies:
 
 menu:
   main:
-    - name: Search
-      url: search/
-      weight: 1
     - name: Articles
       url: articles/
       weight: 1
@@ -62,8 +59,6 @@ params:
     imageWidth: 160
     imageHeight: 160
     buttons:
-      - name: Search
-        url: search/
       - name: Articles
         url: articles/
       - name: Projects
