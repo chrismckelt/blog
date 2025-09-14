@@ -59,6 +59,8 @@ params:
     imageWidth: 160
     imageHeight: 160
     buttons:
+      - name: Search
+        url: search/
       - name: Articles
         url: articles/
       - name: Projects
