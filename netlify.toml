@@ -30,3 +30,6 @@
 
 [sitemap]
   changeFreq = 'monthly'
+  
+[outputs]
+	home = ["HTML","RSS","JSON"]

@@ -16,13 +16,13 @@ cover:
 
 I am passionate about helping teams deliver great experiences through Agile methodologies and software engineering best practices with a focus on cloud-native solutions.
 
-My experience ranges from start-ups to global financials with a focus on financial segments including lending, insurance, investment management, and banking.
+My experience ranges from start-ups to global organizations with a focus on financial segments including lending, insurance, investment management, and banking.
 
-I have worked in London, Sydney, and Perth across a range of industry segments ranging from startups to global financials.
+I have worked in London, Sydney, and Perth and have led teams across the world including South Africa, New Zealand, Philippines, Vietnam, and India (across Bangalore, Delhi, Mumbai).
 
 Outside of work I enjoy the beach with my son, building/riding electric vehicles, and trying to perfect my BBQ technique.
 
-![Chris McKelt](https://blog.mckelt.com/assets/img/me9.jpg "Chris McKelt")
+![Chris McKelt](https://blog.mckelt.com/me1.jpg "Chris McKelt")
 
 **Chris McKelt**
 Developer • Architect • Coach
