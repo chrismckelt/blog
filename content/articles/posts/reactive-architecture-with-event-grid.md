@@ -1,0 +1,16 @@
+---
+title: Reactive architecture with event grid
+date: '2019-04-27T00:00:00+08:00'
+draft: false
+tags:
+- azure
+slug: reactive-architecture-with-event-grid
+---
+
+Azure Global Bootcamp – 27th April 2019
+
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/image_thumb.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2019/04/image.png)
+
+![](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images/highres_480710988.jpeg)
+
+[Slides here](https://www.dropbox.com/s/ghutvssiyyt6otq/azure-global-bootcamp-event-grid-2019.pptx?dl=0)
