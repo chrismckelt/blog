@@ -14,10 +14,16 @@ menu:
   main:
     - name: Articles
       url: articles/
-      weight: 2
+      weight: 1
     - name: Projects
       url: projects/
-      weight: 3
+      weight: 2
+    - name: About
+      url: about/
+      weight: 2
+    - name: Contact
+      url: contact/
+      weight: 2
 params:
   description: "Chris McKelt Blog offer several services including technology strategy, cloud architecture, data engineering and project delivery"
   author: Smart Tech
@@ -60,6 +66,8 @@ params:
         url: tags/
       - name: Website
         url: https://mckelt.com
+      - name: Contact
+        url: contact/
 
   socialIcons:
     - name: Website
