@@ -73,7 +73,8 @@ params:
         url: contact/
       - name: Hire Me
         url: https://smarttechventures.au/contact
-
+      - name: Search
+        url: https://mckelt.com/search
   socialIcons:
     - name: Website
       url: https://mckelt.com
