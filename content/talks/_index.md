@@ -24,7 +24,7 @@ relative: true
 ## Talks
 
 - [How to accelerate Azure with Open Source — Azure Global 2023](https://github.com/chrismckelt/talks/blob/main/Global%20Azure%202023/How%20to%20accelerate%20Azure%20with%20Open-Source.pdf)
-- [Reactive Architecture with Azure Event Grid — Azure Global Bootcamp 2019](Coming soon)
+- [Reactive Architecture with Azure Event Grid — Azure Global Bootcamp 2019](https://blog.mckelt.com/articles/2019/reactive-architecture-with-azure-event-grid/)
 - [Predicting BS (bank statement categories) using ML.Net NLP classification of Bank Statement keyword data – 2018](https://slides.com/chrismckelt/deck-4)
 - [Why Agile?)](http://blog.mckelt.com/blog/?p=130)
 - [Crystal Software Development](http://blog.mckelt.com/blog/?p=108)
