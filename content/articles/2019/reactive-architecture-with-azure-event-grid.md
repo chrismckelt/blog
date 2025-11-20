@@ -19,7 +19,7 @@ Deep dive into Azure Event Grid
 “Take a ride on the grid” demo series
 
 ```
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512" />
+<img   src="https://github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512" />
 
 
 📈 Why Event Thinking Matters
@@ -48,7 +48,7 @@ A system design approach focused on:
 * Elasticity
 * Message-driven communication
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/624c3db4-41ce-4d5c-9881-60b6252836df" />
+<img   src="https://github.com/user-attachments/assets/624c3db4-41ce-4d5c-9881-60b6252836df" />
 
 > More at: <https://www.reactivemanifesto.org>
 
@@ -58,7 +58,7 @@ A system design approach focused on:
 2. 1-to-1 from producer → consumer
 3. Request-based
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/76f0c9f7-9eb3-446d-a18d-2b48a5be0c95" />
+<img   src="https://github.com/user-attachments/assets/76f0c9f7-9eb3-446d-a18d-2b48a5be0c95" />
 
 _Example: CreateCustomer_
 
@@ -79,7 +79,7 @@ Azure provides a broad messaging ecosystem including:
 * Event Grid
 * Storage Queues
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/3a52308a-9f68-49f4-8dea-a845d1339b5e" />
+<img   src="https://github.com/user-attachments/assets/3a52308a-9f68-49f4-8dea-a845d1339b5e" />
 
 **Serverless and Integration Services**
 
@@ -87,7 +87,7 @@ Azure provides a broad messaging ecosystem including:
 
 Azure Event Grid is a cloud-native, fully managed event routing service for building event-driven and microservice-oriented systems without heavy plumbing.
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/469df5f5-0492-4846-86f8-111af59ebb45" />
+<img   src="https://github.com/user-attachments/assets/469df5f5-0492-4846-86f8-111af59ebb45" />
 
 > 🎯 What Is Event Grid For?
 
@@ -95,17 +95,17 @@ Azure Event Grid is a cloud-native, fully managed event routing service for buil
 * Ops automation
 * Third-party integrations
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/0b2bf8e1-1886-42c5-aad4-3a96d7427b20" />
+<img   src="https://github.com/user-attachments/assets/0b2bf8e1-1886-42c5-aad4-3a96d7427b20" />
 
 
 **Azure Integration Services**
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/1f8ad7c3-b5df-45d1-999b-7af093c103bb" />
+<img   src="https://github.com/user-attachments/assets/1f8ad7c3-b5df-45d1-999b-7af093c103bb" />
 
 🔄 Event Grid vs Service Bus vs Event Hub
 
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/deaf341f-cb35-4d8a-b942-5484b09d060d" />
+<img   src="https://github.com/user-attachments/assets/deaf341f-cb35-4d8a-b942-5484b09d060d" />
 
 A quick framing:
 
@@ -217,25 +217,27 @@ BPF rules trigger again from field updates
 
 Reactive loops power distributed workflows.
 
-🙌 Images!
+### Thanks & remember '#PushDontPull'
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/b4582440-037b-4ebf-81f9-20710346ce40" />
+🙌 Images
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/40eaae0d-0a12-4fb4-a9e0-1e8a4df383d3" />
+<img  src="https://github.com/user-attachments/assets/b4582440-037b-4ebf-81f9-20710346ce40" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/46ae5c1e-77a3-4f8e-ac4f-6d02f2bc1b21" />
+<img  src="https://github.com/user-attachments/assets/40eaae0d-0a12-4fb4-a9e0-1e8a4df383d3" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/7ddca021-6515-44e6-807c-3192f1470b2c" />
+<img  src="https://github.com/user-attachments/assets/46ae5c1e-77a3-4f8e-ac4f-6d02f2bc1b21" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/9eb5d61a-3210-44e6-ba38-ea4f341fd940" />
+<img src="https://github.com/user-attachments/assets/7ddca021-6515-44e6-807c-3192f1470b2c" />
+
+<img src="https://github.com/user-attachments/assets/9eb5d61a-3210-44e6-ba38-ea4f341fd940" />
 
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/d4af0c7d-0735-4b54-874f-f5b636febe51" />
+<img src="https://github.com/user-attachments/assets/d4af0c7d-0735-4b54-874f-f5b636febe51" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/8a3427f5-124c-4144-a800-62f3951e8c49" />
+<img   src="https://github.com/user-attachments/assets/8a3427f5-124c-4144-a800-62f3951e8c49" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/c813d595-2f53-4181-b14a-433272a9c6a5" />
+<img   src="https://github.com/user-attachments/assets/c813d595-2f53-4181-b14a-433272a9c6a5" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/bbfc38ef-7618-4cce-b761-23828ba451e4" />
+<img   src="https://github.com/user-attachments/assets/bbfc38ef-7618-4cce-b761-23828ba451e4" />
 
-<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/9c45f970-ff51-4ccf-8d7f-d59b2c8ca8d0" />
+<img   src="https://github.com/user-attachments/assets/9c45f970-ff51-4ccf-8d7f-d59b2c8ca8d0" />
