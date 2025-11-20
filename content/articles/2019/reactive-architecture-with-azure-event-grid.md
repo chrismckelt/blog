@@ -6,7 +6,7 @@ description: "Azure Global Bootcamp 2019"
 date: 2019-02-21T10:26:31Z
 draft: false
 cover:
-  image: "https://github.com/user-attachments/assets/624c3db4-41ce-4d5c-9881-60b6252836df"
+  image: "https://github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512"
   alt: "Azure Event Grid"
   relative: true
 ---
@@ -19,7 +19,7 @@ Deep dive into Azure Event Grid
 “Take a ride on the grid” demo series
 
 ```
-
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512" />
 
 
 📈 Why Event Thinking Matters
