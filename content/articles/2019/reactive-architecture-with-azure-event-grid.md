@@ -48,6 +48,8 @@ A system design approach focused on:
 * Elasticity
 * Message-driven communication
 
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/624c3db4-41ce-4d5c-9881-60b6252836df" />
+
 > More at: <https://www.reactivemanifesto.org>
 
 **💬 Messages vs Commands vs Events Command**
