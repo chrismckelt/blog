@@ -1,4 +1,4 @@
 ---
 title: "Articles"
-description: "Posts by Smart Tech Ventures."
+description: "Writing on cloud architecture, integration, data, AI, DevOps and software delivery."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "OSS"
 tags: ["cncf", "OSS", "apache", "dapr"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "We love OSS software"
 date: 2021-03-21T10:26:31Z
 draft: false
@@ -28,6 +28,6 @@ Smart Tech is a specialist in open-source software, with deep expertise in Apach
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

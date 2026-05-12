@@ -1,7 +1,7 @@
 ---
 title: "Cloud Adoption"
 tags: ["azure", "aws", "gcp", "github"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Plan your digital strategy"
 date: 2022-01-21T10:26:31Z
 draft: false
@@ -43,6 +43,6 @@ We support cloud migration through the phases of **Assess, Migrate, Optimize, an
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

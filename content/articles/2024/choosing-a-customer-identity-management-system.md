@@ -3,7 +3,7 @@ title: "Choosing a Customer Identity Management System"
 date: 2024-08-21T10:03:35Z
 draft: false
 tags: ["ciam", "identity", "Access Management", "oauth"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: " Solution Evaluation"
 summary: "Customer Identity and Access Managment"
 cover:
@@ -192,6 +192,6 @@ Support is provided via community channels (forums, Slack, GitHub). Allows up to
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

@@ -3,7 +3,7 @@ title: "Measure by Metric"
 date: 2023-02-19T10:46:37Z
 draft: false
 tags: ["devops", "devsecops", "dataops", "gitops"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Baseline delivery to improve performance"
 summary: "The Integrations Lifecycle follows a Design Thinking Lean Startup Agile approach."
 cover:
@@ -45,6 +45,6 @@ This research, together with our extensive delivery experience, forms the basis 
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

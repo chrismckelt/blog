@@ -1,7 +1,7 @@
 ---
 title: "Partners"
 tags: ["azure", "aws", "gcp", "github"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Our partner network."
 date: 2020-01-21T10:26:31Z
 draft: false
@@ -37,6 +37,6 @@ They also have extensive experience working with multiple cloud platforms (Azure
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

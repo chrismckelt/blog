@@ -1,16 +1,22 @@
 .page-header,
 .post-header {
-    margin: 24px auto var(--content-gap) auto;
+    margin: 26px auto 30px auto;
 }
 
 .post-title {
-    margin-bottom: 20px;
-    font-size: 36px;
+    margin-bottom: 14px;
+    font-size: 46px;
+    line-height: 1.08;
+    letter-spacing: 0;
 }
 
 .post-description {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    max-width: 680px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: var(--secondary);
+    font-size: 19px;
+    line-height: 1.5;
 }
 
 .post-meta,
@@ -46,7 +52,7 @@
 
 .post-content h2 {
     margin: 32px auto 24px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .post-content h3 {
@@ -167,7 +173,7 @@
 }
 
 .post-content .highlight:not(table) {
-    margin: 10px auto;
+    margin: 18px auto;
     background: var(--code-block-bg) !important;
     border-radius: var(--radius);
     direction: ltr;
@@ -222,10 +228,10 @@
 }
 
 .post-content blockquote {
-    margin: 20px 0;
+    margin: 24px 0;
     padding: 0 20px;
-    color: var(--secondary);    
-    border-inline-start: 6px solid var(--tertiary);
+    color: var(--secondary);
+    border-inline-start: 4px solid var(--accent-2);
 }
 
 .post-content hr {
@@ -240,8 +246,9 @@
 }
 
 .post-content img {
-    border-radius: 4px;
+    border-radius: var(--radius);
     margin: 1rem 0;
+    border: 1px solid var(--border);
 }
 
 .post-content img[src*="#center"] {
@@ -341,9 +348,9 @@
 
 .post-tags a {
     display: block;
-    padding: 0 10px;
+    padding: 0 11px;
     color: var(--secondary);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 32px;
     background: var(--code-bg);
 }
@@ -438,4 +445,18 @@ a[href^="#fn:"], a[href^="#fnref:"] {
 
 a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
     color: var(--darkcolor);
+}
+
+@media screen and (max-width: 768px) {
+    .post-title {
+        font-size: 34px;
+    }
+
+    .post-description {
+        font-size: 17px;
+    }
+
+    .post-content {
+        font-size: 17px;
+    }
 }

@@ -1,7 +1,7 @@
 ---
 title: "Azure"
 tags: ["Integration", "devops", "iot"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "We are Azure Cloud Experts"
 date: 2021-02-21T10:26:31Z
 draft: false
@@ -54,6 +54,6 @@ Azure enables seamless redirection of client application requests to the right s
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

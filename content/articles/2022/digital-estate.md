@@ -1,7 +1,7 @@
 ---
 title: "Digital Estate Planning"
 tags: ["togaf", "application portfolio planning", "iserver", "roadmap"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: "Manage your application portfolio"
 date: 2022-01-21T10:26:31Z
 draft: false
@@ -51,6 +51,6 @@ The journey to develop a strategic roadmap for your organisation involves **five
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)

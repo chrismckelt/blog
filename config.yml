@@ -1,5 +1,5 @@
-baseURL: "https://blog.smarttechventures.au/"
-title: Smart Tech Ventures
+baseURL: "https://blog.mckelt.com/"
+title: Chris McKelt - Remembering Thoughts
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -14,11 +14,26 @@ menu:
   main:
     - name: Articles
       url: articles/
+      weight: 1
+    - name: Projects
+      url: projects/
       weight: 2
+    - name: Talks
+      url: talks/
+      weight: 3
+    - name: About
+      url: about/
+      weight: 4
+    - name: Contact
+      url: contact/
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 6
 params:
-  description: "Smart Tech Ventures offer several services including technology strategy, cloud architecture, data engineering and project delivery"
-  author: Smart Tech
-  googleAnalyticsID: "G-01MGQXJNBV"
+  description: "Chris McKelt writes about cloud architecture, integration, data, AI, delivery leadership and practical software engineering."
+  author: Chris McKelt
+  googleAnalyticsID: "G-GPSK740W4P"
   DateFormat: "January 2006"
   defaultTheme: light
   hideFooter: false
@@ -30,6 +45,7 @@ params:
   ShowPostNavLinks: false
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
+  hideAuthor: true
   ShowAllPagesInArchive: false
   MainSections: ["articles"]
   ShowToc: false
@@ -41,25 +57,30 @@ params:
   math: true
   profileMode:
     enabled: true
-    title: Smart Tech Ventures
-    subtitle: "Tech Consulting across cloud, digital, data & AI"
-    imageUrl: "Logo.svg"
+    title: Chris McKelt
+    subtitle: "Cloud, digital, data and AI consulting from Perth. Notes from 25+ years building software, platforms and delivery teams."
+    imageUrl: "https://mckelt.com/_astro/profile_Z1AnH13.webp"
     imageWidth: 160
     imageHeight: 160
     buttons:
       - name: Articles
         url: articles/
-      - name: Tags
-        url: tags/
-      - name: Website
-        url: https://smarttechventures.au
-
+      - name: Projects
+        url: projects/
+      - name: About
+        url: about/
+      - name: Contact
+        url: contact/
+      - name: Hire Me
+        url: https://smarttechventures.au/contact
+      - name: Search
+        url: search/
   socialIcons:
     - name: Website
-      url: https://www.smarttechventures.au
+      url: https://mckelt.com
     - name: Email
-      url: mailto:hi+www@smarttechventures.au
-    - name: Book a Call
+      url: mailto:chris+mckelt@smarttechventures.au
+    - name: Phone
       url: https://calendly.com/chris-smarttechventures/chat-with-us-1
     - name: GitHub
       url: https://github.com/smarttechventures-au
@@ -67,10 +88,10 @@ params:
   assets:
     disableScrollBarStyle: true
   cover:
-    hiddenInList: false
+    hiddenInList: true
     hiddenInSingle: true
   label:
-    text: "Smart Tech Ventures"
+    text: "Chris McKelt"
     icon: favicon.ico
     iconHeight: 18
 

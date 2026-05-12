@@ -1,0 +1,35 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.150.0"     # pin a current Extended version
+  HUGO_ENV = "production"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Optional: make Deploy Previews noindex
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "all"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[contentTypes]
+  [contentTypes.'text/asciidoc']
+  [contentTypes.'text/html']
+  [contentTypes.'text/markdown']
+  [contentTypes.'text/org']
+  [contentTypes.'text/pandoc']
+  [contentTypes.'text/rst']
+
+[sitemap]
+  changeFreq = 'monthly'
+  
+[outputs]
+	home = ["HTML","RSS","JSON"]

@@ -1,7 +1,7 @@
 ---
 title: "Finops"
 tags: ["finops", "cloud costs", "cloud budget"]
-author: ["Smart Tech Ventures"]
+author: ["Chris McKelt Blog"]
 description: " Rapidly & safely reduce cloud spend"
 date: 2021-01-21T10:26:31Z
 draft: false
@@ -60,6 +60,6 @@ These insights uncover innovation opportunities
 <br />
 <hr />
 
-### Ready to start?
+### Could this help you?
 
-[Contact us to start your journey](https://smarttechventures.au/contact/)
+[Contact me for a free discussion](https://smarttechventures.au/contact/)
