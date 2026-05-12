@@ -1,15 +1,30 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(247, 248, 246, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+}
+
+body.dark .header {
+    background: rgba(18, 24, 23, 0.92);
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
     margin-inline-start: auto;
     margin-inline-end: auto;
     line-height: var(--header-height);
-    background: var(--code-bg);
 }
 
 .nav a {
-    display: block;
+    display: inline-flex;
+    align-items: center;
 }
 
 .logo,
@@ -25,6 +40,7 @@
 .logo a {
     font-size: var(--headersize);
     font-weight: var(--semibold);
+    letter-spacing: 0;
 }
 
 .logo a img, .logo a svg {
@@ -55,18 +71,29 @@ body:not(.dark) #sun {
     word-break: keep-all;
     overflow-x: auto;
     white-space: nowrap;
+    gap: 8px;
 }
 
 #menu li + li {
-    margin-inline-start: var(--gap);
+    margin-inline-start: 0;
 }
 
 #menu a {
     font-size: var(--headersize);
     font-weight: 400;
+    min-height: 38px;
+    padding: 0 10px;
+    border-radius: var(--radius);
+    color: var(--secondary);
+}
+
+#menu a:hover {
+    color: var(--primary);
+    background: var(--surface-muted);
 }
 
 #menu .active {
+    color: var(--primary);
     border-bottom: 2px solid var(--darkcolor);
 }
 
@@ -90,4 +117,28 @@ body:not(.dark) #sun {
 
 .logo-switches {
     flex-wrap: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        position: static;
+    }
+
+    .nav {
+        line-height: 54px;
+    }
+
+    .logo,
+    #menu {
+        width: 100%;
+        margin: 0 var(--gap);
+    }
+
+    .logo {
+        justify-content: space-between;
+    }
+
+    #menu {
+        padding-bottom: 10px;
+    }
 }

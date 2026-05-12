@@ -1,0 +1,76 @@
+<section class="profile home-profile">
+    {{- with site.Params.profileMode }}
+    <div class="home-hero">
+        <div class="home-hero-copy">
+            <p class="home-eyebrow">Technology strategy / cloud architecture / delivery</p>
+            <h1>{{ .title | default site.Title | markdownify }}</h1>
+            <p class="home-lede">{{ .subtitle | markdownify }}</p>
+
+            <div class="home-actions" aria-label="Primary links">
+                <a class="button button-primary" href="{{ "articles/" | relLangURL }}">Read articles</a>
+                <a class="button" href="{{ "projects/" | relLangURL }}">Project experience</a>
+                <a class="button" href="{{ "contact/" | relLangURL }}">Contact</a>
+            </div>
+
+            {{- partial "social_icons.html" -}}
+        </div>
+
+        <aside class="home-portrait" aria-label="Profile summary">
+            {{- if .imageUrl }}
+            <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "Chris McKelt" }}" title="{{ .imageTitle }}"
+                height="{{ .imageHeight | default 160 }}" width="{{ .imageWidth | default 160 }}" />
+            {{- end }}
+            <div class="home-proof">
+                <span>25+ years</span>
+                <span>Perth, WA</span>
+                <span>Cloud / data / AI</span>
+                <span>Enterprise delivery</span>
+            </div>
+        </aside>
+    </div>
+    {{- end }}
+</section>
+
+<section class="home-section home-focus" aria-labelledby="focus-heading">
+    <div class="section-heading">
+        <p class="section-kicker">Current focus</p>
+        <h2 id="focus-heading">Practical notes for modern technology teams.</h2>
+    </div>
+    <div class="focus-grid">
+        <a href="{{ "tags/cloud/" | relLangURL }}">
+            <span>Cloud architecture</span>
+            <small>Azure, platform design, cost control and migration planning.</small>
+        </a>
+        <a href="{{ "tags/integration/" | relLangURL }}">
+            <span>API and integration</span>
+            <small>Governance, event-driven systems, lifecycle and delivery patterns.</small>
+        </a>
+        <a href="{{ "tags/devops/" | relLangURL }}">
+            <span>Delivery systems</span>
+            <small>DevOps, agile operating models, metrics and engineering practice.</small>
+        </a>
+    </div>
+</section>
+
+{{- $articles := where site.RegularPages.ByDate.Reverse "Section" "articles" -}}
+{{- if $articles }}
+<section class="home-section home-latest" aria-labelledby="latest-heading">
+    <div class="section-heading">
+        <p class="section-kicker">Latest writing</p>
+        <h2 id="latest-heading">Recent articles</h2>
+        <a class="section-link" href="{{ "articles/" | relLangURL }}">All articles</a>
+    </div>
+    <div class="latest-grid">
+        {{- range first 3 $articles }}
+        <article class="latest-entry">
+            {{- with .Params.tags }}
+            <p class="entry-kicker">{{ index . 0 }}</p>
+            {{- end }}
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Summary | plainify | htmlUnescape | truncate 130 }}</p>
+            <footer>{{ .Date | time.Format (default "January 2006" site.Params.DateFormat) }}</footer>
+        </article>
+        {{- end }}
+    </div>
+</section>
+{{- end }}
