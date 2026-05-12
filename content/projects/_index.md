@@ -16,8 +16,7 @@ cover:
 
 ### Imdex
 
-<img width="367" height="137" alt="Image" src="https://github.com/user-attachments/assets/c0c67a8e-0969-40d1-ad98-462356fe6a">
-
+<img width="367" height="137" alt="Image" src="https://github.com/user-attachments/assets/c0c67a8e-0969-40d1-ad98-462356fe6a6e" />
 
 - **Project:**  Global AI Agentic Data Mesh  
 - **Role:** Data Platform Lead  
@@ -31,16 +30,10 @@ cover:
 
 <img width="250" height="250" alt="Image" src="https://github.com/user-attachments/assets/03fe9cbe-65b3-4ba7-a22d-54e153cd23c4" />
 
-- **Project:**  Roof Top Solary Ingestion
+- **Project:**  Roof Top Solar CSIP DATA Ingestion
 - **Role:** Data Architect 
 - **Key Details:** 
-  - Architecture for the Distributed Energy Resources (DER) platform with the purpose of creating Virtual Power Plants grouping residential household solar to provide energy back to the grid. 
-  - Cloud & Data platform including
-    - 1.	Datastore design via a custom bi-temporal database XTDB
-    - 2.	OT Cloud design to host solution
-    - 3.	PKI and Security design
-    - 4.	Cloud solution built with microservices using DAPR, 
-    - 5.	Azure Databricks for model forecasting
+  - Architecture for the Distributed Energy Resources (DER) platform with the purpose of creating Virtual Power Plants grouping residential household solar to provide energy back to the grid including: Datastore design via a custom bi-temporal database XTDB, OT Cloud design to host solution, PKI and Security design,Cloud solution built with microservices using DAPR, Azure Databricks for model forecasting
 ---
 
 ### Club Assist (AAA Mobile Battery Service)
