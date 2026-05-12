@@ -18,18 +18,21 @@ menu:
     - name: Projects
       url: projects/
       weight: 2
+    - name: Talks
+      url: talks/
+      weight: 3
     - name: About
       url: about/
-      weight: 3
+      weight: 4
     - name: Contact
       url: contact/
-      weight: 2
-    - name: Tags
-      url: tags/
-      weight: 2
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 6
 params:
-  description: "Remembering Thoughts across technology strategy, cloud architecture, data engineering and project delivery"
-  author: Smart Tech
+  description: "Chris McKelt writes about cloud architecture, integration, data, AI, delivery leadership and practical software engineering."
+  author: Chris McKelt
   googleAnalyticsID: "G-GPSK740W4P"
   DateFormat: "January 2006"
   defaultTheme: light
@@ -42,6 +45,7 @@ params:
   ShowPostNavLinks: false
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
+  hideAuthor: true
   ShowAllPagesInArchive: false
   MainSections: ["articles"]
   ShowToc: false
@@ -53,8 +57,8 @@ params:
   math: true
   profileMode:
     enabled: true
-    title: Chris McKelt Blog
-    subtitle: "Tech Consultant working across cloud, digital, data & AI"
+    title: Chris McKelt
+    subtitle: "Cloud, digital, data and AI consulting from Perth. Notes from 25+ years building software, platforms and delivery teams."
     imageUrl: "https://mckelt.com/_astro/profile_Z1AnH13.webp"
     imageWidth: 160
     imageHeight: 160
@@ -65,16 +69,12 @@ params:
         url: projects/
       - name: About
         url: about/
-      - name: Tags
-        url: tags/
-      - name: Website
-        url: https://mckelt.com
       - name: Contact
         url: contact/
       - name: Hire Me
         url: https://smarttechventures.au/contact
       - name: Search
-        url: https://mckelt.com/search
+        url: search/
   socialIcons:
     - name: Website
       url: https://mckelt.com
@@ -88,10 +88,10 @@ params:
   assets:
     disableScrollBarStyle: true
   cover:
-    hiddenInList: false
+    hiddenInList: true
     hiddenInSingle: true
   label:
-    text: "Chris McKelt Blog"
+    text: "Chris McKelt"
     icon: favicon.ico
     iconHeight: 18
 
