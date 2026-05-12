@@ -15,7 +15,7 @@ cover:
 ---
 
 cover:
-image: "<img width="3523" height="2519" alt="Chris - Global Azure Day" src="https://github.com/user-attachments/assets/09de0a44-c8af-47f0-8a6e-14e13654fbd4" />
+image: "<img width="352" height="251" alt="Chris - Global Azure Day" src="https://github.com/user-attachments/assets/09de0a44-c8af-47f0-8a6e-14e13654fbd4" />
 alt: "Past Talks"
 relative: true
 
