@@ -39,6 +39,7 @@ cover:
 ### Consulting via Insight, Versent, Broadreach
 
 <img width="265" height="190" alt="Image" src="https://github.com/user-attachments/assets/cccad12e-4acc-409d-be41-06092e19e7e7" />
+
 - **Project:** APAC Consulting Lead
 - **Role:** Various consulting & leadership roles
 - **Key Details:** Program design, financial management, delivery ownership
