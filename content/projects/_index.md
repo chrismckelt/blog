@@ -36,15 +36,12 @@ cover:
   - Architecture for the Distributed Energy Resources (DER) platform with the purpose of creating Virtual Power Plants grouping residential household solar to provide energy back to the grid including: Datastore design via a custom bi-temporal database XTDB, OT Cloud design to host solution, PKI and Security design,Cloud solution built with microservices using DAPR, Azure Databricks for model forecasting
 ---
 
-### Club Assist (AAA Mobile Battery Service)
+### Consulting via Insight, Versent, Broadreach
 
-<img alt="Club Assist"
-     src="https://github.com/user-attachments/assets/c8487b76-f0b0-42b0-8b72-c29a14fbaba6"
-     style="width:600px; height:auto;">
-
-- **Project:** APAC IT Modernization Program
-- **Role:** Principal Integration Architect
-- **Key Details:** Implementation & upgrades on D365 CE/FO; integration with 20+ external systems for supply chain management. BizTalk upgrade to Azure Integration Services. Led a team of 5 in the integration stream.
+<img width="265" height="190" alt="Image" src="https://github.com/user-attachments/assets/cccad12e-4acc-409d-be41-06092e19e7e7" />
+- **Project:** APAC Consulting Lead
+- **Role:** Various consulting & leadership roles
+- **Key Details:** Program design, financial management, delivery ownership
 
 ---
 
