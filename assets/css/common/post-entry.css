@@ -36,15 +36,16 @@
 .post-entry {
     position: relative;
     margin-bottom: var(--gap);
-    padding: var(--gap);
+    padding: 24px;
     background: var(--entry);
     border-radius: var(--radius);
-    transition: transform 0.1s;
-    border: 2px solid var(--border);
+    transition: border-color 0.15s, box-shadow 0.15s;
+    border: 1px solid var(--border);
 }
 
 .post-entry:hover {
-     border: 2px solid var(--darkcolor);
+     border-color: var(--darkcolor);
+     box-shadow: 0 14px 34px rgba(23, 33, 30, 0.08);
 }
 
 .tag-entry .entry-cover {
@@ -52,24 +53,33 @@
 }
 
 .entry-header h2 {
-    font-size: 20px;
-    line-height: var(--lineheight);
+    font-size: 24px;
+    line-height: 1.25;
 }
 
 .entry-content {
-    margin: 20px 10px;
+    margin: 14px 0 18px;
     color: var(--secondary);
-    font-size: var(--entrysize);
-    line-height: var(--lineheight);
+    font-size: 16px;
+    line-height: 1.58;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8;
+    -webkit-line-clamp: 3;
 }
 
 .entry-footer {
-    color: var(--content);
-    font-size: var(--entrysize);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.entry-read-more {
+    color: var(--darkcolor);
+    font-weight: var(--semibold);
 }
 
 .entry-link {
@@ -87,21 +97,51 @@
 .entry-hint-parent {
     display: flex;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .entry-cover {
     font-size: var(--entrysize);
-    margin-bottom: var(--gap);
+    margin-bottom: 18px;
     text-align: center;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
 }
 
 .entry-cover img {
     border-radius: var(--radius);
     width: 100%;
-    height: auto;
+    height: 180px;
+    padding: 12px;
+    object-fit: contain;
 }
 
 .entry-cover a {
     color: var(--secondary);
     box-shadow: 0 1px 0 var(--primary);
+}
+
+.entry-kicker {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 560px) {
+    .post-entry {
+        padding: 18px;
+    }
+
+    .entry-header h2 {
+        font-size: 21px;
+    }
+
+    .entry-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .entry-cover img {
+        height: 140px;
+    }
 }

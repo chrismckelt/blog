@@ -1,7 +1,7 @@
 ---
 title: Search
 url: /search/
-_build:
+build:
   list: never
 ---
 

@@ -16,8 +16,7 @@ cover:
 
 ### Imdex
 
-<img width="367" height="137" alt="Image" src="https://github.com/user-attachments/assets/c0c67a8e-0969-40d1-ad98-462356fe6a
-
+<img width="367" height="137" alt="Image" src="https://github.com/user-attachments/assets/c0c67a8e-0969-40d1-ad98-462356fe6a6e" />
 
 - **Project:**  Global AI Agentic Data Mesh  
 - **Role:** Data Platform Lead  
@@ -31,27 +30,19 @@ cover:
 
 <img width="250" height="250" alt="Image" src="https://github.com/user-attachments/assets/03fe9cbe-65b3-4ba7-a22d-54e153cd23c4" />
 
-- **Project:**  Roof Top Solary Ingestion
+- **Project:**  Roof Top Solar CSIP DATA Ingestion
 - **Role:** Data Architect 
 - **Key Details:** 
-  - Architecture for the Distributed Energy Resources (DER) platform with the purpose of creating Virtual Power Plants grouping residential household solar to provide energy back to the grid. 
-  - Cloud & Data platform including
-    - 1.	Datastore design via a custom bi-temporal database XTDB
-    - 2.	OT Cloud design to host solution
-    - 3.	PKI and Security design
-    - 4.	Cloud solution built with microservices using DAPR, 
-    - 5.	Azure Databricks for model forecasting
+  - Architecture for the Distributed Energy Resources (DER) platform with the purpose of creating Virtual Power Plants grouping residential household solar to provide energy back to the grid including: Datastore design via a custom bi-temporal database XTDB, OT Cloud design to host solution, PKI and Security design,Cloud solution built with microservices using DAPR, Azure Databricks for model forecasting
 ---
 
-### Club Assist (AAA Mobile Battery Service)
+### Consulting via Insight, Versent, Broadreach
 
-<img alt="Club Assist"
-     src="https://github.com/user-attachments/assets/c8487b76-f0b0-42b0-8b72-c29a14fbaba6"
-     style="width:600px; height:auto;">
+<img width="265" height="190" alt="Image" src="https://github.com/user-attachments/assets/cccad12e-4acc-409d-be41-06092e19e7e7" />
 
-- **Project:** APAC IT Modernization Program
-- **Role:** Principal Integration Architect
-- **Key Details:** Implementation & upgrades on D365 CE/FO; integration with 20+ external systems for supply chain management. BizTalk upgrade to Azure Integration Services. Led a team of 5 in the integration stream.
+- **Project:** APAC Consulting Lead
+- **Role:** Various consulting & leadership roles
+- **Key Details:** Program design, financial management, delivery ownership
 
 ---
 
