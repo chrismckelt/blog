@@ -62,7 +62,7 @@ claude plugin install arckit arckit-au
 
 ## The live demo
 
-For the demo I ran ArcKit against a fictional Perth bicycle retailer — **Cycle Motion Group** ("Spoke & Rim"), twelve stores, five project spaces — showing the day-in-the-life flow: `/arckit:init` to stand up a project inheriting org-wide principles, `/arckit:stakeholders` to map drivers → goals → measurable outcomes, `/arckit:risk` for an Orange Book register, `/arckit:au-pia` for the privacy assessment, and `/arckit:navigator` — the project GPS — telling me exactly which of the eight essential artefacts to generate next.
+A worked example of an architecture engagement, governed end to end by ArcKit rather than hand-written.
 
 The whole demo workspace is public. Clone it and follow along:
 
