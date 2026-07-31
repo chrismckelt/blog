@@ -12,7 +12,7 @@ Last night I had the pleasure of presenting to the Perth AI User Group on a topi
 
 The talk — *AI Architecture in Practice* — centred on [ArcKit](https://arckit.org), the open-source enterprise architecture governance harness created by Mark Craddock ([tractorjuice](https://github.com/tractorjuice)), and how I've used it end-to-end on real client engagements here in Australia.
 
-![Presenting the ArcKit overview to the Perth AI User Group](/images/1785412619381.jpg)
+![Presenting the ArcKit overview to the Perth AI User Group](https://github.com/user-attachments/assets/56f77a0f-c711-4ebc-b1b4-ce2cf031f26a)
 
 ## The problem: "can AI draft it?" is the wrong question
 
