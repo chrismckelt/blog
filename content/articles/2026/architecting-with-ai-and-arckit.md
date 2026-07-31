@@ -1,5 +1,4 @@
-
-- ---
+---
 title: "AI Architecture in Practice — ArcKit at the Perth AI User Group"
 date: 2026-07-31
 author: Chris McKelt
