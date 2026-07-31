@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Reactive Architecture with Azure Event Grid | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="azure, event, reactive">
+<meta name="description" content="Azure Global Bootcamp 2019">
+<meta name="author" content="Chris McKelt Blog">
+<link rel="canonical" href="http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="Reactive Architecture with Azure Event Grid">
+  <meta property="og:description" content="Azure Global Bootcamp 2019">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2019-02-21T10:26:31+00:00">
+    <meta property="article:modified_time" content="2019-02-21T10:26:31+00:00">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Event">
+    <meta property="article:tag" content="Reactive">
+    <meta property="og:image" content="http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/https:/github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/https:/github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512">
+<meta name="twitter:title" content="Reactive Architecture with Azure Event Grid">
+<meta name="twitter:description" content="Azure Global Bootcamp 2019">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Reactive Architecture with Azure Event Grid",
+      "item": "http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reactive Architecture with Azure Event Grid",
+  "name": "Reactive Architecture with Azure Event Grid",
+  "description": "Azure Global Bootcamp 2019",
+  "keywords": [
+    "azure", "event", "reactive"
+  ],
+  "articleBody": "Reactive Architecture with Azure Event Grid Reactive, event-driven architecture Deep dive into Azure Event Grid “Take a ride on the grid” demo series 📈 Why Event Thinking Matters\nEnterprises should embrace “event thinking” as part of their digital strategy.\nBy 2020, event-sourced, real-time situational awareness will be required for 80% of digital business solutions, and 80% of new business ecosystems will require event processing. — Gartner Top 10 Strategic Technology Trends (2018)\nEvents Tell a Story\nChange is captured in an event\nA series of events captures behaviour\nEvent streams capture patterns\nTogether, they tell the narrative of the system\n⚡ What Is a Reactive Architecture?\nA system design approach focused on:\nResponsiveness Resilience Elasticity Message-driven communication More at: https://www.reactivemanifesto.org\n💬 Messages vs Commands vs Events Command\nHas intent 1-to-1 from producer → consumer Request-based Example: CreateCustomer\nEvent\nNo intent — purely a notification 1-to-many subscribers Fact-based Example: CustomerCreated\n☁️ Azure Messaging Services Overview\nAzure provides a broad messaging ecosystem including:\nService Bus Event Hubs Event Grid Storage Queues Serverless and Integration Services\n🔷 What Is Azure Event Grid?\nAzure Event Grid is a cloud-native, fully managed event routing service for building event-driven and microservice-oriented systems without heavy plumbing.\n🎯 What Is Event Grid For?\nServerless apps Ops automation Third-party integrations Azure Integration Services\n🔄 Event Grid vs Service Bus vs Event Hub\nA quick framing:\nEvent Grid → reactive notifications (push model, lightweight) Service Bus → commands, workflow coordination, reliable messaging Event Hub → large event ingestion, telemetry, streaming 📣 Why a Push Model?\nEvent Grid pushes events to subscribers as they occur, supporting system-wide reactivity.\nExample system events:\nMicrosoft.Storage.BlobCreated Microsoft.ServiceBus.ActiveMessagesAvailableWithNoListeners 🧩 Event Schemas\nEvent Grid Native Schema Standard structure used by Azure Event Grid. CloudEvents Schema An industry-standard, cloud-agnostic event schema.\nResources:\nhttps://cloudevents.io\nCNCF Serverless Working Group\nGitHub: https://github.com/cloudevents/spec\n.NET SDK: https://github.com/aliencube/CloudEvents.NET\n⚙️ Triggers\nEvent Grid can trigger:\nAzure Functions Logic Apps Automation workflows Webhooks Custom subscribers 🔐 Security\nEvent Grid supports:\nManaged identities Key authentication IP filtering Private endpoints Event domain-level access controls 📊 Event Grid – Daily Metrics\nNative monitoring includes: Delivery attempts Latency Subscriber response codes Dead-letter events 🗂️ Event Domains\nAllows multi-tenant event routing at scale, ideal for large distributed platforms.\nExcluded 6 demos done on day :( 🧪 Demo Highlights Demo 1\nRide the grid: event publishing and subscriptions.\nDemo 2\nLive event monitoring 🔗 https://eventsmonitoring2019.azurewebsites.net/\nDemo 3\n_Microsoft Flow integration. _ Demo 4\nDumb insurance claim management flow\nExample pattern:\n_Inbound API request → publish event _ Event subscriber → execute command\nEvent publisher → emit result event\nMultiple subscribers react\n🏗️ Claim Entity Event Flow Example\nFor each Claim:\nClaim has a Status\nBusiness process flows trigger on status changes\nStatus updates broadcast events\nMicroservices react and write back updates\nBPF rules trigger again from field updates\nReactive loops power distributed workflows.\nThanks \u0026 remember ‘#PushDontPull’ 🙌 Images\n",
+  "wordCount" : "477",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/https:/github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512","datePublished": "2019-02-21T10:26:31Z",
+  "dateModified": "2019-02-21T10:26:31Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Chris McKelt Blog"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/2019/reactive-architecture-with-azure-event-grid/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Reactive Architecture with Azure Event Grid
+    </h1>
+    <p class="post-description">Azure Global Bootcamp 2019</p>
+    <div class="post-meta"><span title='2019-02-21 10:26:31 +0000 UTC'>February 2019</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="reactive-architecture-with-azure-event-grid">Reactive Architecture with Azure Event Grid</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Reactive, event-driven architecture
+</span></span><span style="display:flex;"><span>Deep dive into Azure Event Grid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>“Take a ride on the grid” demo series
+</span></span></code></pre></div><img   src="https://github.com/user-attachments/assets/a0b783df-80e6-4e7c-a796-a95fea691512" />
+<p>📈 Why Event Thinking Matters</p>
+<p>Enterprises should embrace “event thinking” as part of their digital strategy.</p>
+<blockquote>
+<p>By 2020, event-sourced, real-time situational awareness will be required for 80% of digital business solutions, and 80% of new business ecosystems will require event processing.
+— Gartner Top 10 Strategic Technology Trends (2018)</p></blockquote>
+<p><strong>Events Tell a Story</strong></p>
+<p>Change is captured in an event</p>
+<p>A series of events captures behaviour</p>
+<p>Event streams capture patterns</p>
+<p>Together, they tell the narrative of the system</p>
+<p><strong>⚡ What Is a Reactive Architecture?</strong></p>
+<p>A system design approach focused on:</p>
+<ul>
+<li>Responsiveness</li>
+<li>Resilience</li>
+<li>Elasticity</li>
+<li>Message-driven communication</li>
+</ul>
+<img   src="https://github.com/user-attachments/assets/624c3db4-41ce-4d5c-9881-60b6252836df" />
+<blockquote>
+<p>More at: <a href="https://www.reactivemanifesto.org" target="_blank">https://www.reactivemanifesto.org</a></p></blockquote>
+<p><strong>💬 Messages vs Commands vs Events Command</strong></p>
+<ol>
+<li>Has intent</li>
+<li>1-to-1 from producer → consumer</li>
+<li>Request-based</li>
+</ol>
+<img   src="https://github.com/user-attachments/assets/76f0c9f7-9eb3-446d-a18d-2b48a5be0c95" />
+<p><em>Example: CreateCustomer</em></p>
+<p><strong>Event</strong></p>
+<ul>
+<li>No intent — purely a notification</li>
+<li>1-to-many subscribers</li>
+<li>Fact-based</li>
+</ul>
+<p><em>Example: CustomerCreated</em></p>
+<p><strong>☁️ Azure Messaging Services Overview</strong></p>
+<p>Azure provides a broad messaging ecosystem including:</p>
+<ul>
+<li>Service Bus</li>
+<li>Event Hubs</li>
+<li>Event Grid</li>
+<li>Storage Queues</li>
+</ul>
+<img   src="https://github.com/user-attachments/assets/3a52308a-9f68-49f4-8dea-a845d1339b5e" />
+<p><strong>Serverless and Integration Services</strong></p>
+<blockquote>
+<p>🔷 What Is Azure Event Grid?</p></blockquote>
+<p>Azure Event Grid is a cloud-native, fully managed event routing service for building event-driven and microservice-oriented systems without heavy plumbing.</p>
+<img   src="https://github.com/user-attachments/assets/469df5f5-0492-4846-86f8-111af59ebb45" />
+<blockquote>
+<p>🎯 What Is Event Grid For?</p></blockquote>
+<ul>
+<li>Serverless apps</li>
+<li>Ops automation</li>
+<li>Third-party integrations</li>
+</ul>
+<img   src="https://github.com/user-attachments/assets/0b2bf8e1-1886-42c5-aad4-3a96d7427b20" />
+<p><strong>Azure Integration Services</strong></p>
+<img   src="https://github.com/user-attachments/assets/1f8ad7c3-b5df-45d1-999b-7af093c103bb" />
+<p>🔄 Event Grid vs Service Bus vs Event Hub</p>
+<img   src="https://github.com/user-attachments/assets/deaf341f-cb35-4d8a-b942-5484b09d060d" />
+<p>A quick framing:</p>
+<ul>
+<li>Event Grid → reactive notifications (push model, lightweight)</li>
+<li>Service Bus → commands, workflow coordination, reliable messaging</li>
+<li>Event Hub → large event ingestion, telemetry, streaming</li>
+</ul>
+<p><strong>📣 Why a Push Model?</strong></p>
+<blockquote>
+<p>Event Grid pushes events to subscribers as they occur, supporting system-wide reactivity.</p></blockquote>
+<p>Example system events:</p>
+<ul>
+<li>Microsoft.Storage.BlobCreated</li>
+<li>Microsoft.ServiceBus.ActiveMessagesAvailableWithNoListeners</li>
+</ul>
+<p><strong>🧩 Event Schemas</strong></p>
+<ul>
+<li>Event Grid Native Schema</li>
+<li>Standard structure used by Azure Event Grid.</li>
+<li>CloudEvents Schema</li>
+</ul>
+<p>An industry-standard, cloud-agnostic event schema.</p>
+<p>Resources:</p>
+<p><a href="https://cloudevents.io" target="_blank">https://cloudevents.io</a></p>
+<p>CNCF Serverless Working Group</p>
+<p>GitHub: <a href="https://github.com/cloudevents/spec" target="_blank">https://github.com/cloudevents/spec</a></p>
+<p>.NET SDK: <a href="https://github.com/aliencube/CloudEvents.NET" target="_blank">https://github.com/aliencube/CloudEvents.NET</a></p>
+<p><strong>⚙️ Triggers</strong></p>
+<p>Event Grid can trigger:</p>
+<ul>
+<li>Azure Functions</li>
+<li>Logic Apps</li>
+<li>Automation workflows</li>
+<li>Webhooks</li>
+<li>Custom subscribers</li>
+</ul>
+<p><strong>🔐 Security</strong></p>
+<p>Event Grid supports:</p>
+<ul>
+<li>Managed identities</li>
+<li>Key authentication</li>
+<li>IP filtering</li>
+<li>Private endpoints</li>
+<li>Event domain-level access controls</li>
+</ul>
+<p><strong>📊 Event Grid – Daily Metrics</strong></p>
+<ul>
+<li>Native monitoring includes:</li>
+<li>Delivery attempts</li>
+<li>Latency</li>
+<li>Subscriber response codes</li>
+<li>Dead-letter events</li>
+</ul>
+<p><strong>🗂️ Event Domains</strong></p>
+<p>Allows multi-tenant event routing at scale, ideal for large distributed platforms.</p>
+<h2 id="excluded-6-demos-done-on-day-">Excluded 6 demos done on day :(</h2>
+<p><em>🧪 Demo Highlights</em>
+Demo 1</p>
+<p><em>Ride the grid: event publishing and subscriptions.</em></p>
+<p>Demo 2</p>
+<p>Live event monitoring
+🔗 <a href="https://eventsmonitoring2019.azurewebsites.net/" target="_blank">https://eventsmonitoring2019.azurewebsites.net/</a></p>
+<p>Demo 3</p>
+<p>_Microsoft Flow integration.
+_
+Demo 4</p>
+<p><em>Dumb insurance claim management flow</em></p>
+<p>Example pattern:</p>
+<p>_Inbound API request → publish event
+_
+Event subscriber → execute command</p>
+<p>Event publisher → emit result event</p>
+<p>Multiple subscribers react</p>
+<p>🏗️ Claim Entity Event Flow Example</p>
+<p>For each Claim:</p>
+<p>Claim has a Status</p>
+<p>Business process flows trigger on status changes</p>
+<p>Status updates broadcast events</p>
+<p>Microservices react and write back updates</p>
+<p>BPF rules trigger again from field updates</p>
+<p>Reactive loops power distributed workflows.</p>
+<h3 id="thanks--remember-pushdontpull">Thanks &amp; remember &lsquo;#PushDontPull&rsquo;</h3>
+<p>🙌 Images</p>
+<img  src="https://github.com/user-attachments/assets/b4582440-037b-4ebf-81f9-20710346ce40" />
+<img  src="https://github.com/user-attachments/assets/40eaae0d-0a12-4fb4-a9e0-1e8a4df383d3" />
+<img  src="https://github.com/user-attachments/assets/46ae5c1e-77a3-4f8e-ac4f-6d02f2bc1b21" />
+<img src="https://github.com/user-attachments/assets/7ddca021-6515-44e6-807c-3192f1470b2c" />
+<img src="https://github.com/user-attachments/assets/9eb5d61a-3210-44e6-ba38-ea4f341fd940" />
+<img src="https://github.com/user-attachments/assets/d4af0c7d-0735-4b54-874f-f5b636febe51" />
+<img   src="https://github.com/user-attachments/assets/8a3427f5-124c-4144-a800-62f3951e8c49" />
+<img   src="https://github.com/user-attachments/assets/c813d595-2f53-4181-b14a-433272a9c6a5" />
+<img   src="https://github.com/user-attachments/assets/bbfc38ef-7618-4cce-b761-23828ba451e4" />
+<img   src="https://github.com/user-attachments/assets/9c45f970-ff51-4ccf-8d7f-d59b2c8ca8d0" />
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/azure/">Azure</a></li>
+      <li><a href="http://localhost:1313/tags/event/">Event</a></li>
+      <li><a href="http://localhost:1313/tags/reactive/">Reactive</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

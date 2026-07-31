@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Sql on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/sql/</link><description>Recent content in Sql on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Tue, 24 Aug 2010 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/sql/index.xml" rel="self" type="application/rss+xml"/><item><title>Invalid object name 'master.dbo.spt_values'.</title><link>https://blog.mckelt.com/articles/posts/invalid-object-name-master-dbo-spt-values/</link><pubDate>Tue, 24 Aug 2010 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/invalid-object-name-master-dbo-spt-values/</guid><description>&lt;h1 id="invalid-object-name-masterdbospt_values"&gt;&amp;ldquo;Invalid object name &amp;lsquo;master.dbo.spt_values&amp;rsquo;.&amp;rdquo;&lt;/h1&gt;
+&lt;p&gt;This means your SQL Master DB is in a bad state.&lt;/p&gt;
+&lt;p&gt;To fix:&lt;/p&gt;
+&lt;p&gt;Error- Invalid object name &amp;lsquo;master.dbo.spt_values&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;CD&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\Install&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;run &lt;strong&gt;u_tables.sql&lt;/strong&gt; in master&amp;hellip;.&lt;/p&gt;</description></item><item><title>Integrated Security = SSPI -- Security Support Provider Interface</title><link>https://blog.mckelt.com/articles/posts/integrated-security-sspi-security-support-provider-interface/</link><pubDate>Tue, 29 Jun 2010 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/integrated-security-sspi-security-support-provider-interface/</guid><description>&lt;p&gt;Using Integrated Security in connection strings should be either of the following:&lt;/p&gt;
+&lt;h3 id="integrated-securitysspi"&gt;Integrated Security=SSPI&lt;/h3&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;h3 id="integrated-securityfalse"&gt;Integrated Security=false&lt;/h3&gt;
+&lt;p&gt;Not&lt;/p&gt;
+&lt;h5 id="integrated-securitytrue"&gt;&lt;del&gt;Integrated Security=true&lt;/del&gt;&lt;/h5&gt;</description></item><item><title>Obliterate Database</title><link>https://blog.mckelt.com/articles/posts/obliterate-database/</link><pubDate>Thu, 10 Dec 2009 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/obliterate-database/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;declare
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK varchar(&lt;span style="color:#099"&gt;250&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable varchar(&lt;span style="color:#099"&gt;250&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP varchar(&lt;span style="color:#099"&gt;250&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView varchar(&lt;span style="color:#099"&gt;250&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn varchar(&lt;span style="color:#099"&gt;250&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;-- ...drop all foreign key constraints
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;F&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00a"&gt;while&lt;/span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK is &lt;span style="color:#00a"&gt;not&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;begin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#0aa"&gt;print&lt;/span&gt; &lt;span style="color:#a50"&gt;&amp;#39;Dropping FK constraint &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; -- ...get name of table corresponding to the foreign key
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable = S2.name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; from
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sysobjects S1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; inner join sysconstraints C on S1.id = C.constid
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; inner join sysobjects S2 on C.id = S2.id
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; where
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; S1.name = &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK &lt;span style="color:#00a"&gt;and&lt;/span&gt; S1.type=&lt;span style="color:#a50"&gt;&amp;#39;F&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exec (&lt;span style="color:#a50"&gt;&amp;#39;alter table &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable + &lt;span style="color:#a50"&gt;&amp;#39; drop constraint &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;F&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &amp;gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFK
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;-- ...drop all tables
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;U&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &lt;span style="color:#00a"&gt;not&lt;/span&gt; like &lt;span style="color:#a50"&gt;&amp;#39;dt%&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00a"&gt;while&lt;/span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable is &lt;span style="color:#00a"&gt;not&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;begin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#0aa"&gt;print&lt;/span&gt; &lt;span style="color:#a50"&gt;&amp;#39;Dropping table &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exec (&lt;span style="color:#a50"&gt;&amp;#39;drop table &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;U&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &lt;span style="color:#00a"&gt;not&lt;/span&gt; like &lt;span style="color:#a50"&gt;&amp;#39;dt%&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &amp;gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcTable
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;-- ...drop all our stored procedures
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;P&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; (name like &lt;span style="color:#a50"&gt;&amp;#39;usp%&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00a"&gt;while&lt;/span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP is &lt;span style="color:#00a"&gt;not&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;begin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#0aa"&gt;print&lt;/span&gt; &lt;span style="color:#a50"&gt;&amp;#39;Dropping procedure &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exec (&lt;span style="color:#a50"&gt;&amp;#39;drop procedure &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;P&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; (name like &lt;span style="color:#a50"&gt;&amp;#39;usp%&amp;#39;&lt;/span&gt;) &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &amp;gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcSP
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;-- ...drop all views
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;V&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name like &lt;span style="color:#a50"&gt;&amp;#39;v%&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00a"&gt;while&lt;/span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView is &lt;span style="color:#00a"&gt;not&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;begin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#0aa"&gt;print&lt;/span&gt; &lt;span style="color:#a50"&gt;&amp;#39;Dropping view &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exec (&lt;span style="color:#a50"&gt;&amp;#39;drop view &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;V&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name like &lt;span style="color:#a50"&gt;&amp;#39;v%&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &amp;gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcView
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;-- ...drop all functions
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;FN&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name like &lt;span style="color:#a50"&gt;&amp;#39;udf%&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00a"&gt;while&lt;/span&gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn is &lt;span style="color:#00a"&gt;not&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;begin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#0aa"&gt;print&lt;/span&gt; &lt;span style="color:#a50"&gt;&amp;#39;Dropping function &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; exec (&lt;span style="color:#a50"&gt;&amp;#39;drop function &amp;#39;&lt;/span&gt; + &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn = &lt;span style="color:#0aa"&gt;min&lt;/span&gt;(name) from sysobjects where type=&lt;span style="color:#a50"&gt;&amp;#39;FN&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name like &lt;span style="color:#a50"&gt;&amp;#39;udf%&amp;#39;&lt;/span&gt; &lt;span style="color:#00a"&gt;and&lt;/span&gt; name &amp;gt; &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;vcFn
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>SQL Server error handling</title><link>https://blog.mckelt.com/articles/posts/sql-server-error-handling/</link><pubDate>Fri, 11 Sep 2009 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/sql-server-error-handling/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;CREATE PROCEDURE &lt;procName&gt;
+AS
+BEGIN
+SET NOCOUNT ON
+BEGIN TRY&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; --Do work
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;END TRY&lt;/p&gt;
+&lt;p&gt;BEGIN CATCH
+/* Note that catching and rethrowing an exception is a lossy operation. ERROR_PROCEDURE() etc will be reset. */
+DECLARE @errorMessage NVARCHAR(4000);
+DECLARE @errorSeverity INT;
+DECLARE @errorState INT;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; SELECT @errorMessage = ERROR\_MESSAGE(),
+@errorSeverity = ERROR\_SEVERITY() ,
+@errorState = ERROR\_STATE();
+--Perform required recovery actions.
+RAISERROR ( @errorMessage, @errorSeverity, @errorState );
+RETURN 1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;END CATCH&lt;/p&gt;</description></item><item><title>SQL Tricks</title><link>https://blog.mckelt.com/articles/posts/sql-tricks/</link><pubDate>Thu, 31 Jul 2008 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/sql-tricks/</guid><description>&lt;h4 id="delete-all-tables"&gt;Delete all tables&lt;/h4&gt;
+&lt;p&gt;EXEC sp_MSforeachtable @command1 = &amp;ldquo;DROP TABLE ?&amp;rdquo;&lt;/p&gt;
+&lt;h4 id="grant-execute-permissions-to-all-stored-procedures-to-a-specific-user"&gt;Grant execute permissions to all stored procedures to a specific user&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;`CREATE PROC grantexecutepermission( @UserName NVARCHAR(250)) AS DECLARE curse CURSOR  FOR SELECT name FROM   sysobjects WHERE  TYPE = 'P'`
+OPEN curse
+DECLARE  @proc VARCHAR(100)
+DECLARE  @stmt NVARCHAR(200)
+FETCH NEXT FROM curse INTO @proc
+WHILE @@FETCH\_STATUS \= 0 BEGIN SET @stmt \= 'grant execute on ' + @proc + ' to ' + @UserName
+EXEC sp\_executesql @STMT
+PRINT @stmt
+FETCH NEXT FROM curse INTO @proc END
+CLOSE curse
+DEALLOCATE curse
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;</description></item></channel></rss>

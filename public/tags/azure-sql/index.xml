@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Azure Sql on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/azure-sql/</link><description>Recent content in Azure Sql on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/azure-sql/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Azure Pipelines to restore a production database to another environment</title><link>https://blog.mckelt.com/articles/posts/using-azure-pipelines-to-restore-a-production-database-to-another-environment/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/using-azure-pipelines-to-restore-a-production-database-to-another-environment/</guid><description>&lt;p&gt;Often we need a fresh copy of the production database in another environment (eg DEV/TEST/UAT). &lt;/p&gt;
+&lt;p&gt;Previously this was a tedious task involving getting a backup file, copying it to another location, restoring the database.   Here is a solution to automate this process using Azure Pipelines.&lt;/p&gt;
+&lt;h3 id="user-story"&gt;User Story&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Given a production database exists in subscription 1
+When we do a release of the Azure Pipeline named ‘_Refresh Database – DEV’_
+Then an copy of production is available in the DEV environment in subscription 2
+And permissions are correct for the DEV environment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="pipeline-overview"&gt;Pipeline Overview&lt;/h2&gt;
+&lt;p&gt;For each environment that you wish to restore into create an Azure Pipeline with 3 stages.&lt;/p&gt;</description></item></channel></rss>

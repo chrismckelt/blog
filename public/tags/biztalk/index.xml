@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Biztalk on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/biztalk/</link><description>Recent content in Biztalk on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Thu, 12 Feb 2009 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/biztalk/index.xml" rel="self" type="application/rss+xml"/><item><title>Biztalk notes</title><link>https://blog.mckelt.com/articles/posts/biztalk-notes/</link><pubDate>Thu, 12 Feb 2009 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/biztalk-notes/</guid><description>&lt;p&gt;&lt;strong&gt;Databases&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSODB &amp;ndash; Enterprise Single Sign-On database&lt;/li&gt;
+&lt;li&gt;BizTalkRuleEngineDB &amp;ndash; Repository for your business rules&lt;/li&gt;
+&lt;li&gt;BizTalkMsgBoxDb &amp;ndash; Storage for a multitude of BizTalk activities, notably messages&lt;/li&gt;
+&lt;li&gt;BizTalkMgmtDb &amp;ndash; Database for server meta data&lt;/li&gt;
+&lt;li&gt;BizTalkHwsDb &amp;ndash; Human Workflow Services storage database&lt;/li&gt;
+&lt;li&gt;BizTalkEdiDb &amp;ndash; State data for the EDI adapter&lt;/li&gt;
+&lt;li&gt;BizTalkDTADb &amp;ndash; BizTalk tracking engine storage&lt;/li&gt;
+&lt;li&gt;BizTalkStarSchema &amp;ndash; Staging, dimension, and measure tables&lt;/li&gt;
+&lt;li&gt;BAMPrimaryImport &amp;ndash; Raw tracking data for BAM&lt;/li&gt;
+&lt;li&gt;BAMArchive &amp;ndash; Archive for older business activity&lt;/li&gt;
+&lt;li&gt;BAMAlertsNSMain &amp;ndash; Notification services for BAM monitoring&lt;/li&gt;
+&lt;li&gt;BAMAlertsApplication &amp;ndash; Alert information for BAM notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Orchestration Tools&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

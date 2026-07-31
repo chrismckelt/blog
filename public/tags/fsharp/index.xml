@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Fsharp on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/fsharp/</link><description>Recent content in Fsharp on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Mon, 28 Mar 2016 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/fsharp/index.xml" rel="self" type="application/rss+xml"/><item><title>LinqPad and F# Charting</title><link>https://blog.mckelt.com/articles/posts/linqpad-and-f-scripts/</link><pubDate>Mon, 28 Mar 2016 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/linqpad-and-f-scripts/</guid><description>&lt;h1 id="import-these-references"&gt;Import these references&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120944745-b741c880-c768-11eb-9182-d53d9f451a72.png"&gt;&lt;/p&gt;
+&lt;h3 id="sample-script"&gt;Sample script&lt;/h3&gt;
+&lt;script src="https://gist.github.com/chrismckelt/7f2ec81a893e5f31d056.js"&gt;&lt;/script&gt;
+&lt;h3 id="graph"&gt;Graph&lt;/h3&gt;
+&lt;p&gt; 
+&lt;img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120944762-c9bc0200-c768-11eb-8d84-3df4d099fe09.png"&gt;&lt;/p&gt;</description></item><item><title>F# Beginnings</title><link>https://blog.mckelt.com/articles/posts/f-beginnings/</link><pubDate>Mon, 07 Mar 2011 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/f-beginnings/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;open System&lt;/p&gt;
+&lt;p&gt;#light // Hello world let a = &amp;ldquo;Hello, world!&amp;rdquo;;&lt;/p&gt;
+&lt;p&gt;let mutable b = 0;&lt;br&gt;
+while b &amp;lt; 10 do b &amp;lt;- b+1&lt;br&gt;
+Console.WriteLine(a + b.ToString())&lt;/p&gt;
+&lt;p&gt;Console.ReadLine() |&amp;gt; ignore&lt;/p&gt;
+&lt;p&gt;// recursive binary search - &lt;a href="http://rosettacode.org/wiki/Binary" target="_blank"&gt;http://rosettacode.org/wiki/Binary&lt;/a&gt;_search#F.23&lt;br&gt;
+let items = [| 10; 20; 30; 40; 50; 60; 70; 80; 90; 100; |]&lt;/p&gt;
+&lt;p&gt;let rec binarySearch (arr:int[], low:int, high:int, value:int) =
+if (high &amp;lt; low) then&lt;br&gt;
+false&lt;br&gt;
+else&lt;br&gt;
+let mid = (low + high) / 2&lt;/p&gt;</description></item><item><title>DatabaseBackup.fs</title><link>https://blog.mckelt.com/articles/posts/f-keywords/</link><pubDate>Thu, 03 Mar 2011 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/f-keywords/</guid><description>&lt;script src="https://gist.github.com/chrismckelt/a6dc122913bdd40616a5.js"&gt;&lt;/script&gt;</description></item></channel></rss>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Code on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/code/</link><description>Recent content in Code on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Mon, 15 Apr 2013 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/code/index.xml" rel="self" type="application/rss+xml"/><item><title>Powershell &amp; SVN – Export files to CSV</title><link>https://blog.mckelt.com/articles/posts/powershell-svn-export-files-to-csv/</link><pubDate>Mon, 15 Apr 2013 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/powershell-svn-export-files-to-csv/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Function Get-SvnLogData()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ([xml](svn log -v --xml &amp;#39;http://svn/trunk&amp;#39;)).log.logentry | % {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $nestedEntry = $_
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $_.paths.path | % {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $path = $_
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $nestedEntry | Select-Object -Property `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Author, `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{n=&amp;#39;Revision&amp;#39;; e={([int]$_.Revision)}}, `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{n=&amp;#39;Date&amp;#39;; e={Get-Date $_.Date }}, `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{n=&amp;#39;Action&amp;#39;; e={$path.action }}, `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{n=&amp;#39;Path&amp;#39;; e={$path.InnerText }}`
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Get-SvnLogData |
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;where { $_.Date -ge (Get-Date &amp;#39;16-04-2013&amp;#39;) } |
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Select-Object Revision,Date,Path,Author |
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sort -property `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{ Expression=&amp;#34;Path&amp;#34;; Descending=$false }, `
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @{ Expression=&amp;#34;Revision&amp;#34;; Descending=$true } |
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Export-CSV c:\test.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>NServiceBus Powershell Install</title><link>https://blog.mckelt.com/articles/posts/nservicebus-powershell-install/</link><pubDate>Sun, 03 Mar 2013 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/nservicebus-powershell-install/</guid><description>&lt;h2 id="nservicebus-powershell-install"&gt;NServiceBus PowerShell Install&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$Arguments = &amp;#39;/install /startManually /serviceName:{0} /displayName:{0} NServiceBus.Production /username:{1} /password:{2}&amp;#39; -f &amp;#39;McKelt.securitytokenservice.nservicebus.messagehandler&amp;#39;, &amp;#39;xxxx@au.McKelt.net&amp;#39;, &amp;#39;PasswordGoesHere&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$nServiceBus = Resolve-Path -Path nServiceBus.Host.exe;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Write-Host -Object (&amp;#39;Argument string is: {0}&amp;#39; -f $Arguments);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Write-Host -Object (&amp;#39;Path to nServiceBus.Host.exe is: {0}&amp;#39; -f $nServiceBus);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Start-Process -Wait -NoNewWindow -FilePath $nServiceBus -ArgumentList $Arguments -RedirectStandardOutput tmp.txt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Powershell script to delete mail from specific folder</title><link>https://blog.mckelt.com/articles/posts/powershell-script-to-delete-mail-from-specific-folder/</link><pubDate>Thu, 18 Oct 2012 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/powershell-script-to-delete-mail-from-specific-folder/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;function Remove-MailItem {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [CmdletBinding(SupportsShouldProcess=$true)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;param (
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [parameter(Mandatory=$true)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [string]$mailfolder,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [string]$parentfolder
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ol = new-object -comobject &amp;#34;Outlook.Application&amp;#34;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;# Map to the MAPI namespace
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$mapi = $ol.getnamespace(&amp;#34;mapi&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$targetfolder = &amp;#39;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;if ($parentfolder.Length -eq 0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $targetfolder = $mapi.Folders.Item(1).Folders.Item(&amp;#34;Inbox&amp;#34;).Folders.Item($mailfolder)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;else
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $targetfolder = $mapi.Folders.Item(1).Folders.Item(&amp;#34;Inbox&amp;#34;).Folders.Item($parentfolder).Folders.Item($mailfolder)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;foreach ($item in $targetfolder.Items) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; try {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $item.Delete()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; catch [Exception]{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Write-Host &amp;#34;Failed to delete item: &amp;#34; + $item.Subject
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Write-Host $_.Exception.ToString()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;function Clear-DeletedMail {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$outlook = New-Object -ComObject Outlook.Application
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;foreach ($folder in $outlook.Session.Folders){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; foreach($mailfolder in $folder.Folders ) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; if ($mailfolder.Name -eq &amp;#34;Deleted Items&amp;#34; -and $mailfolder.Items.Count -gt 0){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; foreach ($item in $mailfolder.Items){$item.Delete()}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;Cafe&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;COLSupport&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;Failed Logins&amp;#34; -parentfolder &amp;#34;COLSupport&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;IISReset&amp;#34; -parentfolder &amp;#34;COLSupport&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;Not Urgent&amp;#34; -parentfolder &amp;#34;COLSupport&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Remove-MailItem -mailfolder &amp;#34;Production&amp;#34; -parentfolder &amp;#34;COLSupport&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120943129-9de84e80-c75f-11eb-8afe-d55f54735e3f.png"&gt;&lt;/p&gt;</description></item><item><title>Round house and powershell</title><link>https://blog.mckelt.com/articles/posts/round-house-and-powershell/</link><pubDate>Wed, 20 Jun 2012 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/round-house-and-powershell/</guid><description>&lt;p&gt;Using &lt;a href="https://github.com/chucknorris/roundhouse" title="https://github.com/chucknorris/roundhouse" target="_blank"&gt;https://github.com/chucknorris/roundhouse&lt;/a&gt; for powershell to get automated database change management&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Task UpgradeDatabase{
+if (($environment -eq 'integration') -or ($environment -eq 'uat'))
+{
+# round house variables
+$rh = &amp;quot;C:\\dev\\Phoenix\\trunk\\Tools\\RoundhousE\\console\\rh.exe&amp;quot;
+$connectionString = &amp;quot;Data Source=localhost;Database=XXX; User Id=XXXuser; Password=XXX;Connect Timeout=100;&amp;quot;
+$indexesFolder = &amp;quot;C:\\dev\\Phoenix\\trunk\\Database\\10-Indexes&amp;quot;
+$schemaChangesFolder = &amp;quot;C:\\dev\\Phoenix\\trunk\\Database\\11-SchemaChanges&amp;quot;
+## build server?
+if (Test-Path &amp;quot;D:\\Code\\&amp;quot;)
+{
+$rh = &amp;quot;D:\\Code\\Phoenix\\trunk\\Tools\\RoundhousE\\console\\rh.exe&amp;quot;
+$indexesFolder = &amp;quot;D:\\Code\\Phoenix\\trunk\\Database\\10-Indexes&amp;quot;
+$schemaChangesFolder = &amp;quot;D:\\Code\\Phoenix\\trunk\\Database\\11-SchemaChanges&amp;quot;
+if ($environment -eq 'integration')
+{
+$connectionString = &amp;quot;Data Source=xxxxx;Database=rrrr\_Integration; User Id=rrrr; Password=rrrr;&amp;quot;
+}
+else
+{
+$connectionString = &amp;quot;Data Source=xxxx;Database=rrrrr\_UAT; User Id=rrrrr; Password=rrrrr;&amp;quot;
+}
+}
+Write\-Host &amp;quot;Database upgrade started&amp;quot;
+$s1 = &amp;quot; -c &amp;quot;
+$s2 = &amp;quot; $connectionString &amp;quot;
+$s3 = &amp;quot; -ix &amp;quot;
+$s4 = &amp;quot;$indexesFolder&amp;quot;
+$s5 = &amp;quot; -u &amp;quot;
+$s6 = &amp;quot;$schemaChangesFolder&amp;quot;
+$args = $s1 + &amp;quot; &amp;quot;&amp;quot;$s2&amp;quot; &amp;quot;&amp;quot; + $s3 + &amp;quot; &amp;quot;&amp;quot;$s4&amp;quot; &amp;quot;&amp;quot; + $s5 + &amp;quot; &amp;quot;&amp;quot;$s6&amp;quot;&amp;quot;&amp;quot; + &amp;quot; -ni -ct 300&amp;quot;
+Write\-Host $args
+Start-Process -FilePath $rh -ArgumentList $args -PassThru
+Write\-Host &amp;quot;Database upgrade complete&amp;quot;
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; 
+The following tables are created&lt;/p&gt;</description></item><item><title>Converting ints to char</title><link>https://blog.mckelt.com/articles/posts/converting-ints-to-char/</link><pubDate>Thu, 26 Jun 2008 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/converting-ints-to-char/</guid><description>&lt;h1 id="converttochar34tostring"&gt;Convert.ToChar(34).ToString()&lt;/h1&gt;
+&lt;p&gt;Converting the corresponding number to an character 
+ &lt;/p&gt;
+&lt;p&gt;33 = &lt;strong&gt;!&lt;/strong&gt;&lt;br&gt;
+34 = &lt;strong&gt;&amp;quot;&lt;/strong&gt;&lt;br&gt;
+35 = &lt;strong&gt;#&lt;/strong&gt;&lt;br&gt;
+36 = &lt;strong&gt;$&lt;/strong&gt;&lt;br&gt;
+37 = &lt;strong&gt;%&lt;/strong&gt;&lt;br&gt;
+38 = &lt;strong&gt;&amp;amp;&lt;/strong&gt;&lt;br&gt;
+39 = &lt;strong&gt;&amp;rsquo;&lt;/strong&gt;&lt;br&gt;
+40 = &lt;strong&gt;(&lt;/strong&gt;&lt;br&gt;
+41 = &lt;strong&gt;)&lt;/strong&gt;&lt;br&gt;
+42 = &lt;strong&gt;*&lt;/strong&gt;&lt;br&gt;
+43 = &lt;strong&gt;+&lt;/strong&gt;&lt;br&gt;
+44 = &lt;strong&gt;,&lt;/strong&gt;&lt;br&gt;
+45 = &lt;strong&gt;-&lt;/strong&gt;&lt;br&gt;
+46 = &lt;strong&gt;.&lt;/strong&gt;&lt;br&gt;
+47 = &lt;strong&gt;/&lt;/strong&gt;&lt;br&gt;
+48 = &lt;strong&gt;0&lt;/strong&gt;&lt;br&gt;
+49 = &lt;strong&gt;1&lt;/strong&gt;&lt;br&gt;
+50 = &lt;strong&gt;2&lt;/strong&gt;&lt;br&gt;
+51 = &lt;strong&gt;3&lt;/strong&gt;&lt;br&gt;
+52 = &lt;strong&gt;4&lt;/strong&gt;&lt;br&gt;
+53 = &lt;strong&gt;5&lt;/strong&gt;&lt;br&gt;
+54 = &lt;strong&gt;6&lt;/strong&gt;&lt;br&gt;
+55 = &lt;strong&gt;7&lt;/strong&gt;&lt;br&gt;
+56 = &lt;strong&gt;8&lt;/strong&gt;&lt;br&gt;
+57 = &lt;strong&gt;9&lt;/strong&gt;&lt;br&gt;
+58 = &lt;strong&gt;:&lt;/strong&gt;&lt;br&gt;
+59 = &lt;strong&gt;;&lt;/strong&gt;&lt;br&gt;
+60 = &lt;strong&gt;&amp;lt;&lt;/strong&gt;&lt;br&gt;
+61 = &lt;strong&gt;=&lt;/strong&gt;&lt;br&gt;
+62 = &lt;strong&gt;&amp;gt;&lt;/strong&gt;&lt;br&gt;
+63 = &lt;strong&gt;?&lt;/strong&gt;&lt;br&gt;
+64 = &lt;strong&gt;@&lt;/strong&gt;&lt;br&gt;
+65 = &lt;strong&gt;A&lt;/strong&gt;&lt;br&gt;
+66 = &lt;strong&gt;B&lt;/strong&gt;&lt;br&gt;
+67 = &lt;strong&gt;C&lt;/strong&gt;&lt;br&gt;
+68 = &lt;strong&gt;D&lt;/strong&gt;&lt;br&gt;
+69 = &lt;strong&gt;E&lt;/strong&gt;&lt;br&gt;
+70 = &lt;strong&gt;F&lt;/strong&gt;&lt;br&gt;
+71 = &lt;strong&gt;G&lt;/strong&gt;&lt;br&gt;
+72 = &lt;strong&gt;H&lt;/strong&gt;&lt;br&gt;
+73 = &lt;strong&gt;I&lt;/strong&gt;&lt;br&gt;
+74 = &lt;strong&gt;J&lt;/strong&gt;&lt;br&gt;
+75 = &lt;strong&gt;K&lt;/strong&gt;&lt;br&gt;
+76 = &lt;strong&gt;L&lt;/strong&gt;&lt;br&gt;
+77 = &lt;strong&gt;M&lt;/strong&gt;&lt;br&gt;
+78 = &lt;strong&gt;N&lt;/strong&gt;&lt;br&gt;
+79 = &lt;strong&gt;O&lt;/strong&gt;&lt;br&gt;
+80 = &lt;strong&gt;P&lt;/strong&gt;&lt;br&gt;
+81 = &lt;strong&gt;Q&lt;/strong&gt;&lt;br&gt;
+82 = &lt;strong&gt;R&lt;/strong&gt;&lt;br&gt;
+83 = &lt;strong&gt;S&lt;/strong&gt;&lt;br&gt;
+84 = &lt;strong&gt;T&lt;/strong&gt;&lt;br&gt;
+85 = &lt;strong&gt;U&lt;/strong&gt;&lt;br&gt;
+86 = &lt;strong&gt;V&lt;/strong&gt;&lt;br&gt;
+87 = &lt;strong&gt;W&lt;/strong&gt;&lt;br&gt;
+88 = &lt;strong&gt;X&lt;/strong&gt;&lt;br&gt;
+89 = &lt;strong&gt;Y&lt;/strong&gt;&lt;br&gt;
+90 = &lt;strong&gt;Z&lt;/strong&gt;&lt;br&gt;
+91 = &lt;strong&gt;[&lt;/strong&gt;&lt;br&gt;
+92 = &lt;strong&gt;\&lt;/strong&gt;&lt;br&gt;
+93 = &lt;strong&gt;]&lt;/strong&gt;&lt;br&gt;
+94 = &lt;strong&gt;^&lt;/strong&gt;&lt;br&gt;
+95 = &lt;strong&gt;_&lt;/strong&gt;&lt;br&gt;
+96 = &lt;strong&gt;`&lt;/strong&gt;&lt;br&gt;
+97 = &lt;strong&gt;a&lt;/strong&gt;&lt;br&gt;
+98 = &lt;strong&gt;b&lt;/strong&gt;&lt;br&gt;
+99 = &lt;strong&gt;c&lt;/strong&gt;&lt;br&gt;
+100 = &lt;strong&gt;d&lt;/strong&gt;&lt;br&gt;
+101 = &lt;strong&gt;e&lt;/strong&gt;&lt;br&gt;
+102 = &lt;strong&gt;f&lt;/strong&gt;&lt;br&gt;
+103 = &lt;strong&gt;g&lt;/strong&gt;&lt;br&gt;
+104 = &lt;strong&gt;h&lt;/strong&gt;&lt;br&gt;
+105 = &lt;strong&gt;i&lt;/strong&gt;&lt;br&gt;
+106 = &lt;strong&gt;j&lt;/strong&gt;&lt;br&gt;
+107 = &lt;strong&gt;k&lt;/strong&gt;&lt;br&gt;
+108 = &lt;strong&gt;l&lt;/strong&gt;&lt;br&gt;
+109 = &lt;strong&gt;m&lt;/strong&gt;&lt;br&gt;
+110 = &lt;strong&gt;n&lt;/strong&gt;&lt;br&gt;
+111 = &lt;strong&gt;o&lt;/strong&gt;&lt;br&gt;
+112 = &lt;strong&gt;p&lt;/strong&gt;&lt;br&gt;
+113 = &lt;strong&gt;q&lt;/strong&gt;&lt;br&gt;
+114 = &lt;strong&gt;r&lt;/strong&gt;&lt;br&gt;
+115 = &lt;strong&gt;s&lt;/strong&gt;&lt;br&gt;
+116 = &lt;strong&gt;t&lt;/strong&gt;&lt;br&gt;
+117 = &lt;strong&gt;u&lt;/strong&gt;&lt;br&gt;
+118 = &lt;strong&gt;v&lt;/strong&gt;&lt;br&gt;
+119 = &lt;strong&gt;w&lt;/strong&gt;&lt;br&gt;
+120 = &lt;strong&gt;x&lt;/strong&gt;&lt;br&gt;
+121 = &lt;strong&gt;y&lt;/strong&gt;&lt;br&gt;
+122 = &lt;strong&gt;z&lt;/strong&gt;&lt;br&gt;
+123 = &lt;strong&gt;{&lt;/strong&gt;&lt;br&gt;
+124 = &lt;strong&gt;|&lt;/strong&gt;&lt;br&gt;
+125 = &lt;strong&gt;}&lt;/strong&gt;&lt;br&gt;
+126 = &lt;strong&gt;~&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

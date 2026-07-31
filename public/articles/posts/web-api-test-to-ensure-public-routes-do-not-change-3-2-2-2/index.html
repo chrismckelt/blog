@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Web API Test to ensure public routes do not change | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="dotnet">
+<meta name="description" content="[TestFixture] 
+public class RouteTestFixture {
+
+  [Test]
+  public void Routes _should _not _change() {
+    const string good = @ &#34;all existing routes go here (hint run the test first then copy output to here)&#34;;
+    var goodRoutes = good.Split(Convert.ToChar(&#34;;&#34;));
+    var notFound = new List &lt; string &gt; ();
+    var ass = Assembly.GetAssembly(typeof (EventStatisticsController));
+    var sb = new StringBuilder();
+    foreach(var type in ass.GetTypes()) {
+      try {
+        var members = type.GetMembers();
+        for (int i = 0; i &lt; members.Length; i&#43;&#43;) {
+          if (members[i].IsDefined(typeof (RouteAttribute), false)) {
+            Object[] atts = members[i].GetCustomAttributes(typeof (RouteAttribute), false);
+            for (int j = 0; j &lt; atts.Length; j&#43;&#43;) {
+              var routeAttribute = (RouteAttribute) atts[j];
+              string route = routeAttribute.Template &#43; @ &#34;/&#34; &#43; routeAttribute.Name;
+              Console.WriteLine(route);
+              sb.Append(route &#43; &#34;;&#34;);
+              if (!goodRoutes.Contains(route)) {
+                notFound.Add(route);
+              }
+            }
+          }
+        }
+      } catch (Exception e) {
+        Console.WriteLine(@ &#34;An exception occurred: {0}&#34;, e.Message);
+      }
+    }
+    if (notFound.Any()) {
+      Console.WriteLine(@ &#34;-- MISSING ROUTES --&#34;);
+      foreach(var nf in notFound) {
+        Console.WriteLine(nf);
+      }
+      Assert.Fail(&#34;Missing Routes: &#34; &#43; notFound.Count);
+    } else {
+      Assert.True(true, &#34;All routes matched&#34;);
+    }
+    Console.WriteLine(@ &#34;------------------------------------------------&#34;);
+    Console.WriteLine(@ &#34;Match the following string for future tests&#34;);
+    Console.WriteLine(sb.ToString());
+  }
+}
+">
+<meta name="author" content="Chris McKelt">
+<link rel="canonical" href="http://localhost:1313/articles/posts/web-api-test-to-ensure-public-routes-do-not-change-3-2-2-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/posts/web-api-test-to-ensure-public-routes-do-not-change-3-2-2-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/posts/web-api-test-to-ensure-public-routes-do-not-change-3-2-2-2/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="Web API Test to ensure public routes do not change">
+  <meta property="og:description" content="[TestFixture] public class RouteTestFixture { [Test] public void Routes _should _not _change() { const string good = @ &#34;all existing routes go here (hint run the test first then copy output to here)&#34;; var goodRoutes = good.Split(Convert.ToChar(&#34;;&#34;)); var notFound = new List &lt; string &gt; (); var ass = Assembly.GetAssembly(typeof (EventStatisticsController)); var sb = new StringBuilder(); foreach(var type in ass.GetTypes()) { try { var members = type.GetMembers(); for (int i = 0; i &lt; members.Length; i&#43;&#43;) { if (members[i].IsDefined(typeof (RouteAttribute), false)) { Object[] atts = members[i].GetCustomAttributes(typeof (RouteAttribute), false); for (int j = 0; j &lt; atts.Length; j&#43;&#43;) { var routeAttribute = (RouteAttribute) atts[j]; string route = routeAttribute.Template &#43; @ &#34;/&#34; &#43; routeAttribute.Name; Console.WriteLine(route); sb.Append(route &#43; &#34;;&#34;); if (!goodRoutes.Contains(route)) { notFound.Add(route); } } } } } catch (Exception e) { Console.WriteLine(@ &#34;An exception occurred: {0}&#34;, e.Message); } } if (notFound.Any()) { Console.WriteLine(@ &#34;-- MISSING ROUTES --&#34;); foreach(var nf in notFound) { Console.WriteLine(nf); } Assert.Fail(&#34;Missing Routes: &#34; &#43; notFound.Count); } else { Assert.True(true, &#34;All routes matched&#34;); } Console.WriteLine(@ &#34;------------------------------------------------&#34;); Console.WriteLine(@ &#34;Match the following string for future tests&#34;); Console.WriteLine(sb.ToString()); } } ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2014-05-19T00:00:00+08:00">
+    <meta property="article:modified_time" content="2014-05-19T00:00:00+08:00">
+    <meta property="article:tag" content="Dotnet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web API Test to ensure public routes do not change">
+<meta name="twitter:description" content="[TestFixture] 
+public class RouteTestFixture {
+
+  [Test]
+  public void Routes _should _not _change() {
+    const string good = @ &#34;all existing routes go here (hint run the test first then copy output to here)&#34;;
+    var goodRoutes = good.Split(Convert.ToChar(&#34;;&#34;));
+    var notFound = new List &lt; string &gt; ();
+    var ass = Assembly.GetAssembly(typeof (EventStatisticsController));
+    var sb = new StringBuilder();
+    foreach(var type in ass.GetTypes()) {
+      try {
+        var members = type.GetMembers();
+        for (int i = 0; i &lt; members.Length; i&#43;&#43;) {
+          if (members[i].IsDefined(typeof (RouteAttribute), false)) {
+            Object[] atts = members[i].GetCustomAttributes(typeof (RouteAttribute), false);
+            for (int j = 0; j &lt; atts.Length; j&#43;&#43;) {
+              var routeAttribute = (RouteAttribute) atts[j];
+              string route = routeAttribute.Template &#43; @ &#34;/&#34; &#43; routeAttribute.Name;
+              Console.WriteLine(route);
+              sb.Append(route &#43; &#34;;&#34;);
+              if (!goodRoutes.Contains(route)) {
+                notFound.Add(route);
+              }
+            }
+          }
+        }
+      } catch (Exception e) {
+        Console.WriteLine(@ &#34;An exception occurred: {0}&#34;, e.Message);
+      }
+    }
+    if (notFound.Any()) {
+      Console.WriteLine(@ &#34;-- MISSING ROUTES --&#34;);
+      foreach(var nf in notFound) {
+        Console.WriteLine(nf);
+      }
+      Assert.Fail(&#34;Missing Routes: &#34; &#43; notFound.Count);
+    } else {
+      Assert.True(true, &#34;All routes matched&#34;);
+    }
+    Console.WriteLine(@ &#34;------------------------------------------------&#34;);
+    Console.WriteLine(@ &#34;Match the following string for future tests&#34;);
+    Console.WriteLine(sb.ToString());
+  }
+}
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Web API Test to ensure public routes do not change",
+      "item": "http://localhost:1313/articles/posts/web-api-test-to-ensure-public-routes-do-not-change-3-2-2-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Web API Test to ensure public routes do not change",
+  "name": "Web API Test to ensure public routes do not change",
+  "description": "[TestFixture] public class RouteTestFixture { [Test] public void Routes _should _not _change() { const string good = @ \u0026#34;all existing routes go here (hint run the test first then copy output to here)\u0026#34;; var goodRoutes = good.Split(Convert.ToChar(\u0026#34;;\u0026#34;)); var notFound = new List \u0026lt; string \u0026gt; (); var ass = Assembly.GetAssembly(typeof (EventStatisticsController)); var sb = new StringBuilder(); foreach(var type in ass.GetTypes()) { try { var members = type.GetMembers(); for (int i = 0; i \u0026lt; members.Length; i++) { if (members[i].IsDefined(typeof (RouteAttribute), false)) { Object[] atts = members[i].GetCustomAttributes(typeof (RouteAttribute), false); for (int j = 0; j \u0026lt; atts.Length; j++) { var routeAttribute = (RouteAttribute) atts[j]; string route = routeAttribute.Template + @ \u0026#34;/\u0026#34; + routeAttribute.Name; Console.WriteLine(route); sb.Append(route + \u0026#34;;\u0026#34;); if (!goodRoutes.Contains(route)) { notFound.Add(route); } } } } } catch (Exception e) { Console.WriteLine(@ \u0026#34;An exception occurred: {0}\u0026#34;, e.Message); } } if (notFound.Any()) { Console.WriteLine(@ \u0026#34;-- MISSING ROUTES --\u0026#34;); foreach(var nf in notFound) { Console.WriteLine(nf); } Assert.Fail(\u0026#34;Missing Routes: \u0026#34; + notFound.Count); } else { Assert.True(true, \u0026#34;All routes matched\u0026#34;); } Console.WriteLine(@ \u0026#34;------------------------------------------------\u0026#34;); Console.WriteLine(@ \u0026#34;Match the following string for future tests\u0026#34;); Console.WriteLine(sb.ToString()); } } ",
+  "keywords": [
+    "dotnet"
+  ],
+  "articleBody": "[TestFixture] public class RouteTestFixture { [Test] public void Routes _should _not _change() { const string good = @ \"all existing routes go here (hint run the test first then copy output to here)\"; var goodRoutes = good.Split(Convert.ToChar(\";\")); var notFound = new List \u003c string \u003e (); var ass = Assembly.GetAssembly(typeof (EventStatisticsController)); var sb = new StringBuilder(); foreach(var type in ass.GetTypes()) { try { var members = type.GetMembers(); for (int i = 0; i \u003c members.Length; i++) { if (members[i].IsDefined(typeof (RouteAttribute), false)) { Object[] atts = members[i].GetCustomAttributes(typeof (RouteAttribute), false); for (int j = 0; j \u003c atts.Length; j++) { var routeAttribute = (RouteAttribute) atts[j]; string route = routeAttribute.Template + @ \"/\" + routeAttribute.Name; Console.WriteLine(route); sb.Append(route + \";\"); if (!goodRoutes.Contains(route)) { notFound.Add(route); } } } } } catch (Exception e) { Console.WriteLine(@ \"An exception occurred: {0}\", e.Message); } } if (notFound.Any()) { Console.WriteLine(@ \"-- MISSING ROUTES --\"); foreach(var nf in notFound) { Console.WriteLine(nf); } Assert.Fail(\"Missing Routes: \" + notFound.Count); } else { Assert.True(true, \"All routes matched\"); } Console.WriteLine(@ \"------------------------------------------------\"); Console.WriteLine(@ \"Match the following string for future tests\"); Console.WriteLine(sb.ToString()); } } ",
+  "wordCount" : "178",
+  "inLanguage": "en",
+  "datePublished": "2014-05-19T00:00:00+08:00",
+  "dateModified": "2014-05-19T00:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Chris McKelt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/posts/web-api-test-to-ensure-public-routes-do-not-change-3-2-2-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Web API Test to ensure public routes do not change
+    </h1>
+    <div class="post-meta"><span title='2014-05-19 00:00:00 +0800 AWST'>May 2014</span>
+
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>[TestFixture] 
+</span></span><span style="display:flex;"><span>public <span style="color:#00a">class</span> RouteTestFixture {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [Test]
+</span></span><span style="display:flex;"><span>  public void Routes _should _not _change() {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">const</span> string good = <span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;all existing routes go here (hint run the test first then copy output to here)&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">var</span> goodRoutes = good.Split(Convert.ToChar(<span style="color:#a50">&#34;;&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">var</span> notFound = new List &lt; string &gt; ();
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">var</span> ass = Assembly.GetAssembly(<span style="color:#0aa">typeof</span> (EventStatisticsController));
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">var</span> sb = new StringBuilder();
+</span></span><span style="display:flex;"><span>    foreach(<span style="color:#00a">var</span> type <span style="color:#00a">in</span> ass.GetTypes()) {
+</span></span><span style="display:flex;"><span>      try {
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">var</span> members = type.GetMembers();
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> (int i = <span style="color:#099">0</span>; i &lt; members.Length; i++) {
+</span></span><span style="display:flex;"><span>          <span style="color:#00a">if</span> (members[i].IsDefined(<span style="color:#0aa">typeof</span> (RouteAttribute), <span style="color:#0aa">false</span>)) {
+</span></span><span style="display:flex;"><span>            Object[] atts = members[i].GetCustomAttributes(<span style="color:#0aa">typeof</span> (RouteAttribute), <span style="color:#0aa">false</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> (int j = <span style="color:#099">0</span>; j &lt; atts.Length; j++) {
+</span></span><span style="display:flex;"><span>              <span style="color:#00a">var</span> routeAttribute = (RouteAttribute) atts[j];
+</span></span><span style="display:flex;"><span>              string route = routeAttribute.Template + <span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;/&#34;</span> + routeAttribute.Name;
+</span></span><span style="display:flex;"><span>              Console.WriteLine(route);
+</span></span><span style="display:flex;"><span>              sb.Append(route + <span style="color:#a50">&#34;;&#34;</span>);
+</span></span><span style="display:flex;"><span>              <span style="color:#00a">if</span> (!goodRoutes.Contains(route)) {
+</span></span><span style="display:flex;"><span>                notFound.Add(route);
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      } catch (Exception e) {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;An exception occurred: {0}&#34;</span>, e.Message);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> (notFound.Any()) {
+</span></span><span style="display:flex;"><span>      Console.WriteLine(<span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;-- MISSING ROUTES --&#34;</span>);
+</span></span><span style="display:flex;"><span>      foreach(<span style="color:#00a">var</span> nf <span style="color:#00a">in</span> notFound) {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(nf);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      Assert.Fail(<span style="color:#a50">&#34;Missing Routes: &#34;</span> + notFound.Count);
+</span></span><span style="display:flex;"><span>    } <span style="color:#00a">else</span> {
+</span></span><span style="display:flex;"><span>      Assert.True(<span style="color:#0aa">true</span>, <span style="color:#a50">&#34;All routes matched&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;------------------------------------------------&#34;</span>);
+</span></span><span style="display:flex;"><span>    Console.WriteLine(<span style="color:#f00;background-color:#faa">@</span> <span style="color:#a50">&#34;Match the following string for future tests&#34;</span>);
+</span></span><span style="display:flex;"><span>    Console.WriteLine(sb.ToString());
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/dotnet/">Dotnet</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

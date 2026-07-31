@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Wordpress Dotnet on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/wordpress-dotnet/</link><description>Recent content in Wordpress Dotnet on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/wordpress-dotnet/index.xml" rel="self" type="application/rss+xml"/><item><title>From DotNetBlogEngine to WordPress</title><link>https://blog.mckelt.com/articles/posts/from-dotnetblogengine-to-wordpress/</link><pubDate>Mon, 01 Jun 2015 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/from-dotnetblogengine-to-wordpress/</guid><description>&lt;p&gt;So after losing 6 months worth of posts I have now converted this blog to use WordPress.&lt;/p&gt;
+&lt;p&gt;To transfers the posts I wrote a simple &lt;a href="https://gist.github.com/chrismckelt/31a3c5ea9114f28f3170" target="_blank"&gt;linqpad&lt;/a&gt; script that uses &lt;a href="WordPressSharp"&gt;WordPressSharp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After trying Syntax highlighter I instead choose this &lt;a href="https://code.google.com/p/codeformatterpluginforwindowslivewriter/downloads/detail?name=CodeFormatterPluginSetup2.5.1.msi&amp;amp;can=2&amp;amp;q=" target="_blank"&gt;code formatter.&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;// need nuget WordPressSharp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;internal &lt;span style="color:#00a"&gt;class&lt;/span&gt; FileStore
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; public IList&amp;lt;Post&amp;gt; Posts { get; private set; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; public void ReadFiles()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;const&lt;/span&gt; string folderPath = &lt;span style="color:#f00;background-color:#faa"&gt;@&lt;/span&gt;&lt;span style="color:#a50"&gt;&amp;#34;C:&lt;/span&gt;&lt;span style="color:#a50"&gt;\t&lt;/span&gt;&lt;span style="color:#a50"&gt;emp\posts&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Posts = new List&amp;lt;Post&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; files = Directory.GetFiles(folderPath);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; files.ToList().ForEach(ProcessFile);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; private void ProcessFile(string filepath)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; //Load xml
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; XDocument xdoc = XDocument.Load(filepath);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; //Run query
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; posts = from lv1 &lt;span style="color:#00a"&gt;in&lt;/span&gt; xdoc.Descendants(&lt;span style="color:#a50"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; select new Post()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Title = lv1.Element(&lt;span style="color:#a50"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;).Value,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Content = lv1.Element(&lt;span style="color:#a50"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;).Value,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; PublishDateTime = Convert.ToDateTime(lv1.Element(&lt;span style="color:#a50"&gt;&amp;#34;pubDate&amp;#34;&lt;/span&gt;).Value),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; CustomFields = GetDesc(new KeyValuePair&amp;lt;string, string&amp;gt;(&lt;span style="color:#a50"&gt;&amp;#34;Description&amp;#34;&lt;/span&gt;, lv1.Element(&lt;span style="color:#a50"&gt;&amp;#34;description&amp;#34;&lt;/span&gt;).Value))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; posts.ToList().ForEach(Posts.Add);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; public CustomField[] GetDesc(params KeyValuePair&amp;lt;string,string&amp;gt;[] fieldsToAdd)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; list = new List&amp;lt;CustomField&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; foreach (&lt;span style="color:#00a"&gt;var&lt;/span&gt; keyValuePair &lt;span style="color:#00a"&gt;in&lt;/span&gt; fieldsToAdd)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; list.Add(new CustomField()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Id=Guid.NewGuid().ToString(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Key=keyValuePair.Key,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Value = keyValuePair.Value
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;return&lt;/span&gt; list.ToArray();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; private &lt;span style="color:#00a"&gt;static&lt;/span&gt; void Main(string[] args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; url = &lt;span style="color:#a50"&gt;&amp;#34;http://www.mckelt.com/blog/&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; cfg = new WordPressSiteConfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; BaseUrl = &lt;span style="color:#a50"&gt;&amp;#34;/blog/xmlrpc.php&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; BlogId = &lt;span style="color:#099"&gt;1&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Username = &lt;span style="color:#a50"&gt;&amp;#34;username&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Password = &lt;span style="color:#a50"&gt;&amp;#34;password&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#00a"&gt;var&lt;/span&gt; fs = new FileStore();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fs.ReadFiles();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; foreach (&lt;span style="color:#00a"&gt;var&lt;/span&gt; post1 &lt;span style="color:#00a"&gt;in&lt;/span&gt; fs.Posts.OrderBy(x=&amp;gt;x.PublishDateTime))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; post1.Status = &lt;span style="color:#a50"&gt;&amp;#34;publish&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; using (&lt;span style="color:#00a"&gt;var&lt;/span&gt; client = new WordPressClient(cfg))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; client.NewPost(post1);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

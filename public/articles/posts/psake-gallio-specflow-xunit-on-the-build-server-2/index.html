@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>PSAKE- Gallio–SpecFlow–XUnit–on the build server | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="code powershell">
+<meta name="description" content="This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.
+https://github.com/chrismckelt/PS-Sake-BuildScripts
+The folder with our build scripts looks like this
+
+The environments folder contains all of the configuration files for each environment
+
+Build server process
+ 
+The build/check-in process is now as follows.
+1. Developer checks in.
+2. Build server detects changes – cleans everything and then pulls down latest SVN code">
+<meta name="author" content="Chris McKelt">
+<link rel="canonical" href="http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="PSAKE- Gallio–SpecFlow–XUnit–on the build server">
+  <meta property="og:description" content="This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.
+https://github.com/chrismckelt/PS-Sake-BuildScripts
+The folder with our build scripts looks like this
+The environments folder contains all of the configuration files for each environment
+Build server process The build/check-in process is now as follows.
+1. Developer checks in.
+2. Build server detects changes – cleans everything and then pulls down latest SVN code">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2011-11-14T00:00:00+08:00">
+    <meta property="article:modified_time" content="2011-11-14T00:00:00+08:00">
+    <meta property="article:tag" content="Code Powershell">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PSAKE- Gallio–SpecFlow–XUnit–on the build server">
+<meta name="twitter:description" content="This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.
+https://github.com/chrismckelt/PS-Sake-BuildScripts
+The folder with our build scripts looks like this
+
+The environments folder contains all of the configuration files for each environment
+
+Build server process
+ 
+The build/check-in process is now as follows.
+1. Developer checks in.
+2. Build server detects changes – cleans everything and then pulls down latest SVN code">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "PSAKE- Gallio–SpecFlow–XUnit–on the build server",
+      "item": "http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PSAKE- Gallio–SpecFlow–XUnit–on the build server",
+  "name": "PSAKE- Gallio–SpecFlow–XUnit–on the build server",
+  "description": "This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.\nhttps://github.com/chrismckelt/PS-Sake-BuildScripts\nThe folder with our build scripts looks like this\nThe environments folder contains all of the configuration files for each environment\nBuild server process The build/check-in process is now as follows.\n1. Developer checks in.\n2. Build server detects changes – cleans everything and then pulls down latest SVN code\n",
+  "keywords": [
+    "code powershell"
+  ],
+  "articleBody": "This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.\nhttps://github.com/chrismckelt/PS-Sake-BuildScripts\nThe folder with our build scripts looks like this\nThe environments folder contains all of the configuration files for each environment\nBuild server process The build/check-in process is now as follows.\n1. Developer checks in.\n2. Build server detects changes – cleans everything and then pulls down latest SVN code\n3. Cruise control builds code in release mode –\u003e If compile fails –\u003e build fail\n4. Unit tests run in place à if any test fails –\u003e build fail\n5. On success a new folder with the VERSION number is created — this is our artefacts\n6. This build is then deployed to the integration server and the Acceptance tests are run – Results are output to a folder\n7. If the Acceptance tests fails -\u003e build fail\n8. On Success the build is packaged for deployment (config files modified for environment)\nCruise control originally calls default.ps1 passing in the environment.\n\u003c‘powershell’\u003e\n\u003c‘scriptsDirectory’\u003eC:\\CCWorking\\Phoenix\\CodeBase\\Build\\BuildScripts\u003c/‘scriptsDirectory’\u003e\n\u003c ‘script’ \u003edefault.ps1\u003c/‘script’ \u003e\n\u003c‘buildArgs’\u003e-environment:integration\u003c/‘buildArgs’\u003e\n\u003c‘executable’\u003eC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\u003c/’executable’\u003e\n\u003c‘buildTimeoutSeconds’\u003e10000\u003c/‘buildTimeoutSeconds’\u003e \u003c‘description’\u003ePhoenix Build\u003c/‘description’\u003e \u003c/‘powershell’\u003e\nThis calls build.ps1\nPSAKE tasks include\nTask default -depends PrintInformation, CleanEnvironment, Clean, SetupEnvironment, MakeBuild, BuildDatabase, DeployIntegrationBuild, IntegrationTest, DeployBuild, UpdateConfigFiles\rTo run the acceptance tests using Gallio The following Powershell function is used:@\nUsage for Gallio tests:\n_Task Test-System -Description \"Runs the system tests via Gallio\" { Test-Gallio $proj $configuration $platform $dll \"system\" \"Test.System\" # Test-Gallio \".\\\\src\\\\Test.Unit\\\\Test.Unit.csproj\" Release x64 \".\\\\src\\\\Test.Unit\\\\bin\\\\Release\\\\x64\\\\Test.Unit.dll\" \"unit\" } } #\u003e function Test-Gallio($proj, $configuration, $platform, $dll, $report\\_name, $report\\_dir, $namespace\\_filter){ Write-Host \"GALLIO TEST proj -- $proj\" Write-Host \"GALLIO TEST configuration -- $configuration\" Write-Host \"GALLIO TEST platform -- $platform\" Write-Host \"GALLIO TEST dll -- $dll\" Write-Host \"GALLIO TEST report\\_name -- $report\\_name\" Write-Host \"GALLIO TEST namespace\\_filter -- $namespace\\_filter\"_\r_if ( (Get-PSSnapin -Name Gallio -ErrorAction SilentlyContinue) -eq $null ) { Add-PSSnapin Gallio } $result = Run-Gallio $dll -filter Namespace:/$namespace\\_filter/ -ReportTypes text,html,xml -ReportDirectory $report\\_dir -ReportNameFormat $report\\_name-test-report #-NoProgress -NoEchoResults get-content \"$report\\_dir\\\\$report\\_name-test-report.txt\" | Write-Host Write-Host $result.ResultsSummary if ($result.Statistics.FailedCount -gt 0) { Write-Warning \"Some unit tests have failed.\" $Error = $result.ResultsSummary exit $result.ResultCode }\rRemove-PSSnapin Gallio\r}_\rFrom an acceptance test entered into SpecFlow as follows:\nOn checkin the build will run and output the result of this test in a report called AcceptanceTests-test-report.html\n",
+  "wordCount" : "376",
+  "inLanguage": "en",
+  "datePublished": "2011-11-14T00:00:00+08:00",
+  "dateModified": "2011-11-14T00:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Chris McKelt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      PSAKE- Gallio–SpecFlow–XUnit–on the build server
+    </h1>
+    <div class="post-meta"><span title='2011-11-14 00:00:00 +0800 AWST'>November 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>This is a quick post to show how to get PowerShell with <a href="http://codebetter.com/jameskovacs/2010/04/12/psake-v4-00/" target="_blank">PSAKE</a> to run <a href="http://specflow.org/" target="_blank">Specflow</a> acceptance tests on the build server using <a href="http://www.gallio.org/" target="_blank">Gallio</a>.</p>
+<p><a href="https://github.com/chrismckelt/PS-Sake-BuildScripts" title="https://github.com/chrismckelt/PS-Sake-BuildScripts" target="_blank">https://github.com/chrismckelt/PS-Sake-BuildScripts</a></p>
+<p>The folder with our build scripts looks like this</p>
+<p><img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120942836-06363080-c75e-11eb-9e2f-0a43b021e334.png"></p>
+<p>The environments folder contains all of the configuration files for each environment</p>
+<p><img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120924073-7021ec00-c704-11eb-83f0-c51328e36f54.png"></p>
+<p>Build server process
+ </p>
+<p>The build/check-in process is now as follows.</p>
+<p>1. Developer checks in.</p>
+<p>2. Build server detects changes – cleans everything and then pulls down latest SVN code</p>
+<p>3. Cruise control builds code in release mode –&gt; If compile fails –&gt; build fail</p>
+<p>4. Unit tests run in place à if any test fails –&gt; build fail</p>
+<p>5. On success a new folder with the VERSION number is created      &mdash; <em>this is our artefacts</em></p>
+<p>6. This build is then deployed to the integration server and the Acceptance tests are run – Results are output to a folder</p>
+<p>7. If the Acceptance tests fails -&gt; build fail</p>
+<p>8. On Success the build is packaged for deployment (config files modified for environment)</p>
+<p>Cruise control originally calls default.ps1 passing in the environment.</p>
+<blockquote>
+<p>&lt;&lsquo;powershell&rsquo;&gt;<br>
+&lt;&lsquo;scriptsDirectory&rsquo;&gt;C:\CCWorking\Phoenix\CodeBase\Build\BuildScripts&lt;/&lsquo;scriptsDirectory&rsquo;&gt;</p>
+<!--Scrips folder-->   
+<p>&lt; &lsquo;script&rsquo; &gt;default.ps1&lt;/&lsquo;script&rsquo; &gt;<br>
+&lt;&lsquo;buildArgs&rsquo;&gt;-environment:integration&lt;/&lsquo;buildArgs&rsquo;&gt;</p>
+<!-- Project working folder -workingDir C:\\project1\\working-->   
+<p>&lt;&lsquo;executable&rsquo;&gt;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&lt;/&rsquo;executable&rsquo;&gt;<br>
+&lt;&lsquo;buildTimeoutSeconds&rsquo;&gt;10000&lt;/&lsquo;buildTimeoutSeconds&rsquo;&gt; &lt;&lsquo;description&rsquo;&gt;Phoenix Build&lt;/&lsquo;description&rsquo;&gt; &lt;/&lsquo;powershell&rsquo;&gt;</p></blockquote>
+<p> </p>
+<p>This calls build.ps1</p>
+<p>PSAKE tasks include</p>
+<p> </p>
+<pre><code>Task default -depends PrintInformation, CleanEnvironment, Clean, SetupEnvironment, MakeBuild, BuildDatabase, DeployIntegrationBuild, IntegrationTest, DeployBuild, UpdateConfigFiles
+</code></pre>
+<p> </p>
+<h1 id="to-run-the-acceptance-tests-using-gallio">To run the acceptance tests using Gallio</h1>
+<p>The following Powershell function is used:@</p>
+<p><em>Usage for Gallio tests:</em></p>
+<pre><code>_Task Test-System -Description &quot;Runs the system tests via Gallio&quot; { Test-Gallio $proj $configuration $platform $dll &quot;system&quot; &quot;Test.System&quot; # Test-Gallio &quot;.\\src\\Test.Unit\\Test.Unit.csproj&quot; Release x64 &quot;.\\src\\Test.Unit\\bin\\Release\\x64\\Test.Unit.dll&quot; &quot;unit&quot; } } #&gt; function Test-Gallio($proj, $configuration, $platform, $dll, $report\_name, $report\_dir, $namespace\_filter){ Write-Host &quot;GALLIO TEST proj --  $proj&quot; Write-Host &quot;GALLIO TEST configuration --  $configuration&quot; Write-Host &quot;GALLIO TEST platform --  $platform&quot; Write-Host &quot;GALLIO TEST dll --  $dll&quot; Write-Host &quot;GALLIO TEST report\_name --  $report\_name&quot; Write-Host &quot;GALLIO TEST namespace\_filter --  $namespace\_filter&quot;_
+
+ _if ( (Get-PSSnapin -Name Gallio -ErrorAction SilentlyContinue) -eq $null ) { Add-PSSnapin Gallio } $result = Run-Gallio $dll -filter Namespace:/$namespace\_filter/ -ReportTypes text,html,xml -ReportDirectory $report\_dir  -ReportNameFormat $report\_name-test-report  #-NoProgress -NoEchoResults get-content &quot;$report\_dir\\$report\_name-test-report.txt&quot; | Write-Host Write-Host $result.ResultsSummary if ($result.Statistics.FailedCount -gt 0) { Write-Warning &quot;Some unit tests have failed.&quot; $Error = $result.ResultsSummary exit $result.ResultCode }
+
+Remove-PSSnapin Gallio
+
+}_
+</code></pre>
+<p>From an acceptance test entered into SpecFlow as follows:</p>
+<p><img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120924208-1241d400-c705-11eb-9f59-c0215571af2c.png"></p>
+<p>On checkin the build will run and output the result of this test in a report called <em>AcceptanceTests-test-report.html</em></p>
+<p><img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120924266-5d5be700-c705-11eb-9aaa-ccbb75512ce2.png"></p>
+<p><img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120924294-8c725880-c705-11eb-81a0-1ddd0fd326b1.png"></p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/code-powershell/">Code Powershell</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

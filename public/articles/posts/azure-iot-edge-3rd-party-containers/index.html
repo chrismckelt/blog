@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Azure IoT Edge – using Apache Nifi as a 3rd party container | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="azure iot node python dotnet containers">
+<meta name="description" content="Series
+Part 1 - dotnet vs python vs node - temperature emission - who is cooler?
+Part 2 - Developing modules
+Part 3 - Custom Containers using Apache Nifi
+Part 4 - Custom Module using TimescaleDB
+Part 5 - Custom Module using Grafana
+Intro
+This is part 3 in a series starting here that runs through building an Azure IOT Edge solution. This post will run through setting up a 3rd party docker container for an edge deployment. 
+The code is located at: https://github.com/chrismckelt/edgy">
+<meta name="author" content="Chris McKelt">
+<link rel="canonical" href="http://localhost:1313/articles/posts/azure-iot-edge-3rd-party-containers/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/posts/azure-iot-edge-3rd-party-containers/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/posts/azure-iot-edge-3rd-party-containers/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="Azure IoT Edge – using Apache Nifi as a 3rd party container">
+  <meta property="og:description" content="Series Part 1 - dotnet vs python vs node - temperature emission - who is cooler?
+Part 2 - Developing modules
+Part 3 - Custom Containers using Apache Nifi
+Part 4 - Custom Module using TimescaleDB
+Part 5 - Custom Module using Grafana
+Intro This is part 3 in a series starting here that runs through building an Azure IOT Edge solution. This post will run through setting up a 3rd party docker container for an edge deployment. The code is located at: https://github.com/chrismckelt/edgy">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2020-04-11T00:00:00+08:00">
+    <meta property="article:modified_time" content="2020-04-11T00:00:00+08:00">
+    <meta property="article:tag" content="Azure Iot Node Python Dotnet Containers">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure IoT Edge – using Apache Nifi as a 3rd party container">
+<meta name="twitter:description" content="Series
+Part 1 - dotnet vs python vs node - temperature emission - who is cooler?
+Part 2 - Developing modules
+Part 3 - Custom Containers using Apache Nifi
+Part 4 - Custom Module using TimescaleDB
+Part 5 - Custom Module using Grafana
+Intro
+This is part 3 in a series starting here that runs through building an Azure IOT Edge solution. This post will run through setting up a 3rd party docker container for an edge deployment. 
+The code is located at: https://github.com/chrismckelt/edgy">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Azure IoT Edge – using Apache Nifi as a 3rd party container",
+      "item": "http://localhost:1313/articles/posts/azure-iot-edge-3rd-party-containers/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Azure IoT Edge – using Apache Nifi as a 3rd party container",
+  "name": "Azure IoT Edge – using Apache Nifi as a 3rd party container",
+  "description": "Series Part 1 - dotnet vs python vs node - temperature emission - who is cooler?\nPart 2 - Developing modules\nPart 3 - Custom Containers using Apache Nifi\nPart 4 - Custom Module using TimescaleDB\nPart 5 - Custom Module using Grafana\nIntro This is part 3 in a series starting here that runs through building an Azure IOT Edge solution. This post will run through setting up a 3rd party docker container for an edge deployment. The code is located at: https://github.com/chrismckelt/edgy\n",
+  "keywords": [
+    "azure iot node python dotnet containers"
+  ],
+  "articleBody": "Series Part 1 - dotnet vs python vs node - temperature emission - who is cooler?\nPart 2 - Developing modules\nPart 3 - Custom Containers using Apache Nifi\nPart 4 - Custom Module using TimescaleDB\nPart 5 - Custom Module using Grafana\nIntro This is part 3 in a series starting here that runs through building an Azure IOT Edge solution. This post will run through setting up a 3rd party docker container for an edge deployment. The code is located at: https://github.com/chrismckelt/edgy\nIn order to manage data flow \u0026 logic on the edge we will deploy a data orchestrator. There are quite a few choices on the market – for this demo we will use Apache Nifi https://nifi.apache.org/.\nApache Nifi describes itself as ‘An easy to use, powerful, and reliable system to process and distribute data.’\nWhat will this module do? The Nifi module will listen to the dot net, python \u0026 node module messages and when a temperature exceeds 25°C it will publish a message to activate the air conditioning. The over heating module will receive the message and turn the air conditioning on, thus decrease the temperature.\nThis work was inspired by the following project:\nhttps://github.com/iotblackbelt/nifimodule\nSetting up Nifi To connect Nifi to the edge hub MQTT/AMQP broker (and not using the inbuilt SDKs with code), we need to authenticate with self signed certificates.\nThe easiest way to use self signed certificates for Azure IoT Edge is to follow this tutorial https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-machine-learning-edge-05-configure-edge-device.\nI use the docker image provided in that tutorial to generate my self signed certs. After following the tutorial I upload the ROOT CA to the Azure IoT Hub. After verification it should appear as below:\nWhen working locally with the simulator you will use the generated certs from VS Code. These are found at C:\\ProgramData\\iotedgehubdev\nDeployment files For debugging purposes I made a deployment file that runs only the DotNetGenerator \u0026 Nifi. The sections below are also in the full local debug and production template.\nNifi config setup When the Nifi docker file starts it will execute a script to do the following:\ncopy existing files from the local computer using docker bind from c:/config to /config copy the self signed certificates to the Java cert store restart Nifi so the certs and new configuration apply Nifi authentication To connect and publish messages to the MQTT broker we add the following processors in our Nifi flow\nConsumeMQTT PublishMQTT Upon adding a processor you will need to enter the connection details and configure a SSL Context Service to connect to the edge hub broker.\nSSL Context Service setting (certs used are stored in the Java cert store) Settings To generate a SAS token, right click on the device and select ‘Generate SAS Token for Device’ Nifi logic to air con control Using the inbuilt IoT routing system temperature payloads published from dot net, python \u0026 node will be pushed to Nifi.\nNifi checks if the temperature recording exceeds 25°C. When this occurs it will publish its own message which is routed back to the overheating module requesting it to turn on the air con.\nIn Nifi this translates to the following processor flows (probably a better way to do this – Nifi experts?)\nNifi flows Running the solution locally Upon starting the solution each module will publish a temperature starting at 20°C . Nifi will receive each message via the Consume MQTT processor. Viewing the data provenance shows all received messages:\nThe modules keep publishing increasing temperatures until Nifi received a temperature over 25°C. Nifi then publishes a message requesting the respective module (e.g. PythonDataGenerator) to decrease the temperature (turn on the air con).\nWatch out when publishing your container to ACR Be careful when publishing your local containers to your remote container registry. I was publishing direct from my machine to my Azure Container Registry. Meanwhile the environment variables were set to look for certificates in the wrong place. So Nifi would not authenticate.\nOutro Here we have shown how to build and deploy a 3rd party container in our edge solution. Once we have the installed the custom certificates Nifi can authenticate to the edge hub and send/receive messages.\n",
+  "wordCount" : "697",
+  "inLanguage": "en",
+  "datePublished": "2020-04-11T00:00:00+08:00",
+  "dateModified": "2020-04-11T00:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Chris McKelt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/posts/azure-iot-edge-3rd-party-containers/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Azure IoT Edge – using Apache Nifi as a 3rd party container
+    </h1>
+    <div class="post-meta"><span title='2020-04-11 00:00:00 +0800 AWST'>April 2020</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="series">Series</h1>
+<p><a href="https://dev.to/chris_mckelt/azure-iot-edge-who-is-cooler-dotnet-node-or-python-369m" target="_blank">Part 1 - dotnet vs python vs node - temperature emission - who is cooler?</a><br>
+<a href="https://dev.to/chris_mckelt/azure-iot-edge-developing-custom-modules-df3" target="_blank">Part 2 - Developing modules</a><br>
+<a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3" target="_blank">Part 3 - Custom Containers using Apache Nifi</a><br>
+<a href="https://dev.to/chris_mckelt/azure-iot-edge-using-timescaledb-on-the-edge-2ec1" target="_blank">Part 4 - Custom Module using TimescaleDB</a><br>
+<a href="https://dev.to/chris_mckelt/azure-iot-edge-using-grafana-on-the-edge-26na" target="_blank">Part 5 - Custom Module using Grafana</a></p>
+<h1 id="intro">Intro</h1>
+<p>This is part 3 in a series starting <a href="https://dev.to/chris_mckelt/azure-iot-edge-who-is-cooler-dotnet-node-or-python-369m" target="_blank">here</a> that runs through building an <a href="https://docs.microsoft.com/en-us/azure/iot-edge/about-iot-edge" target="_blank">Azure IOT Edge</a> solution. This post will run through setting up a 3rd party docker container for an edge deployment. <br>
+The code is located at: <a href="https://github.com/chrismckelt/edgy" target="_blank">https://github.com/chrismckelt/edgy</a></p>
+<p>In order to manage data flow &amp; logic on the edge we will deploy a data orchestrator.  There are quite a few <a href="https://stackshare.io/apache-nifi/alternatives" target="_blank">choices</a> on the market – for this demo we will use Apache Nifi <a href="https://nifi.apache.org/" target="_blank">https://nifi.apache.org/</a>.</p>
+<p><a href="https://nifi.apache.org/" target="_blank">Apache Nifi</a> describes itself as ‘<em>An easy to use, powerful, and reliable system to process and distribute data</em>.’</p>
+<h4 id="what-will-this-module-do"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#what-will-this-module-do" target="_blank"></a>What will this module do?</h4>
+<p>The Nifi module will listen to the dot net, python &amp; node module messages and when a temperature exceeds 25°C it will publish a message to activate the air conditioning.  The over heating module will receive the message and turn the air conditioning on, thus decrease the temperature.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--m-n00mc_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78258726-3963ab00-752e-11ea-91fa-90ff4d0e13a7.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78258726-3963ab00-752e-11ea-91fa-90ff4d0e13a7.png"></a></p>
+<p>This work was inspired by the following project:<br>
+<a href="https://github.com/iotblackbelt/nifimodule" target="_blank">https://github.com/iotblackbelt/nifimodule</a></p>
+<h3 id="setting-up-nifi"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#setting-up-nifi" target="_blank"></a>Setting up Nifi</h3>
+<p>To connect Nifi to the edge hub MQTT/AMQP broker (and not using the inbuilt <a href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-sdks" target="_blank">SDKs</a> with code), we need to authenticate with self signed certificates.</p>
+<p>The easiest way to use self signed certificates for Azure IoT Edge is to follow this tutorial <a href="https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-machine-learning-edge-05-configure-edge-device" target="_blank">https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-machine-learning-edge-05-configure-edge-device</a>.</p>
+<p>I use the docker image provided in that tutorial to generate my self signed certs. After following the tutorial I upload the ROOT CA to the Azure IoT Hub. After verification it should appear as below:</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8duHmcbH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78261684-1a671800-7532-11ea-932b-eda711d33355.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78261684-1a671800-7532-11ea-932b-eda711d33355.png"></a></p>
+<p>When working <strong>locally</strong> with the simulator you will use the generated certs from VS Code. These are found at <em>C:\ProgramData\iotedgehubdev</em></p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--i60s7EvV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78262241-dfb1af80-7532-11ea-82a1-d25141004479.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78262241-dfb1af80-7532-11ea-82a1-d25141004479.png"></a></p>
+<h4 id="deployment-files"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#deployment-files" target="_blank"></a>Deployment files</h4>
+<p>For debugging purposes I made a deployment file that runs only the <em>DotNetGenerator</em> &amp; <em>Nifi</em>.   The sections below are also in the full local debug and production template.<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qsmDNdBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78413894-1c24fe80-764c-11ea-8bd6-0d4fbea22bad.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78413894-1c24fe80-764c-11ea-8bd6-0d4fbea22bad.png"></a></p>
+<h4 id="nifi-config-setup"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#nifi-config-setup" target="_blank"></a>Nifi config setup</h4>
+<p>When the Nifi docker file starts it will execute a <a href="https://github.com/chrismckelt/edgy/blob/master/modules/Nifi/local.sh" target="_blank">script</a> to do the following:</p>
+<ol>
+<li>copy existing files from the local computer using docker bind from c:/config  to /config<img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78266974-0bd02f00-7539-11ea-8afb-e49490273913.png"></li>
+<li>copy the self signed certificates to the Java cert store</li>
+<li>restart Nifi so the certs and new configuration apply</li>
+</ol>
+<h4 id="nifi-authentication"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#nifi-authentication" target="_blank"></a>Nifi authentication</h4>
+<p>To connect and publish messages to the MQTT broker we add the following processors in our Nifi flow</p>
+<ul>
+<li>ConsumeMQTT</li>
+<li>PublishMQTT</li>
+</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--8B39VofP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78415336-b3da1b00-7653-11ea-8704-90bfe2007a5a.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78415336-b3da1b00-7653-11ea-8704-90bfe2007a5a.png"></a></p>
+<p>Upon adding a processor you will need to enter the connection details and configure a <em>SSL Context Service</em>  to connect to the edge hub broker.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--nw1I_S7q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78415309-7bd2d800-7653-11ea-8683-ff076cd14baf.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78415309-7bd2d800-7653-11ea-8683-ff076cd14baf.png"></a></p>
+<h6 id="ssl-context-service-setting-certs-used-are-stored-in-the-java-cert-store"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#ssl-context-service-setting-certs-used-are-stored-in-the-java-cert-store" target="_blank"></a>SSL Context Service setting (certs used are stored in the Java cert store)</h6>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--088Jx9uQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78415387-fac81080-7653-11ea-8d80-4f8fbdb1307b.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78415387-fac81080-7653-11ea-8d80-4f8fbdb1307b.png"></a></p>
+<h6 id="settings"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#settings" target="_blank"></a>Settings</h6>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DP2tsLYO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78469090-5bd50e80-7750-11ea-8222-b22a6d8947c8.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78469090-5bd50e80-7750-11ea-8222-b22a6d8947c8.png"></a></p>
+<h6 id="to-generate-a-sas-token-right-click-on-the-device-and-select-generate-sas-token-for-device"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#to-generate-a-sas-token-right-click-on-the-device-and-select-generate-sas-token-for-device" target="_blank"></a>To generate a SAS token, right click on the device and select ‘Generate SAS Token for Device’</h6>
+<h6><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#%C2%A0" target="_blank"></a><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78415646-9c039680-7655-11ea-8d6c-5781fbdb4171.png"></h6>
+<h4 id="nifi-logic-to-air-con-control"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#nifi-logic-to-air-con-control" target="_blank"></a>Nifi logic to air con control</h4>
+<p>Using the inbuilt IoT routing system temperature payloads published from dot net, python &amp; node will be pushed to Nifi.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--AME5Gc1u--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78415724-4aa7d700-7656-11ea-9047-1d3f03e01ca8.png" target="_blank"><img alt="image" loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78415724-4aa7d700-7656-11ea-9047-1d3f03e01ca8.png"></a></p>
+<p>Nifi checks if the temperature recording exceeds 25°C.  When this occurs it will publish its own message which is routed back to the overheating module requesting it to turn on the air con.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--MfFqHGQJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78273205-1989b280-7541-11ea-92c4-eb9f92153fa2.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78273205-1989b280-7541-11ea-92c4-eb9f92153fa2.png"></a></p>
+<p>In Nifi this translates to the following processor flows (probably a better way to do this – Nifi experts?)</p>
+<h4 id="nifi-flows"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#nifi-flows" target="_blank"></a>Nifi flows</h4>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--eGBp_KdD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78217920-85432f80-74ef-11ea-80db-e92bd4f2b850.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78217920-85432f80-74ef-11ea-80db-e92bd4f2b850.png"></a></p>
+<h4 id="running-the-solution-locally"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#running-the-solution-locally" target="_blank"></a>Running the solution locally</h4>
+<p>Upon starting the solution each module will publish a temperature starting at 20°C .   Nifi will receive each message via the Consume MQTT processor.  Viewing the data provenance shows all received messages:<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--Z5jFn1JZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78442149-d8151680-76aa-11ea-9f33-504390a7487b.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78442149-d8151680-76aa-11ea-9f33-504390a7487b.png"></a></p>
+<p>The modules keep publishing increasing temperatures until Nifi received a temperature over 25°C.  Nifi then publishes a message requesting the respective module (e.g. <em>PythonDataGenerator</em>) to decrease the temperature (turn on the air con).</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fGq9xMoT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/662868/78723470-0e2df100-795e-11ea-8ebf-75294a7beb1c.png" target="_blank"><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78723470-0e2df100-795e-11ea-8ebf-75294a7beb1c.png"></a></p>
+<h4 id="watch-out-when-publishing-your-container-to-acr"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#watch-out-when-publishing-your-container-to-acr" target="_blank"></a>Watch out when publishing your container to ACR</h4>
+<p>Be careful when publishing your local containers to your remote container registry.  I was publishing direct from my machine to my Azure Container Registry. Meanwhile the environment variables were set to look for certificates in the wrong place. So Nifi would not authenticate.</p>
+<h4><img loading="lazy" src="https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//78264086-5354bc00-7535-11ea-854d-f468f1f45e44.png"></h4>
+<h3 id="outro"><a href="https://dev.to/chris_mckelt/azure-iot-edge-3rd-party-containers-3mi3#outro" target="_blank"></a>Outro</h3>
+<p>Here we have shown how to build and deploy a 3rd party container in our edge solution.  Once we have the installed the custom certificates Nifi can authenticate to the edge hub and send/receive messages.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/azure-iot-node-python-dotnet-containers/">Azure Iot Node Python Dotnet Containers</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

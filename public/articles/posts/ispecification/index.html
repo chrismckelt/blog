@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>ISpecification | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="dotnet tdd">
+<meta name="description" content="
+public interface ISpecification&lt;T&gt;
+{
+  bool IsSatisfiedBy(T candidate);
+  ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications);
+  T Target { get; set; }
+  void GetResults(ResultsVisitor visitor);
+  IEnumerable&lt;Type&gt; WhatWasAssessed();
+  Risks.IDemoCommand GetCommand();
+}
+ using System;
+using System.Collections.Generic;
+using Demo.Core.Commands;
+using Demo.Core.Risks;
+using Demo.Core.Specification.Common;
+
+namespace Demo.Core.Specification
+{
+    public abstract class AbstractSpecification&lt;T&gt; : ISpecification&lt;T&gt;
+    {
+        protected SpecificationResult result;
+        protected IList&lt;Type&gt; ruleList = new List&lt;Type&gt;();
+        protected bool SoftCheck { get; set; }
+
+        public T Candidate { get; set; }
+        public T Target { get; set; }
+        public bool IsReplay {protected get; set;}
+
+        public ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other)
+        {
+            return new AndSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other)
+        {
+            return new OrSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other)
+        {
+            return new XORSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications)
+        {
+            return new AndAllOfSpecification&lt;T&gt;(this, specifications);    
+        }
+
+        public virtual bool Evaluate(T candidate)
+        {
+            throw new NotImplementedException(&#34;You need to provide a predicate or override IsSatisfiedBy&#34;);
+        }
+
+        public virtual IDemoCommand GetCommand()
+        {
+            return new NoCommand();
+        }
+        
+        public virtual void GetResults(ResultsVisitor visitor)
+        {
+            if (result != null &amp;&amp; !string.IsNullOrEmpty(result.Message))
+            {
+                visitor.Add(result);
+            }
+        }
+
+        public virtual IEnumerable&lt;Type&gt; WhatWasAssessed()
+        {
+            return ruleList;
+        }
+
+        public virtual string MessageFormat()
+        {
+            throw new NotImplementedException(&#34;You need to provide a result a message or override IsSatisfiedBy&#34;);
+        }
+
+        public virtual bool IsSatisfiedBy(T candidate)
+        {
+            if (IsReplay)
+            {
+                return true;
+            }
+            
+            Type ruleType = GetType(); 
+            ruleList.Add(ruleType);
+
+            Candidate = candidate;
+
+            bool satisfied = Evaluate(candidate);
+            if (!satisfied || (SoftCheck &amp;&amp; !string.IsNullOrEmpty(result.Message)))
+            {
+                result = new SpecificationResult
+                             {
+                                Satisfied = SoftCheck, 
+                                Message = string.Format(MessageFormat(), candidate, Target)
+                             };
+            }
+
+            return satisfied;
+        }
+
+        public AbstractSpecification&lt;T&gt; SuccessOrRhs(ISpecification&lt;T&gt; specification)
+        {
+            return new SuccessOrRhsSpecification&lt;T&gt;(specification);
+        }
+    }
+}
+">
+<meta name="author" content="Chris McKelt">
+<link rel="canonical" href="http://localhost:1313/articles/posts/ispecification/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/posts/ispecification/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/posts/ispecification/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="ISpecification">
+  <meta property="og:description" content=" public interface ISpecification&lt;T&gt; { bool IsSatisfiedBy(T candidate); ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications); T Target { get; set; } void GetResults(ResultsVisitor visitor); IEnumerable&lt;Type&gt; WhatWasAssessed(); Risks.IDemoCommand GetCommand(); } using System; using System.Collections.Generic; using Demo.Core.Commands; using Demo.Core.Risks; using Demo.Core.Specification.Common; namespace Demo.Core.Specification { public abstract class AbstractSpecification&lt;T&gt; : ISpecification&lt;T&gt; { protected SpecificationResult result; protected IList&lt;Type&gt; ruleList = new List&lt;Type&gt;(); protected bool SoftCheck { get; set; } public T Candidate { get; set; } public T Target { get; set; } public bool IsReplay {protected get; set;} public ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other) { return new AndSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other) { return new OrSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other) { return new XORSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications) { return new AndAllOfSpecification&lt;T&gt;(this, specifications); } public virtual bool Evaluate(T candidate) { throw new NotImplementedException(&#34;You need to provide a predicate or override IsSatisfiedBy&#34;); } public virtual IDemoCommand GetCommand() { return new NoCommand(); } public virtual void GetResults(ResultsVisitor visitor) { if (result != null &amp;&amp; !string.IsNullOrEmpty(result.Message)) { visitor.Add(result); } } public virtual IEnumerable&lt;Type&gt; WhatWasAssessed() { return ruleList; } public virtual string MessageFormat() { throw new NotImplementedException(&#34;You need to provide a result a message or override IsSatisfiedBy&#34;); } public virtual bool IsSatisfiedBy(T candidate) { if (IsReplay) { return true; } Type ruleType = GetType(); ruleList.Add(ruleType); Candidate = candidate; bool satisfied = Evaluate(candidate); if (!satisfied || (SoftCheck &amp;&amp; !string.IsNullOrEmpty(result.Message))) { result = new SpecificationResult { Satisfied = SoftCheck, Message = string.Format(MessageFormat(), candidate, Target) }; } return satisfied; } public AbstractSpecification&lt;T&gt; SuccessOrRhs(ISpecification&lt;T&gt; specification) { return new SuccessOrRhsSpecification&lt;T&gt;(specification); } } } ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2010-02-03T00:00:00+08:00">
+    <meta property="article:modified_time" content="2010-02-03T00:00:00+08:00">
+    <meta property="article:tag" content="Dotnet Tdd">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ISpecification">
+<meta name="twitter:description" content="
+public interface ISpecification&lt;T&gt;
+{
+  bool IsSatisfiedBy(T candidate);
+  ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other);
+  ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications);
+  T Target { get; set; }
+  void GetResults(ResultsVisitor visitor);
+  IEnumerable&lt;Type&gt; WhatWasAssessed();
+  Risks.IDemoCommand GetCommand();
+}
+ using System;
+using System.Collections.Generic;
+using Demo.Core.Commands;
+using Demo.Core.Risks;
+using Demo.Core.Specification.Common;
+
+namespace Demo.Core.Specification
+{
+    public abstract class AbstractSpecification&lt;T&gt; : ISpecification&lt;T&gt;
+    {
+        protected SpecificationResult result;
+        protected IList&lt;Type&gt; ruleList = new List&lt;Type&gt;();
+        protected bool SoftCheck { get; set; }
+
+        public T Candidate { get; set; }
+        public T Target { get; set; }
+        public bool IsReplay {protected get; set;}
+
+        public ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other)
+        {
+            return new AndSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other)
+        {
+            return new OrSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other)
+        {
+            return new XORSpecification&lt;T&gt;(this, other);
+        }
+
+        public ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications)
+        {
+            return new AndAllOfSpecification&lt;T&gt;(this, specifications);    
+        }
+
+        public virtual bool Evaluate(T candidate)
+        {
+            throw new NotImplementedException(&#34;You need to provide a predicate or override IsSatisfiedBy&#34;);
+        }
+
+        public virtual IDemoCommand GetCommand()
+        {
+            return new NoCommand();
+        }
+        
+        public virtual void GetResults(ResultsVisitor visitor)
+        {
+            if (result != null &amp;&amp; !string.IsNullOrEmpty(result.Message))
+            {
+                visitor.Add(result);
+            }
+        }
+
+        public virtual IEnumerable&lt;Type&gt; WhatWasAssessed()
+        {
+            return ruleList;
+        }
+
+        public virtual string MessageFormat()
+        {
+            throw new NotImplementedException(&#34;You need to provide a result a message or override IsSatisfiedBy&#34;);
+        }
+
+        public virtual bool IsSatisfiedBy(T candidate)
+        {
+            if (IsReplay)
+            {
+                return true;
+            }
+            
+            Type ruleType = GetType(); 
+            ruleList.Add(ruleType);
+
+            Candidate = candidate;
+
+            bool satisfied = Evaluate(candidate);
+            if (!satisfied || (SoftCheck &amp;&amp; !string.IsNullOrEmpty(result.Message)))
+            {
+                result = new SpecificationResult
+                             {
+                                Satisfied = SoftCheck, 
+                                Message = string.Format(MessageFormat(), candidate, Target)
+                             };
+            }
+
+            return satisfied;
+        }
+
+        public AbstractSpecification&lt;T&gt; SuccessOrRhs(ISpecification&lt;T&gt; specification)
+        {
+            return new SuccessOrRhsSpecification&lt;T&gt;(specification);
+        }
+    }
+}
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ISpecification",
+      "item": "http://localhost:1313/articles/posts/ispecification/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ISpecification",
+  "name": "ISpecification",
+  "description": " public interface ISpecification\u0026lt;T\u0026gt; { bool IsSatisfiedBy(T candidate); ISpecification\u0026lt;T\u0026gt; And(ISpecification\u0026lt;T\u0026gt; other); ISpecification\u0026lt;T\u0026gt; Or(ISpecification\u0026lt;T\u0026gt; other); ISpecification\u0026lt;T\u0026gt; XOr(ISpecification\u0026lt;T\u0026gt; other); ISpecification\u0026lt;T\u0026gt; AndAllOf(IEnumerable\u0026lt;ISpecification\u0026lt;T\u0026gt;\u0026gt; specifications); T Target { get; set; } void GetResults(ResultsVisitor visitor); IEnumerable\u0026lt;Type\u0026gt; WhatWasAssessed(); Risks.IDemoCommand GetCommand(); } using System; using System.Collections.Generic; using Demo.Core.Commands; using Demo.Core.Risks; using Demo.Core.Specification.Common; namespace Demo.Core.Specification { public abstract class AbstractSpecification\u0026lt;T\u0026gt; : ISpecification\u0026lt;T\u0026gt; { protected SpecificationResult result; protected IList\u0026lt;Type\u0026gt; ruleList = new List\u0026lt;Type\u0026gt;(); protected bool SoftCheck { get; set; } public T Candidate { get; set; } public T Target { get; set; } public bool IsReplay {protected get; set;} public ISpecification\u0026lt;T\u0026gt; And(ISpecification\u0026lt;T\u0026gt; other) { return new AndSpecification\u0026lt;T\u0026gt;(this, other); } public ISpecification\u0026lt;T\u0026gt; Or(ISpecification\u0026lt;T\u0026gt; other) { return new OrSpecification\u0026lt;T\u0026gt;(this, other); } public ISpecification\u0026lt;T\u0026gt; XOr(ISpecification\u0026lt;T\u0026gt; other) { return new XORSpecification\u0026lt;T\u0026gt;(this, other); } public ISpecification\u0026lt;T\u0026gt; AndAllOf(IEnumerable\u0026lt;ISpecification\u0026lt;T\u0026gt;\u0026gt; specifications) { return new AndAllOfSpecification\u0026lt;T\u0026gt;(this, specifications); } public virtual bool Evaluate(T candidate) { throw new NotImplementedException(\u0026#34;You need to provide a predicate or override IsSatisfiedBy\u0026#34;); } public virtual IDemoCommand GetCommand() { return new NoCommand(); } public virtual void GetResults(ResultsVisitor visitor) { if (result != null \u0026amp;\u0026amp; !string.IsNullOrEmpty(result.Message)) { visitor.Add(result); } } public virtual IEnumerable\u0026lt;Type\u0026gt; WhatWasAssessed() { return ruleList; } public virtual string MessageFormat() { throw new NotImplementedException(\u0026#34;You need to provide a result a message or override IsSatisfiedBy\u0026#34;); } public virtual bool IsSatisfiedBy(T candidate) { if (IsReplay) { return true; } Type ruleType = GetType(); ruleList.Add(ruleType); Candidate = candidate; bool satisfied = Evaluate(candidate); if (!satisfied || (SoftCheck \u0026amp;\u0026amp; !string.IsNullOrEmpty(result.Message))) { result = new SpecificationResult { Satisfied = SoftCheck, Message = string.Format(MessageFormat(), candidate, Target) }; } return satisfied; } public AbstractSpecification\u0026lt;T\u0026gt; SuccessOrRhs(ISpecification\u0026lt;T\u0026gt; specification) { return new SuccessOrRhsSpecification\u0026lt;T\u0026gt;(specification); } } } ",
+  "keywords": [
+    "dotnet tdd"
+  ],
+  "articleBody": " public interface ISpecification { bool IsSatisfiedBy(T candidate); ISpecification And(ISpecification other); ISpecification Or(ISpecification other); ISpecification XOr(ISpecification other); ISpecification AndAllOf(IEnumerable",
+  "wordCount" : "259",
+  "inLanguage": "en",
+  "datePublished": "2010-02-03T00:00:00+08:00",
+  "dateModified": "2010-02-03T00:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Chris McKelt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/posts/ispecification/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      ISpecification
+    </h1>
+    <div class="post-meta"><span title='2010-02-03 00:00:00 +0800 AWST'>February 2010</span>
+
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>public interface ISpecification&lt;T&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  bool IsSatisfiedBy(T candidate);
+</span></span><span style="display:flex;"><span>  ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other);
+</span></span><span style="display:flex;"><span>  ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other);
+</span></span><span style="display:flex;"><span>  ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other);
+</span></span><span style="display:flex;"><span>  ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications);
+</span></span><span style="display:flex;"><span>  T Target { get; set; }
+</span></span><span style="display:flex;"><span>  void GetResults(ResultsVisitor visitor);
+</span></span><span style="display:flex;"><span>  IEnumerable&lt;Type&gt; WhatWasAssessed();
+</span></span><span style="display:flex;"><span>  Risks.IDemoCommand GetCommand();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> using System;
+</span></span><span style="display:flex;"><span>using System.Collections.Generic;
+</span></span><span style="display:flex;"><span>using Demo.Core.Commands;
+</span></span><span style="display:flex;"><span>using Demo.Core.Risks;
+</span></span><span style="display:flex;"><span>using Demo.Core.Specification.Common;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>namespace Demo.Core.Specification
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    public abstract class AbstractSpecification&lt;T&gt; : ISpecification&lt;T&gt;
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        protected SpecificationResult result;
+</span></span><span style="display:flex;"><span>        protected IList&lt;Type&gt; ruleList = new List&lt;Type&gt;();
+</span></span><span style="display:flex;"><span>        protected bool SoftCheck { get; set; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public T Candidate { get; set; }
+</span></span><span style="display:flex;"><span>        public T Target { get; set; }
+</span></span><span style="display:flex;"><span>        public bool IsReplay {protected get; set;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new AndSpecification&lt;T&gt;(this, other);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new OrSpecification&lt;T&gt;(this, other);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new XORSpecification&lt;T&gt;(this, other);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new AndAllOfSpecification&lt;T&gt;(this, specifications);    
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public virtual bool Evaluate(T candidate)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            throw new NotImplementedException(&#34;You need to provide a predicate or override IsSatisfiedBy&#34;);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public virtual IDemoCommand GetCommand()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new NoCommand();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        public virtual void GetResults(ResultsVisitor visitor)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            if (result != null &amp;&amp; !string.IsNullOrEmpty(result.Message))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                visitor.Add(result);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public virtual IEnumerable&lt;Type&gt; WhatWasAssessed()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return ruleList;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public virtual string MessageFormat()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            throw new NotImplementedException(&#34;You need to provide a result a message or override IsSatisfiedBy&#34;);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public virtual bool IsSatisfiedBy(T candidate)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            if (IsReplay)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                return true;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            Type ruleType = GetType(); 
+</span></span><span style="display:flex;"><span>            ruleList.Add(ruleType);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Candidate = candidate;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            bool satisfied = Evaluate(candidate);
+</span></span><span style="display:flex;"><span>            if (!satisfied || (SoftCheck &amp;&amp; !string.IsNullOrEmpty(result.Message)))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                result = new SpecificationResult
+</span></span><span style="display:flex;"><span>                             {
+</span></span><span style="display:flex;"><span>                                Satisfied = SoftCheck, 
+</span></span><span style="display:flex;"><span>                                Message = string.Format(MessageFormat(), candidate, Target)
+</span></span><span style="display:flex;"><span>                             };
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            return satisfied;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public AbstractSpecification&lt;T&gt; SuccessOrRhs(ISpecification&lt;T&gt; specification)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            return new SuccessOrRhsSpecification&lt;T&gt;(specification);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/dotnet-tdd/">Dotnet Tdd</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Code Dotnet Tdd on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/code-dotnet-tdd/</link><description>Recent content in Code Dotnet Tdd on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Sat, 16 Oct 2010 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/code-dotnet-tdd/index.xml" rel="self" type="application/rss+xml"/><item><title>Spec Flow, Specifications and Chained Commands</title><link>https://blog.mckelt.com/articles/posts/spec-flow-specifications-and-chained-commands/</link><pubDate>Sat, 16 Oct 2010 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/spec-flow-specifications-and-chained-commands/</guid><description>&lt;h1 id="a-quick-experiment-with-spec-flow--httpwwwspecfloworg"&gt;A quick experiment with Spec Flow &amp;ndash; &lt;a href="http://www.specflow.org/" title="http://www.specflow.org/" target="_blank"&gt;http://www.specflow.org/&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="spec-flow-feature"&gt;Spec flow feature&lt;/h2&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Feature: Run Specification rules
+To stop large postage costs
+As a user
+I want to be stopped from buying to much if I am in Australia&lt;/p&gt;
+&lt;p&gt;@CountryAllowedToProcessOrderWithLargeCost Scenario: Orders of 20 cannot be sent to Australia&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Given I have a customer with an order for socks
+And the order is to be sent to Australia
+When I process the order
+Then I should not be able to place the order
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;</description></item></channel></rss>

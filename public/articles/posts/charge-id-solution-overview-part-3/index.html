@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Charge Id – solution overview | Chris McKelt - Remembering Thoughts</title>
+<meta name="keywords" content="dotnet">
+<meta name="description" content="The proposed solution sequence flow follows:
+ 
+
+Posts in this series
+Charge Id – scratching the tech itch 
+Charge Id – lean canvas
+Charge Id – solution overview
+Charge Id – analysing the data
+Charge Id – the prediction model
+Charge Id – deploying a ML.Net Model to Azure
+Code
+https://github.com/chrismckelt/vita">
+<meta name="author" content="Chris McKelt">
+<link rel="canonical" href="http://localhost:1313/articles/posts/charge-id-solution-overview-part-3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/posts/charge-id-solution-overview-part-3/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/articles/posts/charge-id-solution-overview-part-3/">
+  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
+  <meta property="og:title" content="Charge Id – solution overview">
+  <meta property="og:description" content="The proposed solution sequence flow follows:
+Posts in this series Charge Id – scratching the tech itch Charge Id – lean canvas
+Charge Id – solution overview
+Charge Id – analysing the data
+Charge Id – the prediction model
+Charge Id – deploying a ML.Net Model to Azure
+Code https://github.com/chrismckelt/vita">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2018-07-15T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-07-15T00:00:00+08:00">
+    <meta property="article:tag" content="Dotnet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Charge Id – solution overview">
+<meta name="twitter:description" content="The proposed solution sequence flow follows:
+ 
+
+Posts in this series
+Charge Id – scratching the tech itch 
+Charge Id – lean canvas
+Charge Id – solution overview
+Charge Id – analysing the data
+Charge Id – the prediction model
+Charge Id – deploying a ML.Net Model to Azure
+Code
+https://github.com/chrismckelt/vita">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "http://localhost:1313/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Charge Id – solution overview",
+      "item": "http://localhost:1313/articles/posts/charge-id-solution-overview-part-3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Charge Id – solution overview",
+  "name": "Charge Id – solution overview",
+  "description": "The proposed solution sequence flow follows:\nPosts in this series Charge Id – scratching the tech itch Charge Id – lean canvas\nCharge Id – solution overview\nCharge Id – analysing the data\nCharge Id – the prediction model\nCharge Id – deploying a ML.Net Model to Azure\nCode https://github.com/chrismckelt/vita\n",
+  "keywords": [
+    "dotnet"
+  ],
+  "articleBody": "The proposed solution sequence flow follows:\nPosts in this series Charge Id – scratching the tech itch Charge Id – lean canvas\nCharge Id – solution overview\nCharge Id – analysing the data\nCharge Id – the prediction model\nCharge Id – deploying a ML.Net Model to Azure\nCode https://github.com/chrismckelt/vita\n",
+  "wordCount" : "50",
+  "inLanguage": "en",
+  "datePublished": "2018-07-15T00:00:00+08:00",
+  "dateModified": "2018-07-15T00:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Chris McKelt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/articles/posts/charge-id-solution-overview-part-3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chris McKelt - Remembering Thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Chris McKelt</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/talks/" title="Talks">
+                    <span>Talks</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Charge Id – solution overview
+    </h1>
+    <div class="post-meta"><span title='2018-07-15 00:00:00 +0800 AWST'>July 2018</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>The proposed solution sequence flow follows:</p>
+<h3 id="heading"> <img loading="lazy" src="https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQ2hhcmdlSWQgT3ZlcnZpZXcKClVzZXItPiBXZWIgQVBJIDogdGV4dCBpZGVudGlmaWNhdGlvbiByZXF1ZXN0Cm5vdGUgbGVmdCBvZgArCDogIGF1dGhlbnQAJwcKAEQILT4gQ29zbW9zIERCOiBsb29rdXAgY2xhc3NpZmllZCBjAIEJBXMgCgAdCSAtPiBVc2VyIDogZm91bmQgbWF0Y2gAFgotPiBDADoGeSBwaXBlbGluZSA6IG5vdAAqBgoADREtPiBQcmVkaWMAgUMFAIFcBnAACwYKAAoPLQCBJAwAHQplZCAAgWoOAHEROiAgYWRkIHRvIEF6dXJlIGVsYXN0aWMgc2VhcmNoIGNsdXN0ZXIAgUUhAIEZDyAAgwkNbm8AggUHAIJ-BXJpZ2gAgnUPc2VuAH4FcXVldWUgZm9yIG1hbnVhbCBwcm9jZXNzaW5nAIIKFACBOhNyZS10cmFpbiBtb2RlbAoK&s=napkin"></h3>
+<hr>
+<h2 id="posts-in-this-series">Posts in this series</h2>
+<p>Charge Id – scratching the tech itch <br>
+Charge Id – lean canvas<br>
+Charge Id – solution overview<br>
+Charge Id – analysing the data<br>
+Charge Id – the prediction model<br>
+Charge Id – deploying a ML.Net Model to Azure</p>
+<h2 id="code">Code</h2>
+<p><a href="https://github.com/chrismckelt/vita" title="https://github.com/chrismckelt/vita" target="_blank">https://github.com/chrismckelt/vita</a></p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/dotnet/">Dotnet</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <div class="footer-inner">
+        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="/articles/">Articles</a>
+            <a href="/projects/">Projects</a>
+            <a href="/talks/">Talks</a>
+            <a href="/tags/">Tags</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

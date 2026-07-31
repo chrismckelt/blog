@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>R Data-Science on Chris McKelt - Remembering Thoughts</title><link>https://blog.mckelt.com/tags/r-data-science/</link><description>Recent content in R Data-Science on Chris McKelt - Remembering Thoughts</description><generator>Hugo -- 0.150.0</generator><language>en</language><lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.mckelt.com/tags/r-data-science/index.xml" rel="self" type="application/rss+xml"/><item><title>Word prediction with Natural Language Processing</title><link>https://blog.mckelt.com/articles/posts/word-prediction-with-natural-language-processing/</link><pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/word-prediction-with-natural-language-processing/</guid><description>&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.rpubs.com/chris_mckelt/capstone-presentation" target="_blank"&gt;https://www.rpubs.com/chris_mckelt/capstone-presentation&lt;/a&gt;&lt;/p&gt;</description></item><item><title>R–Data Exploration</title><link>https://blog.mckelt.com/articles/posts/rdata-exploration/</link><pubDate>Sat, 23 Jul 2016 00:00:00 +0800</pubDate><guid>https://blog.mckelt.com/articles/posts/rdata-exploration/</guid><description>&lt;h1 id="pca"&gt;PCA&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Principal Components Analysis&lt;/strong&gt; (PCA) allows us to study and explore a set of quantitative variables measured on a set of objects&lt;/p&gt;
+&lt;h6 id="core-idea"&gt;Core Idea&lt;/h6&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;With PCA we seek to reduce the dimensionality (reduce the number of variables) of a data set while retaining as much as possible of the variation present in the data&lt;/p&gt;
+&lt;p&gt;Before performing a PCA(or any other multivariate method) we should start with some preliminary explorations&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Descriptive statistics&lt;/li&gt;
+&lt;li&gt;Basic graphical displays&lt;/li&gt;
+&lt;li&gt;Distribution of variables&lt;/li&gt;
+&lt;li&gt;Pair-wise correlations among variables&lt;/li&gt;
+&lt;li&gt;Perhaps transforming some variables&lt;/li&gt;
+&lt;li&gt;ETC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image" loading="lazy" src="https://user-images.githubusercontent.com/662868/120943805-c6724780-c763-11eb-83bb-d1920d08269e.png"&gt;&lt;/p&gt;</description></item></channel></rss>
