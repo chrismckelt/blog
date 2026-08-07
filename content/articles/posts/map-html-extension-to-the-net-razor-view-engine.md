@@ -9,15 +9,15 @@ slug: map-html-extension-to-the-net-razor-view-engine
 
 1\. Add the _buildProvider_ config for razor inside the compilation element
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb2.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image2.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb2.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image2.png)
 
 2\. Application start –> Registers the html extension with razor
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb1.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image1.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb1.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image1.png)
 
 3\. Create a Start.cshtml page and ingest the index.html page
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb3.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image3.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb3.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2015/09/image3.png)
 
 ```
 <compilation debug\="true" targetFramework\="4.6" \> 

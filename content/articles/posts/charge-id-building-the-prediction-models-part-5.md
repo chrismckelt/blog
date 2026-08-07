@@ -43,7 +43,7 @@ Other types available are:
 
 ## Retrieving and cleaning the data
 
-Having [analysed the data and problem](/blog/?p=507) we now have an CSV extract for a bank account statement.
+Having [analysed the data and problem](/articles/posts/charge-id-analysing-the-data-part-4/) we now have an CSV extract for a bank account statement.
 
 We shuffle the data in the file and split this into 2 files ‘train.csv’ and ‘test.csv’ in order to perform [cross validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)).
 
@@ -191,7 +191,7 @@ Write a test to ensure the model is giving accurate results
  
 #### The output metrics
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-6.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-6.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-6.png)
 
 #### Metrics for classification models
 
@@ -229,7 +229,7 @@ The model is output as a _.zip_ file making it easy to deploy.
 
 Extracted contents are below
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-7.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-7.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-7.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/07/image-7.png)
 
 ## Conclusion
 

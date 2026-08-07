@@ -31,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.147.2
+      HUGO_VERSION: 0.150.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -54,8 +54,8 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           hugo \
-            --minify \
-            --baseURL "https://blog.smarttechventures.au/"
+            --gc \
+            --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,557 +1,0 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Articles | Chris McKelt - Remembering Thoughts</title>
-<meta name="keywords" content="">
-<meta name="description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-<meta name="author" content="Chris McKelt">
-<link rel="canonical" href="http://localhost:1313/articles/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/articles/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-</noscript><meta property="og:url" content="http://localhost:1313/articles/">
-  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
-  <meta property="og:title" content="Articles">
-  <meta property="og:description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Articles">
-<meta name="twitter:description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Articles",
-      "item": "http://localhost:1313/articles/"
-    }
-  ]
-}
-</script>
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-          delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
-            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
-            {left: "\\begin{align}", right: "\\end{align}", display: true},
-            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
-            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
-            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
-          ],
-          throwOnError : false
-        });
-    });
-</script>
- 
-
-
-</head>
-
-<body class="list" id="top">
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
-                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
-                    height="18"
-                    width="18">Chris McKelt</a>
-            <div class="logo-switches">
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/articles/" title="Articles">
-                    <span class="active">Articles</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
-                    <span>Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/talks/" title="Talks">
-                    <span>Talks</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/contact/" title="Contact">
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/search/" title="Search">
-                    <span>Search</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1 class="page-title">
-    Articles
-  </h1>
-  <p class="page-description">Writing on cloud architecture, integration, data, AI, DevOps and software delivery.</p>
-</header>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Round house and powershell
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Using https://github.com/chucknorris/roundhouse for powershell to get automated database change management
-Task UpgradeDatabase{if (($environment -eq &#39;integration&#39;) -or ($environment -eq &#39;uat&#39;)){# round house variables$rh = &#34;C:\\dev\\Phoenix\\trunk\\Tools\\RoundhousE\\console\\rh.exe&#34;$connectionString = &#34;Data Source=localhost;Database=XXX; User Id=XXXuser; Password=XXX;Connect Timeout=100;&#34;$indexesFolder = &#34;C:\\dev\\Phoenix\\trunk\\Database\\10-Indexes&#34;$schemaChangesFolder = &#34;C:\\dev\\Phoenix\\trunk\\Database\\11-SchemaChanges&#34;## build server?if (Test-Path &#34;D:\\Code\\&#34;) {$rh = &#34;D:\\Code\\Phoenix\\trunk\\Tools\\RoundhousE\\console\\rh.exe&#34;$indexesFolder = &#34;D:\\Code\\Phoenix\\trunk\\Database\\10-Indexes&#34;$schemaChangesFolder = &#34;D:\\Code\\Phoenix\\trunk\\Database\\11-SchemaChanges&#34;if ($environment -eq &#39;integration&#39;){$connectionString = &#34;Data Source=xxxxx;Database=rrrr\_Integration; User Id=rrrr; Password=rrrr;&#34;}else{$connectionString = &#34;Data Source=xxxx;Database=rrrrr\_UAT; User Id=rrrrr; Password=rrrrr;&#34;}}Write\-Host &#34;Database upgrade started&#34;$s1 = &#34; -c &#34;$s2 = &#34; $connectionString &#34;$s3 = &#34; -ix &#34;$s4 = &#34;$indexesFolder&#34;$s5 = &#34; -u &#34;$s6 = &#34;$schemaChangesFolder&#34; $args = $s1 &#43; &#34; &#34;&#34;$s2&#34; &#34;&#34; &#43; $s3 &#43; &#34; &#34;&#34;$s4&#34; &#34;&#34; &#43; $s5 &#43; &#34; &#34;&#34;$s6&#34;&#34;&#34; &#43; &#34; -ni -ct 300&#34;Write\-Host $argsStart-Process -FilePath $rh -ArgumentList $args -PassThruWrite\-Host &#34;Database upgrade complete&#34;	} }The following tables are created
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2012-06-20 00:00:00 +0800 AWST'>June 2012</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Round house and powershell" href="http://localhost:1313/articles/posts/round-house-and-powershell/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code powershell</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">PSAKE- Gallio–SpecFlow–XUnit–on the build server
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This is a quick post to show how to get PowerShell with PSAKE to run Specflow acceptance tests on the build server using Gallio.
-https://github.com/chrismckelt/PS-Sake-BuildScripts
-The folder with our build scripts looks like this
-The environments folder contains all of the configuration files for each environment
-Build server process The build/check-in process is now as follows.
-1. Developer checks in.
-2. Build server detects changes – cleans everything and then pulls down latest SVN code
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2011-11-14 00:00:00 +0800 AWST'>November 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to PSAKE- Gallio–SpecFlow–XUnit–on the build server" href="http://localhost:1313/articles/posts/psake-gallio-specflow-xunit-on-the-build-server-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">interview</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">My interview coding test
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Technical Test - Book Store An online books store sells books for 3 different categories: Crime, Romance, Fantasy.
-Currently all books within the Crime category are discounted by 5%
-Total tax for the whole order is 10%
-The task Write a simple console application that outputs the total order cost with and without tax for the below purchase:
-Book name Category Total Cost Unsolved crimes Crime 10.99 A Little Love Story Romance 2.40 Heresy Fantasy 6.80 Jack the Ripper Crime 16.00 The Tolkien Years Fantasy 22.90 Guidelines
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2011-03-11 00:00:00 +0800 AWST'>March 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to My interview coding test" href="http://localhost:1313/articles/posts/interview-code-test/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Sales Tax Calculator using SpecFlow &amp; The State Pattern And Chained Commands
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Using SpecFlow heres how I solved the following problem
-PROBLEM : SALES TAXES Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions._
-When I purchase items I receive a receipt which lists the name of all the items and their price (including tax), finishing with the total cost of the items, and the total amounts of sales taxes paid. The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the nearest 0.05) amount of sales tax.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2011-03-11 00:00:00 +0800 AWST'>March 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Sales Tax Calculator using SpecFlow & The State Pattern And Chained Commands" href="http://localhost:1313/articles/posts/sales-tax-calculator-using-specflow-the-state-pattern-and-chained-commands/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">interview</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Interview Process
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Interview Process Pairing Interview This workbook is designed to help focus on the important aspects of the interview. Take as many or as few notes as you need to answer the following questions, and fill in the interview summary:
-Design What design process did they use before /while building the solution? We are looking to identify the ability decompose the problem into a possible solution. What processes and or tooling did they use?
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2011-03-10 00:00:00 +0800 AWST'>March 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Interview Process" href="http://localhost:1313/articles/posts/interview-process/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">fsharp</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">F# Beginnings
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> open System
-#light // Hello world let a = “Hello, world!”;
-let mutable b = 0;
-while b &lt; 10 do b &lt;- b&#43;1
-Console.WriteLine(a &#43; b.ToString())
-Console.ReadLine() |&gt; ignore
-// recursive binary search - http://rosettacode.org/wiki/Binary_search#F.23
-let items = [| 10; 20; 30; 40; 50; 60; 70; 80; 90; 100; |]
-let rec binarySearch (arr:int[], low:int, high:int, value:int) = if (high &lt; low) then
-false
-else
-let mid = (low &#43; high) / 2
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2011-03-07 00:00:00 +0800 AWST'>March 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to F# Beginnings" href="http://localhost:1313/articles/posts/f-beginnings/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">fsharp</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">DatabaseBackup.fs
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span title='2011-03-03 00:00:00 +0800 AWST'>March 2011</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to DatabaseBackup.fs" href="http://localhost:1313/articles/posts/f-keywords/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code dotnet tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Spec Flow, Specifications and Chained Commands
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A quick experiment with Spec Flow – http://www.specflow.org/ Spec flow feature Feature: Run Specification rules To stop large postage costs As a user I want to be stopped from buying to much if I am in Australia
-@CountryAllowedToProcessOrderWithLargeCost Scenario: Orders of 20 cannot be sent to Australia
-Given I have a customer with an order for socksAnd the order is to be sent to AustraliaWhen I process the orderThen I should not be able to place the order...</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-10-16 00:00:00 +0800 AWST'>October 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Spec Flow, Specifications and Chained Commands" href="http://localhost:1313/articles/posts/spec-flow-specifications-and-chained-commands/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">agile</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Agile Flavours
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>XP
-5 values 14 principles 12 Primary practices 11 Corollary practices Lean
-7 principles 22 thinking tools Scrum
-5 Values 3 Roles (Product owner, scrum master, scrum team) 3 Ceremonies (Sprint planning meeting, Stand up, review &amp; retrospective) 3 Work Products (product backlog, sprint backlog, burndown chart) (depending on which definition you choose) DSDM Atern
-8 Principles 5 Lifecycle phases 12 roles 17 work products 5 key techniques Agile Unified Process
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-09-12 00:00:00 +0800 AWST'>September 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Agile Flavours" href="http://localhost:1313/articles/posts/agile-flavours/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Custom NHibernate User Type
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>How to use a custom NHibernate User Type To store the state of a Risk (ie RiskState) as a value in a column we can use a NHibernate.UserType
-The RiskState can be one of the following: (these are all derived from RiskState which implements IRiskState)
-Our user type
-public class RiskStateNameUserType: IUserType {#region IUserType Memberspublic object Assemble(object cached, object owner) {return cached;}public object DeepCopy(object value){return value;}public object Disassemble(object value){return value;}public int GetHashCode(object x){return x.GetHashCode();}public bool IsMutable{get {return false;}}public object NullSafeGet(System.Data.IDataReader dr, string\[\] names, object owner) { var property0 = NHibernateUtil.String.NullSafeGet(dr, names\[0\]);if (property0 == null){return null;}IRiskState state;if (owner is Risk){state =(IRiskState)Activator.CreateInstance(Type.GetType(typeof (IRiskState).Namespace &#43; &#34;.&#34; &#43; (string) property0),owner);} else{state =(IRiskState)Activator.CreateInstance(Type.GetType(typeof (IRiskState).Namespace &#43; &#34;.&#34; &#43; (string) property0));}return state; } public void NullSafeSet(System.Data.IDbCommand cmd, object value, int index){if (value == null){((IDataParameter) cmd.Parameters\[index\]).Value = DBNull.Value;} else{var state = (IRiskState) value;((IDataParameter) cmd.Parameters\[index\]).Value = state.GetType().Name;}}public object Replace(object original, object target, object owner){return original;}public Type ReturnedType{get {return typeof (RiskState);}}public NHibernate.SqlTypes.SqlType\[\] SqlTypes{get {return new\ [\] {NHibernateUtil.String.SqlType};}}public new bool Equals(object x, object y){if (x == null &amp;&amp; y == null) return true;if (x == null || y == null) return false;return x.GetType() == y.GetType();}#endregion}Using this on a property as follows:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-08-26 00:00:00 +0800 AWST'>August 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Custom NHibernate User Type" href="http://localhost:1313/articles/posts/custom-nhibernate-user-type-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">sql</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Invalid object name &#39;master.dbo.spt_values&#39;.
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>“Invalid object name ‘master.dbo.spt_values’.” This means your SQL Master DB is in a bad state.
-To fix:
-Error- Invalid object name ‘master.dbo.spt_values’.
-CD
-“C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\Install”
-run u_tables.sql in master….
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-08-24 00:00:00 +0800 AWST'>August 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Invalid object name &#39;master.dbo.spt_values&#39;." href="http://localhost:1313/articles/posts/invalid-object-name-master-dbo-spt-values/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">RhinoMocks – WhenCalled
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>The following test would fail without this
-.WhenCalled(invocation =&gt; invocation.ReturnValue = new TestResult(){IsTrue = true, Message = &#34;BBB&#34;})[TestClass]public class ChrisTest{private IRuleService ruleService;[TestMethod]public void ShouldNotChangeReturnedTestResult(){ruleService = MockRepository.GenerateMock&lt;IRuleService&gt;();var testResult = new TestResult();testResult.IsTrue = true;testResult.Message = &#34;AAA&#34;;ruleService.Stub(a =&gt; a.GetTestResult()).Return(testResult).WhenCalled(invocation =&gt; invocation.ReturnValue = new TestResult(){IsTrue = true, Message = &#34;BBB&#34;});var testClass = new TestClass(ruleService);testClass.KillTheString();Assert.IsTrue(testClass.StringIsThere());}public interface IRuleService{TestResult GetTestResult();}public class TestResult{public bool IsTrue { get; set; }public string Message { get; set; }}private class TestClass{private readonly IRuleService ruleService;public TestClass(IRuleService ruleService){this.ruleService = ruleService;}public void KillTheString(){var result = ruleService.GetTestResult();result.Message = string.Empty;}public bool StringIsThere(){var result = ruleService.GetTestResult();return !string.IsNullOrEmpty(result.Message);}}}</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-07-06 00:00:00 +0800 AWST'>July 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to RhinoMocks – WhenCalled" href="http://localhost:1313/articles/posts/rhinomocks-whencalled/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">agile</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Crystal Software Development
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Crystal Software Development Download Agile talk
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-06-30 00:00:00 +0800 AWST'>June 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Crystal Software Development" href="http://localhost:1313/articles/posts/crystal-software-development-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">sql</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Integrated Security = SSPI -- Security Support Provider Interface
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Using Integrated Security in connection strings should be either of the following:
-Integrated Security=SSPI or
-Integrated Security=false Not
-Integrated Security=true</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-06-29 00:00:00 +0800 AWST'>June 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Integrated Security = SSPI -- Security Support Provider Interface" href="http://localhost:1313/articles/posts/integrated-security-sspi-security-support-provider-interface/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">notes</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">LIFO vs FIFO
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>LIFOFIFOhigher COGSlower COGSlower taxeshigher taxeslower net incomehigher net incomelower inventory balanceshigher inventory balanceshigher cash flows (less tax paid out)lower cash flows (more tax paid out)lower net and gross marginshigher net and gross marginslower current ratiohigher current ratiohigher inventory turnoverlower inventory turnoverDA and DE higherDA and DE lowerUnder IFRS the permissible cost flow methods are:
-Specific Identification FIFO Weighted average cost </p>
-  </div>
-  <footer class="entry-footer"><span title='2010-06-21 00:00:00 +0800 AWST'>June 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to LIFO vs FIFO" href="http://localhost:1313/articles/posts/lifo-vs-fifo/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">WPF UI Thread Dispatcher
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A simple implemention for calling asych methods from the UI Examples dispatcher.ExecuteOnMainUIThread(CommandManager.InvalidateRequerySuggested);dispatcher.Execute(() =&gt;{SomeLongRunningMethodHere();});The interface public interface IDispatcher { void Execute(Action action); void ExecuteOnMainUIThread(Action action); } }
-Synchronous for use in Testing public class SynchronousDispatcher: IDispatcher { public void Execute(Action action) { action(); } public void ExecuteOnMainUIThread(Action action) {action();}}
-Asynchronous for use by the application at run time public class AsynchronousDispatcher: IDispatcher {public void Execute(Action action) {action.BeginInvoke(CallBack, action);}public void ExecuteOnMainUIThread(Action action) {Dispatcher dispatcher;if (Application.Current != null) {dispatcher = Application.Current.Dispatcher;} else {dispatcher = Dispatcher.CurrentDispatcher;}dispatcher.Invoke(action);}private void CallBack(IAsyncResult result) {try {((Action) result.AsyncState).EndInvoke(result);} catch (Exception ex) { // Need to raise the exception on the main thread ExecuteOnMainUIThread(() =&gt; { throw ex; } ); } finally { result.AsyncWaitHandle.Close(); }}} </p>
-  </div>
-  <footer class="entry-footer"><span title='2010-05-26 00:00:00 +0800 AWST'>May 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to WPF UI Thread Dispatcher" href="http://localhost:1313/articles/posts/wpf-ui-thread-dispatcher/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Rhino Mock Constraints  -- AssertWasCalled
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Rhino Mock Constraints allow use to test a methods parameters were called with the correct arguments.
-public interface IDocumentService { void Save(string userName, Document document, Stream stream); }
-Some ways to ensure the method that contains the save method passes the correct internally constructed arguments include
-documentService.AssertWasCalled(a=&gt;a.Save(“chris”, doc, adaptor.InputStream), b =&gt; b.Constraints(Is.Equal(“chris”), Is.NotNull(), Is.AnyThing()));
-Passing in
-Property.AllPropertiesMatch(this.MyTestObjectWithPropertiesThatShouldMatch)will check values against each object
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-05-20 00:00:00 +0800 AWST'>May 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Rhino Mock Constraints  -- AssertWasCalled" href="http://localhost:1313/articles/posts/rhino-mock-constraints-assertwascalled/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">notes</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">CFA – Accounting Ratios
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Liquidity ratios Cash ratio is the same as Quick without the accounts receivable
-Solvency ratios Long term debt to equity = total debt / total equity
-Debt to equity = total debt / total equity
-Total debt ratio = total debt / total assets
-Financial leverage ratio = total assets / total equity
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-05-08 00:00:00 +0800 AWST'>May 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to CFA – Accounting Ratios" href="http://localhost:1313/articles/posts/cfa-accounting-ratios/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Allow IIS7 to download .config files
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In the following file C:\\Windows\\System32\\inetsrv\\config\\applicationHost.configEnsure the following
-&lt;section name\=&#34;requestFiltering&#34; overrideModeDefault\=&#34;Allow&#34; /&gt;In the Web.Config &lt;?xml version\=&#34;1.0&#34; encoding\=&#34;UTF-8&#34;?\&gt;&lt;configuration&gt;
-&lt;system.webServer&gt;
-&lt;handlers&gt;
-&lt;add name=“StaticFile” path=&#34;*&#34; verb=&#34;*&#34; modules=“StaticFileModule,DefaultDocumentModule,DirectoryListingModule” resourceType=“Either” requireAccess=“Read” /&gt;
-&lt;/handlers&gt; &lt;staticContent&gt;
-&lt;mimeMap fileExtension=&#34;.*&#34; mimeType=“application/octet-stream” /&gt;
-&lt;/staticContent&gt;
-&lt;security&gt;
-&lt;requestFiltering&gt;
-&lt;fileExtensions allowUnlisted=“true”&gt;
-&lt;remove fileExtension=&#34;.config&#34; /&gt;
-&lt;add fileExtension=&#34;.config&#34; allowed=“true” /&gt;
-&lt;/fileExtensions&gt;
-&lt;/requestFiltering&gt;
-&lt;/security&gt;
-&lt;/system.webServer&gt;
-&lt;/configuration&gt;
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-03-11 00:00:00 +0800 AWST'>March 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Allow IIS7 to download .config files" href="http://localhost:1313/articles/posts/allow-iis7-to-download-config-files/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Stream bytes to files
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>using(var stream = Assembly.GetAssembly(typeof (StubPolicy)).GetManifestResourceStream( &#34;Documents.TestHelpers.Files.test.msg&#34;)) { const int bufferLength = 256; var buffer = new Byte\[bufferLength\]; if (stream != null) { int bytesRead = stream.Read(buffer, 0, bufferLength); using(var fs = new FileStream(filename, FileMode.CreateNew, FileAccess.Write)) { // Write out the input stream while (bytesRead &gt; 0) { fs.Write(buffer, 0, bytesRead); bytesRead = stream.Read(buffer, 0, bufferLength); } fs.Close(); } stream.Close(); } } </p>
-  </div>
-  <footer class="entry-footer"><span title='2010-02-10 00:00:00 +0800 AWST'>February 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Stream bytes to files" href="http://localhost:1313/articles/posts/stream-bytes-to-files/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="http://localhost:1313/articles/page/3/">
-      «&nbsp;Prev&nbsp;
-    </a>
-    <a class="next" href="http://localhost:1313/articles/page/5/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
-    </main>
-    
-<footer class="footer">
-    <div class="footer-inner">
-        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
-        <nav class="footer-links" aria-label="Footer links">
-            <a href="/articles/">Articles</a>
-            <a href="/projects/">Projects</a>
-            <a href="/talks/">Talks</a>
-            <a href="/tags/">Tags</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </div>
-</footer>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-</body>
-</html>

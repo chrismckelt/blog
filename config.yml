@@ -7,6 +7,17 @@ enableRobotsTXT: true
 pagination:
   pagerSize: 20
 
+# Required by PaperMod's search: the JSON output format generates /index.json,
+# which fastsearch.js fetches to build the Fuse.js index.
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+sitemap:
+  changeFreq: monthly
+
 taxonomies:
   tag: tags
 

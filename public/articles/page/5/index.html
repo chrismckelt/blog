@@ -1,546 +1,0 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>Articles | Chris McKelt - Remembering Thoughts</title>
-<meta name="keywords" content="">
-<meta name="description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-<meta name="author" content="Chris McKelt">
-<link rel="canonical" href="http://localhost:1313/articles/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6132b7b3a748eb8401cb3a5d190046e9f95419761c3ba8a9d7d61c21bdbe6e4f.css" integrity="sha256-YTK3s6dI64QByzpdGQBG6flUGXYcO6ip19YcIb2&#43;bk8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/articles/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/articles/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-</noscript><meta property="og:url" content="http://localhost:1313/articles/">
-  <meta property="og:site_name" content="Chris McKelt - Remembering Thoughts">
-  <meta property="og:title" content="Articles">
-  <meta property="og:description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Articles">
-<meta name="twitter:description" content="Writing on cloud architecture, integration, data, AI, DevOps and software delivery.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Articles",
-      "item": "http://localhost:1313/articles/"
-    }
-  ]
-}
-</script>
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-          delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
-            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
-            {left: "\\begin{align}", right: "\\end{align}", display: true},
-            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
-            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
-            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
-          ],
-          throwOnError : false
-        });
-    });
-</script>
- 
-
-
-</head>
-
-<body class="list" id="top">
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Chris McKelt">
-                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
-                    height="18"
-                    width="18">Chris McKelt</a>
-            <div class="logo-switches">
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="http://localhost:1313/articles/" title="Articles">
-                    <span class="active">Articles</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
-                    <span>Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/talks/" title="Talks">
-                    <span>Talks</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/contact/" title="Contact">
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/search/" title="Search">
-                    <span>Search</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1 class="page-title">
-    Articles
-  </h1>
-  <p class="page-description">Writing on cloud architecture, integration, data, AI, DevOps and software delivery.</p>
-</header>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ISpecification
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> public interface ISpecification&lt;T&gt; { bool IsSatisfiedBy(T candidate); ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other); ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications); T Target { get; set; } void GetResults(ResultsVisitor visitor); IEnumerable&lt;Type&gt; WhatWasAssessed(); Risks.IDemoCommand GetCommand(); } using System; using System.Collections.Generic; using Demo.Core.Commands; using Demo.Core.Risks; using Demo.Core.Specification.Common; namespace Demo.Core.Specification { public abstract class AbstractSpecification&lt;T&gt; : ISpecification&lt;T&gt; { protected SpecificationResult result; protected IList&lt;Type&gt; ruleList = new List&lt;Type&gt;(); protected bool SoftCheck { get; set; } public T Candidate { get; set; } public T Target { get; set; } public bool IsReplay {protected get; set;} public ISpecification&lt;T&gt; And(ISpecification&lt;T&gt; other) { return new AndSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; Or(ISpecification&lt;T&gt; other) { return new OrSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; XOr(ISpecification&lt;T&gt; other) { return new XORSpecification&lt;T&gt;(this, other); } public ISpecification&lt;T&gt; AndAllOf(IEnumerable&lt;ISpecification&lt;T&gt;&gt; specifications) { return new AndAllOfSpecification&lt;T&gt;(this, specifications); } public virtual bool Evaluate(T candidate) { throw new NotImplementedException(&#34;You need to provide a predicate or override IsSatisfiedBy&#34;); } public virtual IDemoCommand GetCommand() { return new NoCommand(); } public virtual void GetResults(ResultsVisitor visitor) { if (result != null &amp;&amp; !string.IsNullOrEmpty(result.Message)) { visitor.Add(result); } } public virtual IEnumerable&lt;Type&gt; WhatWasAssessed() { return ruleList; } public virtual string MessageFormat() { throw new NotImplementedException(&#34;You need to provide a result a message or override IsSatisfiedBy&#34;); } public virtual bool IsSatisfiedBy(T candidate) { if (IsReplay) { return true; } Type ruleType = GetType(); ruleList.Add(ruleType); Candidate = candidate; bool satisfied = Evaluate(candidate); if (!satisfied || (SoftCheck &amp;&amp; !string.IsNullOrEmpty(result.Message))) { result = new SpecificationResult { Satisfied = SoftCheck, Message = string.Format(MessageFormat(), candidate, Target) }; } return satisfied; } public AbstractSpecification&lt;T&gt; SuccessOrRhs(ISpecification&lt;T&gt; specification) { return new SuccessOrRhsSpecification&lt;T&gt;(specification); } } } </p>
-  </div>
-  <footer class="entry-footer"><span title='2010-02-03 00:00:00 +0800 AWST'>February 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to ISpecification" href="http://localhost:1313/articles/posts/ispecification/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Castle Windsor – WCF Endpoint Configuration
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> const int maxSize = 52428800;var binding = new BasicHttpBinding();binding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Windows;binding.Security.Transport.ProxyCredentialType = HttpProxyCredentialType.None;binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.UserName;binding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Default;binding.MaxReceivedMessageSize = 1000000;binding.CloseTimeout = new TimeSpan(0, 1, 0);binding.OpenTimeout = new TimeSpan(0,1,0);binding.ReceiveTimeout = new TimeSpan(0,10,0);binding.SendTimeout = new TimeSpan(0,1,0);binding.AllowCookies = false;binding.BypassProxyOnLocal = false;binding.HostNameComparisonMode = HostNameComparisonMode.StrongWildcard;binding.MaxBufferSize = maxSize;binding.MaxBufferPoolSize = maxSize;binding.MaxReceivedMessageSize = maxSize;binding.MessageEncoding = WSMessageEncoding.Mtom;binding.TextEncoding = Encoding.UTF8;binding.TransferMode = TransferMode.Buffered;binding.UseDefaultWebProxy = true;binding.ReaderQuotas.MaxDepth = 32;binding.ReaderQuotas.MaxStringContentLength = maxSize;binding.ReaderQuotas.MaxArrayLength = maxSize;binding.ReaderQuotas.MaxBytesPerRead = maxSize;binding.ReaderQuotas.MaxNameTableCharCount = maxSize;container = new IocContainer(LifestyleType.Transient);container.AddFacility&lt;WcfFacility&gt;().Register(Component.For&lt;ISharePointFacadeService&gt;().Named(&#34;DmsGateway&#34;).ActAs(new DefaultClientModel(){Endpoint = WcfEndpoint.BoundTo(binding).At(&#34;http://localhost/SharepointFacade/DMSService.svc/mex&#34;)}));</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-02-01 00:00:00 +0800 AWST'>February 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Castle Windsor – WCF Endpoint Configuration" href="http://localhost:1313/articles/posts/castle-windsor-wcf-endpoint-configuration/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ConvertPropertiesAndValuesToHashtable Extension method
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> public static class Extensions { public static Hashtable ConvertPropertiesAndValuesToHashtable(this object obj) { var ht = new Hashtable();
-// get all public static properties of obj typevar propertyInfos = obj.GetType().GetProperties().Where(a=&gt;a.MemberType.Equals(MemberTypes.Property)).ToArray();// sort properties by nameArray.Sort(propertyInfos, (propertyInfo1, propertyInfo2) =&gt; propertyInfo1.Name.CompareTo(propertyInfo2.Name));// write property namesforeach (PropertyInfo propertyInfo in propertyInfos){ht.Add(propertyInfo.Name, propertyInfo.GetValue(obj, BindingFlags.Public, null, null, CultureInfo.CurrentCulture));}return ht;}}Tests
-using System; using System.Collections; using System.Globalization; using System.Linq; using System.Reflection;
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2010-01-27 00:00:00 +0800 AWST'>January 2010</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to ConvertPropertiesAndValuesToHashtable Extension method" href="http://localhost:1313/articles/posts/convertpropertiesandvaluestohashtable-extension-method/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">sql</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Obliterate Database
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>declare @vcFK varchar(250), @vcTable varchar(250), @vcSP varchar(250), @vcView varchar(250), @vcFn varchar(250) -- ...drop all foreign key constraints select @vcFK = min(name) from sysobjects where type=&#39;F&#39; while @vcFK is not null begin print &#39;Dropping FK constraint &#39; &#43; @vcFK -- ...get name of table corresponding to the foreign key select @vcTable = S2.name from sysobjects S1 inner join sysconstraints C on S1.id = C.constid inner join sysobjects S2 on C.id = S2.id where S1.name = @vcFK and S1.type=&#39;F&#39; exec (&#39;alter table &#39; &#43; @vcTable &#43; &#39; drop constraint &#39; &#43; @vcFK) select @vcFK = min(name) from sysobjects where type=&#39;F&#39; and name &gt; @vcFK end -- ...drop all tables select @vcTable = min(name) from sysobjects where type=&#39;U&#39; and name not like &#39;dt%&#39; while @vcTable is not null begin print &#39;Dropping table &#39; &#43; @vcTable exec (&#39;drop table &#39; &#43; @vcTable) select @vcTable = min(name) from sysobjects where type=&#39;U&#39; and name not like &#39;dt%&#39; and name &gt; @vcTable end -- ...drop all our stored procedures select @vcSP = min(name) from sysobjects where type=&#39;P&#39; and (name like &#39;usp%&#39;) while @vcSP is not null begin print &#39;Dropping procedure &#39; &#43; @vcSP exec (&#39;drop procedure &#39; &#43; @vcSP) select @vcSP = min(name) from sysobjects where type=&#39;P&#39; and (name like &#39;usp%&#39;) and name &gt; @vcSP end -- ...drop all views select @vcView = min(name) from sysobjects where type=&#39;V&#39; and name like &#39;v%&#39; while @vcView is not null begin print &#39;Dropping view &#39; &#43; @vcView exec (&#39;drop view &#39; &#43; @vcView) select @vcView = min(name) from sysobjects where type=&#39;V&#39; and name like &#39;v%&#39; and name &gt; @vcView end -- ...drop all functions select @vcFn = min(name) from sysobjects where type=&#39;FN&#39; and name like &#39;udf%&#39; while @vcFn is not null begin print &#39;Dropping function &#39; &#43; @vcFn exec (&#39;drop function &#39; &#43; @vcFn) select @vcFn = min(name) from sysobjects where type=&#39;FN&#39; and name like &#39;udf%&#39; and name &gt; @vcFn end </p>
-  </div>
-  <footer class="entry-footer"><span title='2009-12-10 00:00:00 +0800 AWST'>December 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Obliterate Database" href="http://localhost:1313/articles/posts/obliterate-database/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">WCF Tracing
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In the web.config in between the tags
-&lt;system.diagnostics&gt;
-&lt;sources&gt;
-&lt;source name=“System.ServiceModel” switchValue=“Information, ActivityTracing” propagateActivity=“true”&gt;
-&lt;listeners&gt;
-&lt;add name=“traceListener” type=“System.Diagnostics.XmlWriterTraceListener” initializeData= “WCFTrace.svclog” /&gt;
-&lt;/listeners&gt;
-&lt;/source&gt;
-&lt;/sources&gt;
-&lt;trace autoflush=“true” /&gt;
-&lt;/system.diagnostics&gt;
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-11-13 00:00:00 +0800 AWST'>November 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to WCF Tracing" href="http://localhost:1313/articles/posts/wcf-tracing/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet log4net</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Log4Net config
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Log4Net config &lt;? xml version\=&#34;1.0&#34; encoding\=&#34;utf-8&#34; ?\&gt;&lt;configuration&gt;
-&lt;log4net&gt;
-&lt;appender name=“WindowsEventAppender” type=“log4net.Appender.EventLogAppender”&gt;
-&lt;param name=“LogName” value=“Application” /&gt;
-&lt;applicationName value=“Phoenix” /&gt;
-&lt;layout type=“log4net.Layout.PatternLayout”&gt;
-&lt;conversionPattern value=&#34;%date [%thread] %-5level %logger%newline =&gt; %message%newline&#34; /&gt;
-&lt;/layout&gt;
-&lt;filter type=“log4net.Filter.LevelRangeFilter”&gt;
-&lt;param name=“LevelMin” value=“DEBUG” /&gt;
-&lt;/filter&gt;
-&lt;/appender&gt;
-&lt;appender name=“RollingFile” type=“log4net.Appender.RollingFileAppender”&gt;
-&lt;file type=“log4net.Util.PatternString” value=“logs\\phoenix.log” /&gt;
-&lt;appendToFile value=“true” /&gt;
-&lt;maximumFileSize value=“500KB” /&gt;
-&lt;maxSizeRollBackups value=“2” /&gt;
-&lt;layout type=“log4net.Layout.PatternLayout”&gt;
-&lt;conversionPattern value=&#34;%date [%thread] %-5level %logger%newline =&gt; %message%newline&#34; /&gt;
-&lt;/layout&gt;
-&lt;/appender&gt; &lt;root&gt;
-&lt;level value=“DEBUG” /&gt; &lt;appender-ref ref=“WindowsEventAppender” /&gt;
-&lt;appender-ref ref=“RollingFile” /&gt;
-&lt;/root&gt;
-&lt;/log4net&gt;
-&lt;/configuration&gt;
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-10-15 00:00:00 +0800 AWST'>October 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Log4Net config" href="http://localhost:1313/articles/posts/log4net-config/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet code tdd</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Context Specification
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Context Specification Base Class namespace Example { using System; using Microsoft.VisualStudio.TestTools.UnitTesting; using Rhino.Mocks;
-public abstract class ContextSpecification&lt;T&gt;{protected Exception executionException;protected T sut { get; set; }[TestInitialize\]public void Start(){this.Context();this.SetupMockResults();this.Because();}[TestCleanup\]public void CleanUp(){this.Clean();}protected virtual void Context(){}protected virtual void SetupMockResults(){}protected virtual void Because(){}protected virtual void Clean(){}protected TInterface GetDependency&lt;TInterface&gt;() where TInterface : class{return MockRepository.GenerateMock&lt;TInterface&gt;();}public void Execute(Action action){try{action();}catch (Exception ex){executionException = ex;}}}}
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-10-12 00:00:00 +0800 AWST'>October 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Context Specification" href="http://localhost:1313/articles/posts/context-specification/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">sql</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL Server error handling
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> CREATE PROCEDURE AS BEGIN SET NOCOUNT ON BEGIN TRY
---Do workEND TRY
-BEGIN CATCH /* Note that catching and rethrowing an exception is a lossy operation. ERROR_PROCEDURE() etc will be reset. */ DECLARE @errorMessage NVARCHAR(4000); DECLARE @errorSeverity INT; DECLARE @errorState INT;
-SELECT @errorMessage = ERROR\_MESSAGE(),@errorSeverity = ERROR\_SEVERITY() ,@errorState = ERROR\_STATE();--Perform required recovery actions.RAISERROR ( @errorMessage, @errorSeverity, @errorState );RETURN 1;END CATCH
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-09-11 00:00:00 +0800 AWST'>September 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to SQL Server error handling" href="http://localhost:1313/articles/posts/sql-server-error-handling/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">software</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Resharper Live Templates
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-09-04 00:00:00 +0800 AWST'>September 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Resharper Live Templates" href="http://localhost:1313/articles/posts/resharper-live-templates/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet code</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Extensions Methods
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>All these extension methods are now contained here
-https://github.com/chrismckelt/ExtensionMinder
-and available on nuget at
-https://www.nuget.org/packages/ExtensionMinder/
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-07-08 00:00:00 +0800 AWST'>July 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Extensions Methods" href="http://localhost:1313/articles/posts/extensions-methods/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">RandomHelper
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> using System; using System.Collections.Generic; using System.Linq; using System.Reflection; using System.Text; namespace TestHelpers { public static class RandomHelper { /* This method can be used to fill all public properties of an object with random values depending on their type. CAUTION: it does not fill attributes that end with &#39;ID&#39; or attributes which are called &#39;pk&#39;. They have to be filled manually.*/ private static readonly Random randomSeed = new Random(); /* Generates a random string with the given length*/ public static T FillPropertiesWithRandomValues&lt;T&gt;(bool fillBaseObjects) { return CreateItem&lt;T&gt;(true); } public static T FillPropertiesWithRandomValues&lt;T&gt;() { return CreateItem&lt;T&gt;(false); } private static T CreateItem&lt;T&gt;(bool fillBaseObjects) { Type type = typeof (T); var item = (T) Activator.CreateInstance(typeof (T)); while (type != null) { PropertyInfo[] infos = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly); if (infos.Length == 0) { if (item.GetType().BaseType != null) { infos = item.GetType().BaseType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly); } } foreach (PropertyInfo info in infos) { Type infoType = info.PropertyType; Type nullableType = null; if (infoType.IsGenericType &amp;&amp; infoType.GetGenericTypeDefinition().Equals(typeof (Nullable&lt;&gt;))) { nullableType = ExtractTypeFromNullable(infoType); } if (!info.CanWrite) continue; if (infoType.Equals(typeof (DateTime)) || infoType.Equals(typeof (DateTime?))) { info.SetValue(item, RandomDateTime(DateTime.Now, new DateTime(3000, 01, 01)), null); } else if (infoType.Equals(typeof (string))) { info.SetValue(item, info.Name &#43; &#34;_&#34; &#43; RandomString(20, false), null); } else if ((infoType.Equals(typeof (long)) || infoType.Equals(typeof (double)) || infoType.Equals(typeof (int)) || infoType.Equals(typeof (long)) || infoType.Equals(typeof (int))) &amp;&amp; !info.Name.ToLower().EndsWith(&#34;id&#34;) &amp;&amp; !info.Name.ToLower().Equals(&#34;pk&#34;)) { info.SetValue(item, RandomNumber(0, 999999), null); } else if ((infoType.Equals(typeof (long?)) || infoType.Equals(typeof (double?)) || infoType.Equals(typeof (int?)) || infoType.Equals(typeof (long?)) || infoType.Equals(typeof (int?))) &amp;&amp; !info.Name.ToLower().EndsWith(&#34;id&#34;) &amp;&amp; !info.Name.ToLower().Equals(&#34;pk&#34;)) { Type genericType = info.PropertyType.GetGenericArguments()[0]; info.SetValue(item, Convert.ChangeType(RandomNumber(0, 999999), genericType), null); } else if (infoType.Equals(typeof (decimal))) { info.SetValue(item, 1m, null); } else if (infoType.Equals(typeof (bool))) { info.SetValue(item, true, null); } else if (infoType.Equals(typeof (Guid))) { info.SetValue(item, Guid.NewGuid(), null); } else if (infoType.Equals(typeof (Enum))) { Array values = Enum.GetValues(infoType); List&lt;object&gt; list = values.Cast&lt;object&gt;().ToList(); object val = list[new Random().Next(0, list.Count)]; info.SetValue(item, val, null); } else if (((infoType.BaseType != null) &amp;&amp; (infoType.BaseType.Equals(typeof (Enum))))) { Array values = Enum.GetValues(infoType); List&lt;object&gt; list = values.Cast&lt;object&gt;().ToList(); object val = list[new Random().Next(0, list.Count)]; info.SetValue(item, val, null); } else if (nullableType != null) { if (nullableType.BaseType.Equals(typeof (Enum))) { Array values = Enum.GetValues(nullableType); List&lt;object&gt; list = values.Cast&lt;object&gt;().ToList(); object val = list[new Random().Next(0, list.Count)]; info.SetValue(item, val, null); } } else if (infoType.IsArray) { Console.WriteLine(&#34;Object contains array of objects need to fill these&#34;); MethodInfo sm = info.GetSetMethod(true); if (sm.ReturnType.IsArray) { object arrayObject = sm.Invoke(item, null); foreach (object element in (Array) arrayObject) { foreach (PropertyInfo arrayObjPinfo in element.GetType().GetProperties()) { Console.WriteLine(arrayObjPinfo.Name &#43; &#34;:&#34; &#43; arrayObjPinfo.GetGetMethod().Invoke(element, null)); } } } } } if (!fillBaseObjects) break; type = type.BaseType; } return item; } ///&lt;summary&gt;Indentify and extracting type from Nullable Type&lt;/summary&gt; public static Type ExtractTypeFromNullable(Type type) { if (type.IsGenericType &amp;&amp; type.GetGenericTypeDefinition() == typeof (Nullable&lt;&gt;)) { PropertyInfo valueProp = type.GetProperty(&#34;Value&#34;); return valueProp.PropertyType; } else { return null; } } public static string RandomString(int size, bool lowerCase) { var randomString = new StringBuilder(size); /* Ascii start position (65 = A / 97 = a)*/ int start = lowerCase ? 97 : 65; /* Add random chars*/ for (int i = 0; i &lt; size; i&#43;&#43;) { randomString.Append((char) ((26*randomSeed.NextDouble()) &#43; start)); } return randomString.ToString(); } public static int RandomNumber(int minimal, int maximal) { return randomSeed.Next(minimal, maximal); } /* Returns a random boolean value*/ public static bool RandomBool() { return randomSeed.NextDouble() &gt; 0.5; } /* Returns a random color*/ public static DateTime RandomDateTime(DateTime min, DateTime max) { if (max &lt;= min) { const string message = &#34;Max must be greater than min.&#34;; throw new ArgumentException(message); } long minTicks = min.Ticks; long maxTicks = max.Ticks; double rn = ((Convert.ToDouble(maxTicks) - Convert.ToDouble(minTicks))*randomSeed.NextDouble()) &#43; Convert.ToDouble(minTicks); return new DateTime(Convert.ToInt64(rn)); } } } </p>
-  </div>
-  <footer class="entry-footer"><span title='2009-04-27 00:00:00 +0800 AWST'>April 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to RandomHelper" href="http://localhost:1313/articles/posts/randomhelper/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code software</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Design Principles
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>The Open/Closed Principle Software entities (classes, modules, etc) should be open for extension, but closed for modification
-The Liskov Substitution Principle Liskov’s notion of “subtype” is based on the notion of substitutability; that is, if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of the desirable properties of that program (e.g., correctness). ie Derived classes must be usable through the base class interface without the need for the user to know the difference
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-03-08 00:00:00 +0800 AWST'>March 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Design Principles" href="http://localhost:1313/articles/posts/design-principles/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code software</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Sorting Algorithms
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Bubble Heap Insertion Merge Quick Selection Shell Which sorting algorithm has the best asymptotic runtime complexity? Heap Sort
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-03-05 00:00:00 +0800 AWST'>March 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Sorting Algorithms" href="http://localhost:1313/articles/posts/sorting-algorithms/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet code</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Winforms UI cross thread operations
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> ThreadPool.QueueUserWorkItem(new WaitCallback(LoadUsers));private void LoadUsers(Object stateInfo){var site = new SPSite(testHarnessSettings.Url);var web = site.OpenWeb();foreach(SPUser user in web.AllUsers){if (usersListBox.InvokeRequired){usersListBox.Invoke( new MethodInvoker(delegate { usersListBox.Items.Add((user.LoginName)); }));}}</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-02-27 00:00:00 +0800 AWST'>February 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Winforms UI cross thread operations" href="http://localhost:1313/articles/posts/winforms-ui-cross-thread-operations/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">biztalk</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Biztalk notes
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Databases
-SSODB – Enterprise Single Sign-On database BizTalkRuleEngineDB – Repository for your business rules BizTalkMsgBoxDb – Storage for a multitude of BizTalk activities, notably messages BizTalkMgmtDb – Database for server meta data BizTalkHwsDb – Human Workflow Services storage database BizTalkEdiDb – State data for the EDI adapter BizTalkDTADb – BizTalk tracking engine storage BizTalkStarSchema – Staging, dimension, and measure tables BAMPrimaryImport – Raw tracking data for BAM BAMArchive – Archive for older business activity BAMAlertsNSMain – Notification services for BAM monitoring BAMAlertsApplication – Alert information for BAM notifications Orchestration Tools
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-02-12 00:00:00 +0800 AWST'>February 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Biztalk notes" href="http://localhost:1313/articles/posts/biztalk-notes/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>The above example uses Windows Communication Foundation (WCF) Integration Facility
-The main idea here is that WCF should get the service instances from Windsor, which gives us all the usual advantages of IoC plus Windsor’s interceptors capabilities. It isn’t a lot of code, but it makes it much easier to work with WCF services.
-The service contains 2 simple methods on the HelloWorld class.
-SayHello – returns a string “Hello World” ThrowException – throws an exception Every single call to each of these is intercepted and logged. Whilst the throw exception will always be caught by the exceptionhandler interceptor.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-02-03 00:00:00 +0800 AWST'>February 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to WCF Windsor Interceptor, AOP with Logging and Exception Handler Interceptor" href="http://localhost:1313/articles/posts/wcf-windsor-interceptor-aop-with-logging-and-exception-handler-interceptor/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">code dotnet</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Performance Testing using a counting semaphore -- Dijkstra
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Running some performance tests using Fitnesse to test the limits of a new Sharepoint DMS solution produced this solution.
-The code we are trying to test is the AddDocument and the time it takes each call to this to succeed.
-So we need to add n number of documents to Sharepoint using x number of threads through a WCF service_,_ where n and x are configurable via the Fitnesse wiki
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2009-01-21 00:00:00 +0800 AWST'>January 2009</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Performance Testing using a counting semaphore -- Dijkstra" href="http://localhost:1313/articles/posts/performance-testing-using-a-counting-semaphore-dijkstra/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>NANT CruiseControl NUnit - How to get unit tests running and displaying on the build server &lt;target name=&#34;webtest&#34; haltonfailure=&#34;false&#34; failonerror=&#34;true&#34;\&gt;&lt;echo message=&#34;Running unit tests&#34;/&gt;&lt;echo message=&#34;${project.local.folder}&#34;/&gt;&lt;property name=&#34;test\_dll\_folder&#34; value\=&#34;${project.local.folder}\\McKelt.Tests\\bin\\Debug\\&#34;/&gt;&lt;exec failonerror=&#34;true&#34; program=&#34;${nunit-console.exe}&#34; workingdir=&#34;${project.local.folder}&#34; verbose=&#34;true&#34; append=&#34;true&#34; commandline=&#34;${test\_dll\_folder}McKelt.Tests.dll /xml=${test\_dll\_folder}TestResults.xml /output=${test\_dll\_folder}TestOutput.txt /err=${test\_dll\_folder}TestErrorOutput.txt&#34;&gt;&lt;/exec&gt;&lt;echo message=&#34;-- TEST COMPLETE -- &#34;/&gt;In the following file – c:\program files\CruiseControl.Net\Server\CCNet.config
-&lt;msbuild&gt; &lt;executable&gt;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe&lt;/executable&gt; &lt;workingDirectory&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\&lt;/workingDirectory&gt; &lt;projectFile&gt;McKeltOnlineForms.sln&lt;/projectFile&gt; &lt;buildArgs&gt; /noconsolelogger /p:Configuration=Debug /v:quiet &lt;/buildArgs&gt; &lt;targets&gt;Rebuild&lt;/targets&gt; &lt;timeout&gt;120&lt;/timeout&gt; &lt;logger&gt;c:\Program Files\CruiseControl.NET\server\Rodemeyer.MsBuildToCCNet.dll&lt;/logger&gt; &lt;/msbuild&gt; &lt;/tasks&gt; &lt;publishers&gt; &lt;merge&gt; &lt;files&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Web.Application.Tests\bin\Debug\testresults.xml&lt;/file&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Service.Implementations.Tests\bin\Debug\testresults.xml&lt;/file&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\Tests\AcceptanceTests\bin\Debug\TestResults.xml&lt;/file&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Web.Application.Tests\bin\Debug\*Output.txt&lt;/file&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\McKelt.Service.Implementations.Tests\bin\Debug\*Output.txt&lt;/file&gt; &lt;file&gt;C:\CCWorking\McKeltOnlineForms\CodeBase\Tests\AcceptanceTests\bin\Debug\*Output.txt&lt;/file&gt; &lt;/files&gt; &lt;/merge&gt; &lt;/publishers&gt;
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2008-12-23 00:00:00 +0800 AWST'>December 2008</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to NANT CruiseControl NUnit   - How to get unit tests running and displaying on the build server" href="http://localhost:1313/articles/posts/nant-cruisecontrol-nunit-how-to-get-unit-tests-running-and-displaying-on-the-build-server/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet sharepoint</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Windows SharePoint Services Notes
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>SharePoint main objects
-SPSite = Site; Collection SPWeb = Site Web; SPSite siteCollection = new SPSite(&#34;http://localhost/sites/sitename&#34;); SPWeb web = siteCollection.OpenWeb();Features
-Features define a mechanism for defining site elements and adding them to a target site or site collection through a process called feature activation
-An example feature
-&lt;Feature Id=“6AA03A00-02B5-4d83-A041-1CEB0DE9EF9E” Title=“Chris Document Manager” Description=“Test description” Version=“1.0.0.0” Scope=“Web” ImageUrl=“TestImage.gif” ReceiverAssembly=“DocumentManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52cb0cd67d773ef7” ReceiverClass=“DocumentManager.FeatureReceiver” xmlns=“http://schemas.microsoft.com/sharepoint/&#34;&gt; &lt;ElementManifests&gt; &lt;ElementManifest Location=“elements.xml” /&gt; &lt;/ElementManifests&gt; &lt;/Feature&gt;
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2008-10-12 00:00:00 +0800 AWST'>October 2008</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to Windows SharePoint Services Notes" href="http://localhost:1313/articles/posts/windows-sharepoint-services-notes/"></a>
-</article>
-
-<article class="post-entry"> 
-  <div class="entry-kicker">dotnet code</div>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">How to use DB Deploy
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here is a quick example of how to use DB Deploy
-This example uses NANT to run DBDeploy which in turn generates the output.sql file. This is then run against the database causing our changes to be run in and putting an entry in the ChangeLog table to tell you which sql files have been run.
-To run this sample
-Download to a location on your computer e.g. C:\Examples\DBDeployExample Create a database onyour localhost called DBDeployExample In a command prompt (Or PowerShell) use NANT to build the solution –(I have this setup as an environment variable setup and simply type ‘NANT’) NANT will build the default.build file and run the database changes Opening the solution file looks like this
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2008-08-28 00:00:00 +0800 AWST'>August 2008</span><span class="entry-read-more">Read</span>
-  </footer>
-  <a class="entry-link" aria-label="post link to How to use DB Deploy" href="http://localhost:1313/articles/posts/how-to-use-db-deploy/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="http://localhost:1313/articles/page/4/">
-      «&nbsp;Prev&nbsp;
-    </a>
-    <a class="next" href="http://localhost:1313/articles/page/6/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
-    </main>
-    
-<footer class="footer">
-    <div class="footer-inner">
-        <p>&copy; 2026 Chris McKelt. Cloud, digital, data and AI consulting from Perth.</p>
-        <nav class="footer-links" aria-label="Footer links">
-            <a href="/articles/">Articles</a>
-            <a href="/projects/">Projects</a>
-            <a href="/talks/">Talks</a>
-            <a href="/tags/">Tags</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </div>
-</footer>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-</body>
-</html>

@@ -9,7 +9,7 @@ slug: from-dotnetblogengine-to-wordpress
 
 So after losing 6 months worth of posts I have now converted this blog to use WordPress.
 
-To transfers the posts I wrote a simple [linqpad](https://gist.github.com/chrismckelt/31a3c5ea9114f28f3170) script that uses [WordPressSharp](WordPressSharp)
+To transfers the posts I wrote a simple [linqpad](https://gist.github.com/chrismckelt/31a3c5ea9114f28f3170) script that uses [WordPressSharp](https://github.com/abrudtkuhl/WordPressSharp)
 
 After trying Syntax highlighter I instead choose this [code formatter.](https://code.google.com/p/codeformatterpluginforwindowslivewriter/downloads/detail?name=CodeFormatterPluginSetup2.5.1.msi&can=2&q=)
 

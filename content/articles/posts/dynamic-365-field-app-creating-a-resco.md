@@ -96,6 +96,6 @@ Attach Visual Studio to the MobileCrm.exe process
 
 Voila – you should be able to attach & debug the running JavaScript (note may take a few goes to warm up)
 
-[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-8.png "image")](/https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/12/image-8.png)
+[![image](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//image_thumb-8.png "image")](https://raw.githubusercontent.com/chrismckelt/chrismckelt.github.io/master/_posts/posts/images//2018/12/image-8.png)
 
 ![image](https://user-images.githubusercontent.com/662868/120944010-e6563b00-c764-11eb-8caa-190c6abea7f5.png)
